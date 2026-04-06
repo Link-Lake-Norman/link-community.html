@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Hub Admin</title>
+</head>
+<body>
+    <h1>Community Hub Management</h1>
+    
+    <script>
+        // The script URL you generated from Google Apps Script
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyQuuO3onP3OGGDm3xgBjt5uWxwHoYOLtpZXsXeFNRoznKaVN6R7xupRwowBNJhOg1dow/exec';
 
+        // Example function to test the connection
+        async function testConnection() {
+            try {
+                const response = await fetch(scriptURL);
+                console.log("Connection successful");
+            } catch (error) {
+                console.error("Error connecting to script:", error);
+            }
+        }
+    </script>
+</body>
+</html>
