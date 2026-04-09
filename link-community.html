@@ -1,1 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Hub — LINK Lake Norman™</title>
+  <meta name="description" content="LINK Lake Norman™ Community Hub — where businesses, nonprofits, educators, and civic leaders unite to build a stronger Lake Norman region together."/>
+  <meta name="keywords" content="LINK Lake Norman community partner, nonprofit Lake Norman, community hub LKN, business community North Mecklenburg, Cornelius Huntersville Davidson community, workforce community North Carolina"/>
+  <meta name="copyright" content="© 2024–2026 LINK Holdings Group, LLC. All Rights Reserved."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:#0D1F3C; --navy2:#1B3F7A; --gold:#B8922A; --gold2:#D4A843;
+      --teal:#2ab8a0; --white:#FFFFFF;
+    }
 
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;}
+
+    /* ── NAV ── */
+    .top-nav{background:#060f1e;border-bottom:2px solid rgba(184,146,42,0.3);padding:10px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:99;}
+    .nav-brand{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--white);text-decoration:none;}
+    .nav-links{display:flex;gap:6px;flex-wrap:wrap;}
+    .nav-link{font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.65);text-decoration:none;padding:5px 12px;border-radius:20px;border:1px solid transparent;transition:all 0.2s;letter-spacing:0.3px;}
+    .nav-link:hover{color:var(--gold2);border-color:rgba(184,146,42,0.3);}
+    .nav-link.active{color:var(--teal);border-color:rgba(42,184,160,0.35);}
+    .nav-link.highlight{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+
+    /* ── HERO ── */
+    .hero{position:relative;overflow:hidden;padding:80px 60px 70px;text-align:center;background:linear-gradient(160deg,#060f1e 0%,var(--navy) 50%,#0a1828 100%);}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(42,184,160,0.08),transparent 70%);}
+    .hero-eyebrow{font-size:0.65rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--teal);margin-bottom:20px;opacity:0;animation:fadeUp 0.6s 0.1s forwards;}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:900;line-height:1.05;color:var(--white);margin-bottom:20px;opacity:0;animation:fadeUp 0.7s 0.25s forwards;}
+    .hero h1 span{color:var(--gold);}
+    .hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.7);max-width:620px;margin:0 auto 36px;line-height:1.7;opacity:0;animation:fadeUp 0.7s 0.4s forwards;}
+    .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.7s 0.55s forwards;}
+    .btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:0.85rem;padding:14px 28px;border-radius:7px;text-decoration:none;display:inline-block;transition:opacity 0.2s;}
+    .btn-primary:hover{opacity:0.88;}
+    .btn-outline{background:transparent;color:rgba(255,255,255,0.75);font-weight:600;font-size:0.82rem;padding:13px 24px;border-radius:7px;border:1px solid rgba(255,255,255,0.25);text-decoration:none;display:inline-block;transition:all 0.2s;}
+    .btn-outline:hover{border-color:var(--teal);color:var(--teal);}
+    .btn-teal{background:rgba(42,184,160,0.15);color:var(--teal);font-weight:700;font-size:0.85rem;padding:14px 28px;border-radius:7px;border:1px solid rgba(42,184,160,0.4);text-decoration:none;display:inline-block;transition:all 0.2s;}
+    .btn-teal:hover{background:rgba(42,184,160,0.25);}
+
+    /* ── STAT STRIP ── */
+    .stat-strip{background:var(--navy2);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
+    .stat-item{padding:24px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.06);}
+    .stat-item:last-child{border-right:none;}
+    .stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:5px;}
+    .stat-label{font-size:0.65rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+
+    /* ── SECTION WRAPPER ── */
+    section{padding:64px 60px;}
+    .section-eyebrow{font-size:0.62rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:16px;}
+    .section-sub{font-size:0.92rem;color:rgba(255,255,255,0.65);line-height:1.75;max-width:680px;}
+    .gold-rule{height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:40px 0;width:80px;}
+
+    /* ── WHO BELONGS ── */
+    .who-section{background:#060f1e;}
+    .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+    .who-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:28px 24px;transition:border-color 0.2s;}
+    .who-card:hover{border-color:rgba(42,184,160,0.3);}
+    .who-icon{font-size:1.8rem;margin-bottom:14px;display:block;}
+    .who-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px;}
+    .who-card p{font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.7;}
+
+    /* ── HOW IT WORKS ── */
+    .how-section{background:var(--navy);}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;background:rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;}
+    .step{background:var(--navy);padding:32px 28px;}
+    .step-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(184,146,42,0.2);line-height:1;margin-bottom:14px;}
+    .step h3{font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:10px;}
+    .step p{font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.7;}
+
+    /* ── BENEFITS ── */
+    .benefits-section{background:#060f1e;}
+    .benefits-layout{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;margin-top:40px;}
+    .benefits-list{display:flex;flex-direction:column;gap:18px;}
+    .benefit-item{display:flex;gap:16px;align-items:flex-start;}
+    .benefit-icon{width:36px;height:36px;background:rgba(42,184,160,0.12);border:1px solid rgba(42,184,160,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px;}
+    .benefit-text h4{font-size:0.88rem;font-weight:700;color:var(--white);margin-bottom:4px;}
+    .benefit-text p{font-size:0.75rem;color:rgba(255,255,255,0.55);line-height:1.6;}
+    .partner-tiers{display:flex;flex-direction:column;gap:16px;}
+    .tier-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:22px 20px;}
+    .tier-card.featured{background:rgba(42,184,160,0.07);border-color:rgba(42,184,160,0.3);}
+    .tier-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+    .tier-name{font-size:0.8rem;font-weight:700;color:var(--white);}
+    .tier-badge{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:10px;}
+    .tier-badge.nonprofit{background:rgba(42,184,160,0.2);color:var(--teal);}
+    .tier-badge.business{background:rgba(184,146,42,0.2);color:var(--gold2);}
+    .tier-desc{font-size:0.72rem;color:rgba(255,255,255,0.5);line-height:1.6;}
+
+    /* ── SECTORS ── */
+    .sectors-section{background:var(--navy);}
+    .sectors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
+    .sector{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:22px 18px;text-align:center;transition:all 0.2s;}
+    .sector:hover{border-color:rgba(184,146,42,0.3);transform:translateY(-2px);}
+    .sector-icon{font-size:1.6rem;margin-bottom:10px;}
+    .sector-name{font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.8);}
+
+    /* ── QUOTE ── */
+    .quote-section{background:var(--navy2);padding:64px 60px;}
+    .quote-inner{max-width:760px;margin:0 auto;text-align:center;}
+    .quote-mark{font-family:'Playfair Display',serif;font-size:5rem;line-height:0.5;color:rgba(184,146,42,0.25);display:block;margin-bottom:16px;}
+    .quote-text{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.55rem);font-weight:700;color:var(--white);line-height:1.55;margin-bottom:24px;}
+    .quote-attr{font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:1.5px;text-transform:uppercase;}
+    .quote-attr span{color:var(--gold2);}
+
+    /* ── CTA SECTION ── */
+    .cta-section{background:linear-gradient(135deg,#060f1e 0%,var(--navy) 100%);padding:80px 60px;text-align:center;position:relative;overflow:hidden;}
+    .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(42,184,160,0.06),transparent 70%);}
+    .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--white);margin-bottom:16px;position:relative;}
+    .cta-section p{font-size:0.95rem;color:rgba(255,255,255,0.65);max-width:560px;margin:0 auto 36px;line-height:1.7;position:relative;}
+    .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
+
+    /* ── FOOTER ── */
+    .copyright-footer{background:#060f1e;border-top:3px solid var(--gold);padding:22px 60px;text-align:center;}
+    .copyright-footer p{color:rgba(255,255,255,0.6);font-size:11px;line-height:1.9;}
+    .copyright-footer .tm{color:var(--gold);font-size:10px;margin-top:4px;}
+    .copyright-footer .ip{color:rgba(255,255,255,0.25);font-size:10px;margin-top:6px;font-style:italic;max-width:760px;margin-left:auto;margin-right:auto;}
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      section{padding:48px 28px;}
+      .stat-strip{grid-template-columns:repeat(2,1fr);}
+      .who-grid{grid-template-columns:repeat(2,1fr);}
+      .steps{grid-template-columns:1fr;}
+      .benefits-layout{grid-template-columns:1fr;}
+      .sectors-grid{grid-template-columns:repeat(2,1fr);}
+      .hero{padding:60px 28px 56px;}
+      .quote-section{padding:48px 28px;}
+      .cta-section{padding:60px 28px;}
+      .copyright-footer{padding:16px 24px;}
+      .top-nav{padding:10px 20px;}
+    }
+    @media(max-width:600px){
+      .stat-strip{grid-template-columns:repeat(2,1fr);}
+      .who-grid{grid-template-columns:1fr;}
+      .sectors-grid{grid-template-columns:repeat(2,1fr);}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="top-nav">
+  <a href="homepage-v3.html" class="nav-brand">LINK<sup style="font-size:0.6rem;color:var(--gold);">™</sup> Lake Norman</a>
+  <div class="nav-links">
+    <a href="homepage-v3.html" class="nav-link">🏠 Home</a>
+    <a href="jaime-lane-v1.html" class="nav-link">👤 Jaime Lane</a>
+    <a href="additional-services-v1.html" class="nav-link">📋 Services</a>
+    <a href="link-community.html" class="nav-link active">🌎 Community Hub</a>
+    <a href="partner-application-form-v3.html" class="nav-link highlight">✦ Partner Apply</a>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">🌎 LINK Lake Norman™ Community Hub</div>
+  <h1>Where the Region<br><span>Comes Together.</span></h1>
+  <p class="hero-sub">We are not a silo. LINK Lake Norman™ is the connective tissue of this community — bridging businesses, nonprofits, educators, civic leaders, and entrepreneurs into one aligned, collaborative ecosystem.</p>
+  <div class="hero-ctas">
+    <a href="partner-application-form-v3.html" class="btn-primary">📋 Become a Business Partner →</a>
+    <a href="mailto:jaime@linklakenorman.com?subject=Community Partner Inquiry" class="btn-teal">🌱 Become a Community Partner</a>
+    <a href="homepage-v3.html" class="btn-outline">← Back to Home</a>
+  </div>
+</section>
+
+<!-- ═══════════ STAT STRIP ═══════════ -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-num">70+</div>
+    <div class="stat-label">Nonprofit Partners</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">20+</div>
+    <div class="stat-label">Years in Community</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100+</div>
+    <div class="stat-label">Students Placed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">LKN</div>
+    <div class="stat-label">Region-Wide Reach</div>
+  </div>
+</div>
+
+<!-- ═══════════ WHO BELONGS ═══════════ -->
+<section class="who-section">
+  <div class="section-eyebrow">Who Belongs in This Hub</div>
+  <h2 class="section-title">Every Sector. One Region.<br>One Network.</h2>
+  <p class="section-sub">The LINK Community Hub is not a club or a chamber. It is a living, active bridge where every sector of Lake Norman's ecosystem has a seat at the table.</p>
+  <div class="gold-rule"></div>
+  <div class="who-grid">
+    <div class="who-card">
+      <span class="who-icon">🏢</span>
+      <h3>Small Businesses & Entrepreneurs</h3>
+      <p>Local businesses seeking visibility, vetted referrals, access to the LINK network, and strategic marketing support in the Lake Norman region.</p>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">🤝</span>
+      <h3>Nonprofits & Community Orgs</h3>
+      <p>Mission-driven organizations looking for collaboration, resource sharing, event partnerships, and deeper visibility across the community.</p>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">🏫</span>
+      <h3>Schools & Educational Institutions</h3>
+      <p>K–12 schools, colleges, and universities building career pathways, internship pipelines, and workforce-ready programming for students.</p>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">🏛️</span>
+      <h3>Government & Civic Leaders</h3>
+      <p>Town managers, commissioners, state legislators, and civic officials working to strengthen workforce, economy, and community infrastructure.</p>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">🏥</span>
+      <h3>Healthcare & Professional Services</h3>
+      <p>Healthcare executives, medical professionals, and service providers contributing to a thriving, healthy community ecosystem.</p>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">🌱</span>
+      <h3>Community Investors & Advocates</h3>
+      <p>Individuals and organizations who invest time, resources, and relationships in building a stronger, more connected Lake Norman region.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HOW IT WORKS ═══════════ -->
+<section class="how-section">
+  <div class="section-eyebrow">How the Hub Works</div>
+  <h2 class="section-title">Three Ways to<br>Plug In.</h2>
+  <p class="section-sub">The LINK Community Hub operates across three engagement levels. Choose the track that fits your organization, and we'll connect you to the right people, programs, and platforms.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Community Partner (Nonprofit / Civic)</h3>
+      <p>For nonprofits, community organizations, and civic groups. Access roundtables, resource-sharing events, collaborative programming, and visibility in the LINK ecosystem. Contact us to discuss your organization's fit.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Vetted Business Partner</h3>
+      <p>For small businesses and service providers. Apply to be listed in the LINK Vetted Directory — annually curated, community-backed, and visible to the entire LINK membership and network. Plans from $250/yr.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Viewer Membership</h3>
+      <p>For individuals, executives, and professionals who want access to LINK resources, events, the Vetted Directory, and the broader LINK community network. Monthly and annual plans available from $47/mo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BENEFITS ═══════════ -->
+<section class="benefits-section">
+  <div class="section-eyebrow">Community Partner Benefits</div>
+  <h2 class="section-title">What Being a<br>Community Partner Means.</h2>
+  <div class="benefits-layout">
+    <div class="benefits-list">
+      <div class="benefit-item">
+        <div class="benefit-icon">🤝</div>
+        <div class="benefit-text">
+          <h4>Roundtable Access</h4>
+          <p>Participate in LINK's quarterly community roundtables — cross-sector conversations that drive real collaboration and shared solutions.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">📣</div>
+        <div class="benefit-text">
+          <h4>Community Visibility</h4>
+          <p>Your organization featured in LINK's network, newsletter, and community communications — reaching businesses, schools, and civic leaders region-wide.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🗂️</div>
+        <div class="benefit-text">
+          <h4>Resource Sharing</h4>
+          <p>Access to shared tools, program frameworks, partnership referrals, and co-marketing opportunities within the LINK ecosystem.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🎟️</div>
+        <div class="benefit-text">
+          <h4>Event Collaboration</h4>
+          <p>Opportunities to co-host, participate in, and promote LINK events — including the Nonprofit & Community Quarterly Connection™.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🌎</div>
+        <div class="benefit-text">
+          <h4>Network Introductions</h4>
+          <p>Access to Jaime Lane's 20+ year regional network — businesses, government, healthcare, education — ready to work with mission-aligned organizations.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="partner-tiers">
+      <div style="font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:4px;">Partnership Tracks</div>
+
+      <div class="tier-card featured">
+        <div class="tier-header">
+          <div class="tier-name">🌱 Community Partner</div>
+          <div class="tier-badge nonprofit">Nonprofit / Civic</div>
+        </div>
+        <div class="tier-desc">Designed for nonprofits, civic organizations, faith communities, and community advocacy groups. Contact us to discuss terms — we believe in mission over money.</div>
+        <div style="margin-top:16px;">
+          <a href="mailto:jaime@linklakenorman.com?subject=Community Partner Inquiry" style="background:var(--teal);color:var(--navy);font-weight:700;font-size:0.75rem;padding:9px 18px;border-radius:6px;text-decoration:none;display:inline-block;">📩 Inquire About Partnership</a>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-name">📋 Vetted Business Partner</div>
+          <div class="tier-badge business">Business Listing</div>
+        </div>
+        <div class="tier-desc">For businesses seeking vetted placement in the LINK Directory and partner network. Annual plans from $250/yr. Apply and get reviewed by LINK.</div>
+        <div style="margin-top:16px;">
+          <a href="partner-application-form-v3.html" style="background:var(--gold);color:var(--navy);font-weight:700;font-size:0.75rem;padding:9px 18px;border-radius:6px;text-decoration:none;display:inline-block;">📋 Apply to Be a Partner →</a>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-name">👁️ Viewer Membership</div>
+          <div class="tier-badge" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);">Individual Access</div>
+        </div>
+        <div class="tier-desc">For professionals and community members wanting access to LINK resources, the Vetted Directory, and events. From $47/mo or $470/yr.</div>
+        <div style="margin-top:16px;">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdys5nPj_PvyHUDSyK0b8BHRjjlO7gtvBXC_jHklvuiRsBKrQ/viewform" target="_blank" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.65);font-weight:600;font-size:0.75rem;padding:9px 18px;border-radius:6px;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,0.15);">Join as a Member →</a>
+        </div>
+      </div>
+
+      <div style="padding:16px 20px;background:rgba(184,146,42,0.08);border:1px solid rgba(184,146,42,0.2);border-radius:10px;">
+        <div style="font-size:0.68rem;font-weight:700;color:var(--gold);margin-bottom:6px;">✦ NOT SURE WHERE YOU FIT?</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:12px;">Every organization is different. Book a free 30-min discovery call and Jaime will help you find the right path into the LINK community.</div>
+        <a href="mailto:jaime@linklakenorman.com?subject=LINK Community Discovery Call" style="font-size:0.72rem;font-weight:700;color:var(--gold2);text-decoration:none;">Book Free Discovery Call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTORS ═══════════ -->
+<section class="sectors-section">
+  <div class="section-eyebrow">Active Across Every Sector</div>
+  <h2 class="section-title">The Full Lake Norman<br>Ecosystem.</h2>
+  <p class="section-sub">LINK is not limited to one industry or one cause. Our community hub spans every sector that makes the Lake Norman region work.</p>
+  <div class="sectors-grid">
+    <div class="sector"><div class="sector-icon">📚</div><div class="sector-name">Education & Academia</div></div>
+    <div class="sector"><div class="sector-icon">🏥</div><div class="sector-name">Healthcare & Medical</div></div>
+    <div class="sector"><div class="sector-icon">🏭</div><div class="sector-name">Advanced Manufacturing</div></div>
+    <div class="sector"><div class="sector-icon">🏢</div><div class="sector-name">Business & Industry</div></div>
+    <div class="sector"><div class="sector-icon">🏛️</div><div class="sector-name">Government & Civic</div></div>
+    <div class="sector"><div class="sector-icon">🤝</div><div class="sector-name">Nonprofits & Community</div></div>
+    <div class="sector"><div class="sector-icon">💡</div><div class="sector-name">Entrepreneurship</div></div>
+    <div class="sector"><div class="sector-icon">🎓</div><div class="sector-name">Career & Workforce</div></div>
+  </div>
+</section>
+
+<!-- ═══════════ QUOTE ═══════════ -->
+<div class="quote-section">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">LINK is not a silo. We are active partners in Lake Norman's ecosystem — investing in local businesses, nonprofits, industries, and community so this region grows together.</p>
+    <div class="quote-attr">— <span>Jaime Lane</span>, Founder · LINK Lake Norman™</div>
+  </div>
+</div>
+
+<!-- ═══════════ NONPROFIT EVENT ═══════════ -->
+<section style="background:var(--navy);padding:64px 60px;">
+  <div style="max-width:880px;margin:0 auto;">
+    <div class="section-eyebrow">Community Events</div>
+    <h2 class="section-title">Nonprofit & Community<br>Quarterly Connection™</h2>
+    <p class="section-sub" style="margin-bottom:40px;">LINK's flagship nonprofit gathering — a quarterly roundtable where mission-driven organizations collaborate, share resources, and build meaningful partnerships across the Lake Norman region.</p>
+
+    <div style="background:rgba(42,184,160,0.07);border:1px solid rgba(42,184,160,0.25);border-radius:12px;padding:36px 36px 32px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
+        <div>
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px;">🌱 Community · Quarterly</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--white);margin-bottom:12px;line-height:1.3;">Where Nonprofits & Community Leaders Connect</h3>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.6);line-height:1.75;">Cross-sector collaboration between nonprofits, civic leaders, businesses, and educators. Real conversations. Real partnerships. Real impact across the Lake Norman community.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.5);">GET INVOLVED</div>
+          <a href="mailto:jaime@linklakenorman.com?subject=Nonprofit Community Event Inquiry" style="background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.75);font-weight:600;font-size:0.78rem;padding:10px 18px;border-radius:6px;text-decoration:none;display:inline-block;">📩 Inquire About the Event</a>
+          <a href="mailto:jaime@linklakenorman.com?subject=Community Partner Inquiry" style="background:rgba(42,184,160,0.15);border:1px solid rgba(42,184,160,0.4);color:var(--teal);font-weight:700;font-size:0.78rem;padding:10px 18px;border-radius:6px;text-decoration:none;display:inline-block;">🌱 Become a Community Partner</a>
+          <a href="homepage-v3.html#events" style="font-size:0.72rem;color:rgba(255,255,255,0.4);text-decoration:none;">View all events →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ VISIONARY CIRCLE ═══════════ -->
+<section style="background:#060f1e;padding:64px 60px;">
+  <div style="max-width:880px;margin:0 auto;">
+    <div style="background:rgba(184,146,42,0.07);border:1px solid rgba(184,146,42,0.25);border-radius:12px;padding:36px 36px 32px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
+        <div>
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">✦ Executive · June 18, 2026</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--white);margin-bottom:12px;line-height:1.3;">Visionary Circle™<br>AI & Business Risk Luncheon</h3>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.6);line-height:1.75;">An invitation-only executive roundtable. C-suite leaders, industry executives, and community decision-makers convene for high-level conversation, strategy, and connection.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="font-size:0.68rem;font-weight:600;color:rgba(255,255,255,0.5);">REGISTER · JUNE 18, 2026</div>
+          <a href="https://linklakenorman.com/pay-link/80468ee6-caa9-46b9-ae48-dd57d73e6e4b" target="_blank" style="background:var(--gold);color:var(--navy);font-weight:700;font-size:0.82rem;padding:12px 20px;border-radius:7px;text-decoration:none;display:inline-block;">Register & Pay →</a>
+          <a href="mailto:jaime@linklakenorman.com?subject=Visionary Circle Inquiry" style="background:transparent;border:1px solid rgba(184,146,42,0.3);color:rgba(255,255,255,0.6);font-weight:600;font-size:0.75rem;padding:9px 18px;border-radius:6px;text-decoration:none;display:inline-block;">📩 Inquire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FINAL CTA ═══════════ -->
+<div class="cta-section">
+  <h2>Ready to Join the<br>LINK Community?</h2>
+  <p>Whether you're a nonprofit, business, school, or civic organization — there's a place for you in the LINK Lake Norman™ ecosystem. Let's connect.</p>
+  <div class="cta-buttons">
+    <a href="partner-application-form-v3.html" class="btn-primary">📋 Apply as a Business Partner →</a>
+    <a href="mailto:jaime@linklakenorman.com?subject=Community Partner Inquiry" class="btn-teal">🌱 Inquire: Community Partner</a>
+    <a href="homepage-v3.html" class="btn-outline">← Return to Home</a>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="copyright-footer">
+  <p>© 2024–2026 <strong>LINK Holdings Group, LLC</strong>. All Rights Reserved.</p>
+  <p class="tm">LINK Lake Norman™ &nbsp;·&nbsp; Future Ready™ &nbsp;·&nbsp; Community Alignment Playbook™ &nbsp;·&nbsp; LINK Seal of Approval™ &nbsp;·&nbsp; Visionary Circle™ &nbsp;·&nbsp; Nonprofit & Community Quarterly Connection™</p>
+  <p class="ip">All content, programs, toolkits, frameworks, service systems, materials, and intellectual property are the exclusive property of LINK Holdings Group, LLC, protected under U.S. copyright and trademark law. Unauthorized reproduction or use without prior written permission is strictly prohibited. Licensing: <a href="mailto:jaime@linklakenorman.com" style="color:rgba(255,255,255,0.4);">jaime@linklakenorman.com</a></p>
+</div>
+
+</body>
+</html>
