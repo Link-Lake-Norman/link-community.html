@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LINK Lake Norman™ — Vetted Directory Access & Pricing</title>
+<meta name="description" content="Access LINK Lake Norman's personally vetted business partner directory. Community, Professional, and Executive membership plans with monthly or annual billing. 1 login per account."/>
+<meta name="keywords" content="LINK Lake Norman vetted directory, Lake Norman business network membership, vetted vendor Lake Norman, business directory Huntersville NC, professional network Lake Norman membership"/>
+<meta name="author" content="LINK Holdings Group, LLC"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1F3C;--navy2:#1B3F7A;--gold:#B8922A;--gold2:#D4A843;--gold-lt:#F5EDD6;--off:#F7F5F0;--white:#fff;--gray:#555;--green:#27ae60;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--navy);}
+.top-nav{background:#060f1e;border-bottom:2px solid rgba(184,146,42,0.35);padding:10px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:200;}
+.nav-brand{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;color:#fff;text-decoration:none;}
+.nav-brand sup{font-size:0.5em;color:var(--gold);}
+.nl{font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.6);text-decoration:none;padding:5px 12px;border-radius:20px;border:1px solid transparent;transition:all 0.2s;}
+.nl:hover{color:var(--gold2);border-color:rgba(184,146,42,0.3);}
+.nl.cta{background:var(--gold);color:var(--navy);font-weight:700;}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+
+/* HERO */
+.hero{background:linear-gradient(145deg,#0D1F3C 0%,#1B3F7A 58%,#0D1F3C 100%);padding:52px 60px 44px;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;top:-80px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(184,146,42,0.15) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{font-size:0.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;}
+.hero-title{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px;}
+.hero-title span{color:var(--gold2);}
+.hero-sub{font-size:0.87rem;color:rgba(255,255,255,0.65);line-height:1.78;max-width:680px;margin-bottom:22px;}
+.gold-bar{height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2),transparent);margin-top:32px;}
+.btn-gold{background:var(--gold);color:var(--navy);font-weight:700;font-size:0.82rem;padding:11px 22px;border-radius:7px;text-decoration:none;display:inline-block;transition:opacity 0.2s;}
+.btn-gold:hover{opacity:0.88;}
+.btn-outline-white{background:transparent;color:rgba(255,255,255,0.8);font-weight:700;font-size:0.82rem;padding:11px 22px;border-radius:7px;border:2px solid rgba(255,255,255,0.3);text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-outline-white:hover{border-color:var(--gold2);color:var(--gold2);}
+
+/* WHAT YOU GET */
+.what-section{background:#fff;padding:52px 60px;}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto;}
+.what-card{background:var(--off);border:1px solid #e0d8c5;border-radius:10px;padding:22px 18px;border-top:3px solid var(--gold);}
+.wc-icon{font-size:1.6rem;margin-bottom:8px;}
+.wc-title{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.wc-body{font-size:0.74rem;color:var(--gray);line-height:1.7;}
+
+/* TWO TRACKS */
+.tracks-section{background:var(--navy);padding:44px 60px;}
+.tracks-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;margin:0 auto;}
+.track-card{border-radius:12px;padding:26px 24px;}
+.track-card.t1{background:rgba(184,146,42,0.12);border:2px solid rgba(184,146,42,0.4);}
+.track-card.t2{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);}
+.track-label{font-size:0.58rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold2);margin-bottom:6px;}
+.track-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:#fff;margin-bottom:8px;}
+.track-body{font-size:0.77rem;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:14px;}
+.track-price{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--gold);margin-bottom:14px;}
+.track-btn{display:inline-block;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.78rem;text-decoration:none;transition:all 0.2s;}
+.track-btn.gold{background:var(--gold);color:var(--navy);}
+.track-btn.outline{background:transparent;color:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.25);}
+
+/* PRICING */
+.pricing-section{background:var(--gold-lt);padding:52px 60px;border-top:4px solid var(--gold);}
+.pricing-label{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:18px;}
+.toggle-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;}
+.toggle-lbl{font-size:0.76rem;font-weight:600;color:var(--navy);}
+.billing-toggle{width:52px;height:26px;border-radius:13px;background:var(--gold);cursor:pointer;position:relative;flex-shrink:0;border:none;}
+.billing-knob{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform 0.3s;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto 24px;}
+.pc{background:#fff;border:1px solid #ddd6c0;border-radius:12px;padding:28px 24px;position:relative;display:flex;flex-direction:column;}
+.pc.featured{border:2px solid var(--gold);box-shadow:0 6px 28px rgba(184,146,42,0.15);}
+.pc.featured::before{content:"MOST POPULAR";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:0.55rem;font-weight:700;letter-spacing:2px;padding:4px 14px;border-radius:10px;white-space:nowrap;}
+.pc-tier{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.pc-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--navy);margin-bottom:10px;}
+.pc-price{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--navy);line-height:1;}
+.pc-price span{font-size:0.85rem;font-weight:400;color:#888;font-family:'DM Sans',sans-serif;}
+.pc-note{font-size:0.7rem;color:#888;margin-bottom:16px;margin-top:4px;}
+.pc-divider{height:1px;background:#e8e0d0;margin-bottom:16px;}
+.pc-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px;flex:1;}
+.pc-list li{font-size:0.74rem;color:#4a5568;display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.pc-list li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0;}
+.pc-btn{display:block;text-align:center;padding:11px;border-radius:7px;font-weight:700;font-size:0.8rem;text-decoration:none;transition:all 0.2s;}
+.pc-btn.gold{background:var(--gold);color:var(--navy);}
+.pc-btn.gold:hover{opacity:0.88;}
+.pc-btn.navy{background:var(--navy);color:#fff;}
+.pc-btn.navy:hover{background:var(--navy2);}
+.pricing-note{font-size:0.72rem;color:var(--gray);text-align:center;max-width:700px;margin:0 auto;line-height:1.7;}
+
+/* DIRECTORY PREVIEW */
+.dir-section{background:var(--navy);padding:44px 60px;}
+.dir-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:1100px;margin:0 auto 24px;}
+.dir-cat{background:rgba(255,255,255,0.05);border:1px solid rgba(184,146,42,0.18);border-radius:9px;padding:16px 12px;text-align:center;}
+.dir-cat-icon{font-size:1.6rem;margin-bottom:6px;}
+.dir-cat-name{font-size:0.72rem;font-weight:700;color:#fff;margin-bottom:3px;}
+.dir-cat-note{font-size:0.62rem;color:rgba(255,255,255,0.4);}
+.dir-cta{background:rgba(184,146,42,0.1);border:1px solid rgba(184,146,42,0.25);border-radius:10px;padding:22px 28px;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.dir-cta-text{font-family:'Playfair Display',serif;font-size:1.05rem;color:#fff;line-height:1.5;}
+.dir-cta-sub{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:4px;}
+
+/* PARTNER TRACK */
+.partner-section{background:var(--off);padding:52px 60px;border-top:4px solid var(--gold);}
+.partner-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;}
+.partner-pricing-card{background:var(--navy);border-radius:12px;padding:28px 24px;border:2px solid rgba(184,146,42,0.3);}
+.ppc-eyebrow{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:8px;}
+.ppc-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:#fff;margin-bottom:12px;}
+.ppc-tiers{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.ppc-tier{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:rgba(255,255,255,0.05);border-radius:6px;border:1px solid rgba(184,146,42,0.15);}
+.ppc-tier-name{font-size:0.74rem;color:rgba(255,255,255,0.7);font-weight:600;}
+.ppc-tier-price{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold);}
+
+/* FOOTER */
+.site-footer{background:#060f1e;border-top:2px solid rgba(184,146,42,0.3);padding:22px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.sf-brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:#fff;}
+.sf-brand sup{font-size:0.5em;color:var(--gold);}
+.sf-copy{font-size:0.62rem;color:rgba(255,255,255,0.28);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .what-grid,.tracks-grid,.pricing-grid,.dir-cats,.partner-inner{grid-template-columns:1fr;}
+  .hero,.what-section,.tracks-section,.pricing-section,.dir-section,.partner-section{padding-left:24px!important;padding-right:24px!important;}
+  .site-footer{padding:16px 24px;flex-direction:column;}
+}
+@media(max-width:680px){
+  .hero{padding:32px 16px 28px;}
+  .hero-title{font-size:1.7rem;}
+  .dir-cats{grid-template-columns:repeat(2,1fr);}
+  .dir-cta{flex-direction:column;}
+  section,.what-section,.tracks-section,.pricing-section,.dir-section,.partner-section{padding-left:16px!important;padding-right:16px!important;padding-top:36px!important;padding-bottom:36px!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">LINK Lake Norman<sup>™</sup></a>
+  <div class="nav-links">
+    <a href="index.html" class="nl">← Main Site</a>
+    <a href="jaime-lane.html" class="nl">Work With Jaime</a>
+    <a href="additional-services.html" class="nl">All Services</a>
+    <a href="partner-application-v2.html" class="nl">Partner Application</a>
+    <a href="mailto:jaime@linklakenorman.com?subject=Directory Membership" class="nl cta">Get Access →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">🏆 LINK Lake Norman™ — Vetted Partner Directory</p>
+  <h1 class="hero-title">The Region's Most Trusted<br><span>Vetted Business Directory</span></h1>
+  <p class="hero-sub">LINK Lake Norman™ represents the top businesses invited to join our ecosystem — not because they paid a fee, but because they earned their place. When you access this directory, you are accessing 30+ years of personally vetted relationships across every sector in the Lake Norman region.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="#pricing" class="btn-gold">View Membership Plans →</a>
+    <a href="partner-application-v2.html" class="btn-outline-white">📋 Apply to Be Listed</a>
+  </div>
+  <div class="gold-bar"></div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="what-section">
+  <div style="text-align:center;max-width:700px;margin:0 auto 32px;">
+    <div style="font-size:0.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">What Membership Gets You</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy);margin-bottom:8px;">Not a Yellow Pages. A Curated Ecosystem.</h2>
+    <p style="font-size:0.84rem;color:var(--gray);line-height:1.75;">Every business in the LINK directory has been personally reviewed for integrity, performance, and community alignment. You're not searching a list — you're accessing Jaime's personal network.</p>
+  </div>
+  <div class="what-grid">
+    <div class="what-card"><div class="wc-icon">🔐</div><div class="wc-title">Password-Protected Access</div><div class="wc-body">Full contact details, pricing, service descriptions, and member-exclusive discounts are visible only to active LINK members. 1 secure login per membership account.</div></div>
+    <div class="what-card"><div class="wc-icon">✅</div><div class="wc-title">Every Business Is Vetted</div><div class="wc-body">LINK personally reviews every business before they are listed — for quality, integrity, and fit with the community. You won't find a bad recommendation in this directory.</div></div>
+    <div class="what-card"><div class="wc-icon">🤝</div><div class="wc-title">Warm Introductions Available</div><div class="wc-body">As a member, you can request a personal introduction from Jaime to any business in the directory. That's not a feature any other directory offers.</div></div>
+    <div class="what-card"><div class="wc-icon">💰</div><div class="wc-title">Member-Only Discounts</div><div class="wc-body">Partner businesses offer exclusive discounts and promotions to active LINK members — deals not available to the general public.</div></div>
+    <div class="what-card"><div class="wc-icon">📣</div><div class="wc-title">Events &amp; Roundtables</div><div class="wc-body">Members receive priority invitations to LINK events, Visionary Circle™ sessions, and exclusive community roundtables throughout the year.</div></div>
+    <div class="what-card"><div class="wc-icon">🌱</div><div class="wc-title">A Real Community</div><div class="wc-body">LINK membership connects you to a living, breathing ecosystem of businesses, nonprofits, educators, and leaders who are all invested in this region's growth.</div></div>
+  </div>
+</section>
+
+<!-- TWO TRACKS -->
+<section class="tracks-section">
+  <div style="max-width:1100px;margin:0 auto 28px;text-align:center;">
+    <div style="font-size:0.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:6px;">Two Ways to Participate</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:#fff;margin-bottom:8px;">View the Directory — or Be Listed In It</h2>
+    <p style="font-size:0.82rem;color:rgba(255,255,255,0.55);max-width:600px;margin:0 auto;">LINK has two separate membership tracks. Choose the one that fits where you are.</p>
+  </div>
+  <div class="tracks-grid">
+    <div class="track-card t1">
+      <div class="track-label">Track 1 — Viewer</div>
+      <div class="track-title">👁️ Access the Vetted Directory</div>
+      <div class="track-body">For businesses, nonprofits, schools, and community members who want to find and connect with LINK's vetted partner network. Pay a monthly or annual fee for your 1-user login and get full access to every profile, contact, and member discount.</div>
+      <div class="track-price">From $47/mo or $470/yr</div>
+      <a href="#pricing" class="track-btn gold">See Viewer Plans →</a>
+    </div>
+    <div class="track-card t2">
+      <div class="track-label">Track 2 — Partner</div>
+      <div class="track-title">📋 Be Listed in the Directory</div>
+      <div class="track-body">For businesses that want to be found and referred through LINK's network. Apply for a vetted partner listing — receive an annual membership, a profile in the directory, referral routing, and a member portal to manage your presence.</div>
+      <div class="track-price">From $250/yr annual listing</div>
+      <a href="partner-application-v2.html" class="track-btn outline">Apply to Be Listed →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-label">🔐 Track 1 — Viewer Membership Pricing</div>
+
+  <!-- TOGGLE -->
+  <div class="toggle-row">
+    <span class="toggle-lbl">Monthly</span>
+    <button class="billing-toggle" id="billing-toggle" onclick="toggleBilling()">
+      <div class="billing-knob" id="billing-knob"></div>
+    </button>
+    <span class="toggle-lbl">Annual <span style="background:var(--gold);color:var(--navy);font-size:0.58rem;font-weight:700;padding:2px 7px;border-radius:6px;margin-left:4px;">SAVE 2 MONTHS</span></span>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="pc">
+      <div class="pc-tier">Community</div>
+      <div class="pc-name">Community Access</div>
+      <div class="pc-price" id="price-community">$47<span>/mo</span></div>
+      <div class="pc-note" id="note-community">or $470/yr — 2 months free</div>
+      <div class="pc-divider"></div>
+      <ul class="pc-list">
+        <li>Password access to the full vetted directory</li>
+        <li>Complete profiles, contact info &amp; pricing</li>
+        <li>All vendor &amp; partner categories</li>
+        <li>1 user login per membership</li>
+        <li>Member-only events &amp; roundtables</li>
+        <li>Quarterly LINK community newsletter</li>
+      </ul>
+      <a href="mailto:jaime@linklakenorman.com?subject=Community Access Membership" class="pc-btn gold">Get Community Access →</a>
+    </div>
+    <div class="pc featured">
+      <div class="pc-tier">Most Popular</div>
+      <div class="pc-name">Professional Access</div>
+      <div class="pc-price" id="price-pro">$97<span>/mo</span></div>
+      <div class="pc-note" id="note-pro">or $970/yr — 2 months free</div>
+      <div class="pc-divider"></div>
+      <ul class="pc-list">
+        <li>Everything in Community Access</li>
+        <li>Priority referral introductions from LINK</li>
+        <li>Quarterly Visionary Circle™ invitations</li>
+        <li>LINK Seal of Approval™ eligibility</li>
+        <li>Warm introductions to vetted partners</li>
+        <li>Monthly LINK insider briefing</li>
+        <li>1 user login per membership</li>
+      </ul>
+      <a href="mailto:jaime@linklakenorman.com?subject=Professional Access Membership" class="pc-btn gold">Get Professional Access →</a>
+    </div>
+    <div class="pc">
+      <div class="pc-tier">Executive</div>
+      <div class="pc-name">Executive Access</div>
+      <div class="pc-price" id="price-exec">$197<span>/mo</span></div>
+      <div class="pc-note" id="note-exec">or $1,970/yr — 2 months free</div>
+      <div class="pc-divider"></div>
+      <ul class="pc-list">
+        <li>Everything in Professional Access</li>
+        <li>Quarterly LINK strategy sessions</li>
+        <li>First-access to new vetted partners</li>
+        <li>VIP Visionary Circle™ seating</li>
+        <li>Direct line to LINK founder for referrals</li>
+        <li>Co-introductions &amp; warm referral facilitation</li>
+        <li>1 user login per membership</li>
+      </ul>
+      <a href="mailto:jaime@linklakenorman.com?subject=Executive Access Membership" class="pc-btn navy">Get Executive Access →</a>
+    </div>
+  </div>
+  <p class="pricing-note">All viewer memberships include 1 user login per account. Membership is by application and approval only. LINK Lake Norman™ reserves the right to decline any application that does not meet community standards. Questions? <a href="mailto:jaime@linklakenorman.com" style="color:var(--gold);font-weight:700;">Connect With Us →</a></p>
+</section>
+
+<!-- DIRECTORY CATEGORIES -->
+<section class="dir-section">
+  <div style="max-width:1100px;margin:0 auto 28px;text-align:center;">
+    <div style="font-size:0.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:6px;">What's Inside</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:#fff;margin-bottom:8px;">Categories in the LINK Vetted Directory</h2>
+    <p style="font-size:0.82rem;color:rgba(255,255,255,0.55);max-width:600px;margin:0 auto;">Every category below represents businesses that have been personally vetted by LINK — reviewed for integrity, performance, and community fit.</p>
+  </div>
+  <div class="dir-cats">
+    <div class="dir-cat"><div class="dir-cat-icon">💻</div><div class="dir-cat-name">IT &amp; Technology</div><div class="dir-cat-note">Support, cybersecurity, AI compliance</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">🎤</div><div class="dir-cat-name">Keynote Speakers</div><div class="dir-cat-note">Business, community &amp; workforce</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">🤖</div><div class="dir-cat-name">AI Compliance</div><div class="dir-cat-note">Risk, governance &amp; technology</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">📣</div><div class="dir-cat-name">Marketing &amp; Brand</div><div class="dir-cat-note">Strategy, content &amp; social</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">🍽️</div><div class="dir-cat-name">Catering &amp; Events</div><div class="dir-cat-note">Corporate, nonprofit &amp; community</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">⚖️</div><div class="dir-cat-name">Legal &amp; HR</div><div class="dir-cat-note">Employment, compliance &amp; consulting</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">🏗️</div><div class="dir-cat-name">Trades &amp; Construction</div><div class="dir-cat-note">Plumbing, HVAC, electrical &amp; more</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">📊</div><div class="dir-cat-name">Finance &amp; Accounting</div><div class="dir-cat-note">Bookkeeping, planning &amp; strategy</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">🎓</div><div class="dir-cat-name">Coaching &amp; Training</div><div class="dir-cat-note">Executive, career &amp; workforce</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">🤝</div><div class="dir-cat-name">Fractional Services</div><div class="dir-cat-note">CFO, COO, HR &amp; ops leadership</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">🚚</div><div class="dir-cat-name">Logistics &amp; Operations</div><div class="dir-cat-note">Supply chain &amp; operational strategy</div></div>
+    <div class="dir-cat"><div class="dir-cat-icon">🌐</div><div class="dir-cat-name">More Coming</div><div class="dir-cat-note">Network growing every quarter</div></div>
+  </div>
+  <div class="dir-cta">
+    <div>
+      <div class="dir-cta-text">Ready to access the full directory?</div>
+      <div class="dir-cta-sub">Members see full profiles, contact info, pricing &amp; exclusive discounts. Login is password-protected. 1 user per account.</div>
+    </div>
+    <a href="#pricing" class="btn-gold">View Membership Plans →</a>
+  </div>
+</section>
+
+<!-- PARTNER LISTING -->
+<section class="partner-section">
+  <div class="partner-inner">
+    <div>
+      <div style="font-size:0.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Track 2 — Be Listed</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy);margin-bottom:10px;">Apply to Be a LINK Vetted Partner</h2>
+      <p style="font-size:0.86rem;color:var(--gray);line-height:1.8;margin-bottom:16px;">LINK partners represent the best of the Lake Norman business community — from plumbers and HVAC technicians to keynote speakers, AI compliance firms, caterers, fractional executives, and beyond. Membership is by application and vetting only.</p>
+      <p style="font-size:0.86rem;color:var(--gray);line-height:1.8;margin-bottom:20px;">When you are listed in the LINK directory, you receive <strong style="color:var(--navy);">soft, personal introductions</strong> from Jaime to clients who are the right fit — not blast referrals, not cold leads. Every introduction carries the full weight of 30+ years of earned trust.</p>
+      <a href="partner-application-v2.html" class="btn-gold">📋 Apply to Be Listed →</a>
+      <div style="font-size:0.7rem;color:#888;margin-top:10px;">Applications are reviewed personally by LINK. Response within 3–5 business days.</div>
+    </div>
+    <div class="partner-pricing-card">
+      <div class="ppc-eyebrow">Partner Listing Plans</div>
+      <div class="ppc-name">Annual Membership Tiers</div>
+      <div class="ppc-tiers">
+        <div class="ppc-tier"><span class="ppc-tier-name">🏘️ Community Partner</span><span class="ppc-tier-price">$250/yr</span></div>
+        <div class="ppc-tier"><span class="ppc-tier-name">⭐ Network Partner</span><span class="ppc-tier-price">$500/yr</span></div>
+        <div class="ppc-tier"><span class="ppc-tier-name">💎 Executive Partner</span><span class="ppc-tier-price">$1,000/yr</span></div>
+      </div>
+      <a href="partner-application-v2.html" style="display:block;text-align:center;padding:10px;background:var(--gold);color:var(--navy);font-weight:700;font-size:0.78rem;border-radius:6px;text-decoration:none;">Apply Now →</a>
+      <div style="font-size:0.66rem;color:rgba(255,255,255,0.35);text-align:center;margin-top:10px;">All plans billed annually · Vetted by LINK</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div>
+    <div class="sf-brand">LINK Lake Norman<sup>™</sup></div>
+    <div style="font-size:0.62rem;color:rgba(255,255,255,0.35);margin-top:3px;">Workforce · Consulting · Community · Business Network · Lake Norman, NC</div>
+  </div>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;">
+    <a href="index.html" style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-decoration:none;">Main Site</a>
+    <a href="jaime-lane.html" style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-decoration:none;">Work With Jaime</a>
+    <a href="additional-services.html" style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-decoration:none;">All Services</a>
+    <a href="mailto:jaime@linklakenorman.com" style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-decoration:none;">jaime@linklakenorman.com</a>
+    <a href="tel:7042247830" style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-decoration:none;">(704) 224-7830</a>
+  </div>
+  <div class="sf-copy">© 2024–2026 Link Holdings Group, LLC. All Rights Reserved.</div>
+</footer>
+
+<script>
+var isAnnual = false;
+var BILLING = {
+  community:{mo:'$47<span>/mo</span>',yr:'$470<span>/yr</span>',note_mo:'or $470/yr — 2 months free',note_yr:'Billed annually · 2 months free'},
+  pro:{mo:'$97<span>/mo</span>',yr:'$970<span>/yr</span>',note_mo:'or $970/yr — 2 months free',note_yr:'Billed annually · 2 months free'},
+  exec:{mo:'$197<span>/mo</span>',yr:'$1,970<span>/yr</span>',note_mo:'or $1,970/yr — 2 months free',note_yr:'Billed annually · 2 months free'}
+};
+function toggleBilling() {
+  isAnnual = !isAnnual;
+  var knob = document.getElementById('billing-knob');
+  if (knob) knob.style.transform = isAnnual ? 'translateX(26px)' : 'translateX(0)';
+  var tiers = ['community','pro','exec'];
+  for (var i = 0; i < tiers.length; i++) {
+    var k = tiers[i];
+    var pEl = document.getElementById('price-' + k);
+    var nEl = document.getElementById('note-' + k);
+    if (pEl) pEl.innerHTML = isAnnual ? BILLING[k].yr : BILLING[k].mo;
+    if (nEl) nEl.innerHTML = isAnnual ? BILLING[k].note_yr : BILLING[k].note_mo;
+  }
+}
+</script>
+
+<!-- © 2024–2026 Link Holdings Group, LLC. All Rights Reserved. -->
+</body>
+</html>

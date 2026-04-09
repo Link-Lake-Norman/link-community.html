@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LINK Lake Norman™ — Business Partner Application</title>
+<meta name="description" content="Apply to become a LINK Lake Norman™ Vetted Business Partner. Join the region's most trusted business network."/>
+<meta name="robots" content="noindex, nofollow"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#0D1F3C; --navy2:#1B3F7A; --gold:#B8922A; --gold2:#D4A843;
+  --off:#F7F5F0; --white:#fff; --green:#27ae60; --red:#c0392b;
+  --gray:#555; --light-gold:#F5EDD6;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--navy);min-height:100vh;}
+
+/* ── HEADER ── */
+.form-header{background:linear-gradient(145deg,#0D1F3C 0%,#1B3F7A 60%,#0D1F3C 100%);padding:36px 52px;position:relative;overflow:hidden;}
+.form-header::before{content:"";position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(184,146,42,0.18) 0%,transparent 70%);pointer-events:none;}
+.fh-eyebrow{font-size:0.6rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;}
+.fh-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:#fff;line-height:1.15;margin-bottom:8px;}
+.fh-title span{color:var(--gold2);}
+.fh-sub{font-size:0.84rem;color:rgba(255,255,255,0.68);line-height:1.75;max-width:620px;margin-bottom:18px;}
+.fh-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.fh-badge{font-size:0.65rem;font-weight:700;background:rgba(184,146,42,0.15);border:1px solid rgba(184,146,42,0.35);color:var(--gold2);padding:4px 12px;border-radius:14px;}
+.gold-bar{height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2),transparent);margin-top:28px;}
+
+/* ── PROGRESS BAR ── */
+.progress-wrap{background:var(--navy);padding:16px 52px;border-bottom:2px solid rgba(184,146,42,0.25);}
+.progress-steps{display:flex;align-items:center;gap:0;max-width:900px;}
+.ps{display:flex;align-items:center;gap:8px;flex:1;}
+.ps-dot{width:28px;height:28px;border-radius:50%;font-size:0.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.3s;}
+.ps-dot.done{background:var(--gold);color:var(--navy);}
+.ps-dot.active{background:var(--gold2);color:var(--navy);box-shadow:0 0 0 3px rgba(212,168,67,0.3);}
+.ps-dot.todo{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.15);}
+.ps-label{font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.5);white-space:nowrap;}
+.ps-label.active{color:var(--gold2);}
+.ps-line{flex:1;height:1px;background:rgba(255,255,255,0.12);margin:0 8px;}
+.ps-line.done{background:var(--gold);}
+
+/* ── FORM BODY ── */
+.form-body{max-width:860px;margin:0 auto;padding:36px 24px 52px;}
+
+/* SECTION BLOCKS */
+.form-section{background:#fff;border-radius:12px;border:1px solid #ddd6c0;margin-bottom:20px;overflow:hidden;display:none;}
+.form-section.active{display:block;}
+.fs-head{background:var(--navy);padding:18px 24px;display:flex;align-items:center;gap:12px;}
+.fs-step-badge{width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:0.78rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fs-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;}
+.fs-sub{font-size:0.65rem;color:rgba(255,255,255,0.5);margin-top:2px;}
+.fs-body{padding:24px;}
+
+/* FIELDS */
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.field-row.single{grid-template-columns:1fr;}
+.field-row.three{grid-template-columns:1fr 1fr 1fr;}
+.field-group{display:flex;flex-direction:column;gap:5px;}
+.field-label{font-size:0.72rem;font-weight:700;color:var(--navy);letter-spacing:0.2px;}
+.field-label .req{color:var(--red);margin-left:2px;}
+.field-label .opt{font-weight:400;color:#aaa;font-size:0.65rem;}
+.field-note{font-size:0.63rem;color:#888;font-style:italic;margin-top:2px;}
+.f-input{padding:10px 13px;border:1.5px solid #d0c8b8;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.84rem;color:var(--navy);background:#fff;transition:border-color 0.2s,box-shadow 0.2s;width:100%;}
+.f-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,146,42,0.1);}
+.f-input.error{border-color:var(--red);}
+.f-textarea{padding:10px 13px;border:1.5px solid #d0c8b8;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.84rem;color:var(--navy);resize:vertical;min-height:90px;width:100%;transition:border-color 0.2s;}
+.f-textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,146,42,0.1);}
+.f-select{padding:10px 13px;border:1.5px solid #d0c8b8;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.84rem;color:var(--navy);background:#fff;width:100%;cursor:pointer;}
+.f-select:focus{outline:none;border-color:var(--gold);}
+
+/* RADIO / CHECKBOX GROUPS */
+.choice-group{display:flex;flex-direction:column;gap:7px;margin-top:4px;}
+.choice-row{display:flex;align-items:flex-start;gap:10px;background:var(--off);border:1.5px solid #e0d8c5;border-radius:7px;padding:10px 13px;cursor:pointer;transition:all 0.15s;}
+.choice-row:hover{border-color:var(--gold);background:var(--light-gold);}
+.choice-row input[type=radio],.choice-row input[type=checkbox]{accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;margin-top:1px;}
+.choice-row label{font-size:0.78rem;color:var(--navy);cursor:pointer;line-height:1.45;}
+.choice-row label strong{font-weight:700;}
+.choice-row label span{display:block;font-size:0.67rem;color:#777;margin-top:2px;}
+
+/* CHECKBOX GRID */
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:4px;}
+.check-item{display:flex;align-items:center;gap:8px;background:var(--off);border:1.5px solid #e0d8c5;border-radius:6px;padding:9px 12px;cursor:pointer;transition:all 0.15s;}
+.check-item:hover{border-color:var(--gold);background:var(--light-gold);}
+.check-item input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;flex-shrink:0;}
+.check-item label{font-size:0.74rem;color:var(--navy);cursor:pointer;line-height:1.3;}
+
+/* DIVIDER */
+.f-divider{height:1px;background:#f0ebe0;margin:18px 0;}
+.f-section-label{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.f-section-label::after{content:"";flex:1;height:1px;background:rgba(184,146,42,0.2);}
+
+/* RATING STARS */
+.star-row{display:flex;gap:8px;align-items:center;margin-top:4px;}
+.star-option{display:none;}
+.star-label{font-size:1.4rem;cursor:pointer;color:#ddd;transition:color 0.15s;}
+.star-option:checked ~ .star-label,.star-label:hover,.star-label:hover ~ .star-label{color:var(--gold2);}
+.stars-wrap{display:flex;flex-direction:row-reverse;gap:4px;}
+.stars-wrap .star-option:checked ~ .star-label,.stars-wrap .star-label:hover,.stars-wrap .star-label:hover ~ .star-label{color:var(--gold2);}
+
+/* CONDITIONAL FIELDS */
+.cond-field{display:none;margin-top:10px;padding:12px;background:rgba(184,146,42,0.05);border:1px solid rgba(184,146,42,0.2);border-radius:7px;}
+.cond-field.show{display:block;}
+
+/* NAV BUTTONS */
+.form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:20px;border-top:1px solid #f0ebe0;}
+.nav-back{background:transparent;border:2px solid #d0c8b8;color:#888;font-size:0.8rem;font-weight:700;padding:11px 22px;border-radius:7px;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif;}
+.nav-back:hover{border-color:var(--navy);color:var(--navy);}
+.nav-next{background:var(--gold);color:var(--navy);font-size:0.82rem;font-weight:700;padding:11px 28px;border-radius:7px;border:none;cursor:pointer;transition:opacity 0.2s;font-family:'DM Sans',sans-serif;}
+.nav-next:hover{opacity:0.88;}
+.nav-submit{background:var(--navy);color:#fff;font-family:'Playfair Display',serif;font-size:0.9rem;font-weight:700;padding:13px 32px;border-radius:7px;border:none;cursor:pointer;transition:all 0.2s;letter-spacing:0.3px;}
+.nav-submit:hover{background:var(--navy2);}
+.step-indicator{font-size:0.7rem;color:#aaa;}
+.step-indicator strong{color:var(--navy);}
+
+/* SUMMARY CARD */
+.summary-card{background:var(--off);border:1px solid #e0d8c5;border-radius:8px;padding:16px;margin-bottom:14px;}
+.sc-label{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.sc-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:5px 0;border-bottom:1px solid #f0ebe0;font-size:0.76rem;}
+.sc-row:last-child{border-bottom:none;}
+.sc-key{color:#888;flex-shrink:0;width:140px;}
+.sc-val{color:var(--navy);font-weight:600;text-align:right;}
+
+/* AGREEMENT */
+.agree-box{background:rgba(13,31,60,0.04);border:1.5px solid rgba(13,31,60,0.12);border-radius:8px;padding:16px;margin-bottom:16px;}
+.agree-box p{font-size:0.74rem;color:#555;line-height:1.7;margin-bottom:12px;}
+.agree-check-row{display:flex;align-items:flex-start;gap:10px;}
+.agree-check-row input{accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;margin-top:2px;}
+.agree-check-row label{font-size:0.76rem;color:var(--navy);line-height:1.55;}
+
+/* SUCCESS STATE */
+.success-panel{display:none;text-align:center;padding:52px 24px;}
+.success-panel.show{display:block;}
+.success-icon{font-size:4rem;margin-bottom:16px;}
+.success-title{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin-bottom:8px;}
+.success-sub{font-size:0.84rem;color:#666;line-height:1.7;max-width:500px;margin:0 auto 20px;}
+.success-next-steps{background:#fff;border:1px solid #ddd6c0;border-radius:10px;padding:20px;max-width:520px;margin:0 auto;text-align:left;}
+.sns-title{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.sns-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:0.76rem;color:var(--navy);}
+.sns-num{width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:0.65rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* VALIDATION ERROR */
+.field-err{font-size:0.65rem;color:var(--red);margin-top:3px;display:none;}
+.field-err.show{display:block;}
+
+/* NOTICE BANNER */
+.notice-banner{background:rgba(184,146,42,0.08);border:1px solid rgba(184,146,42,0.3);border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:0.76rem;color:var(--navy);line-height:1.65;}
+.notice-banner strong{color:var(--gold);}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  .form-header{padding:28px 20px;}
+  .fh-title{font-size:1.4rem;}
+  .progress-wrap{padding:12px 20px;}
+  .ps-label{display:none;}
+  .form-body{padding:20px 14px 40px;}
+  .field-row,.field-row.three{grid-template-columns:1fr;}
+  .check-grid{grid-template-columns:1fr;}
+}
+
+/* FOOTER */
+.form-footer{background:var(--navy);padding:18px 52px;text-align:center;border-top:2px solid rgba(184,146,42,0.3);}
+.form-footer p{font-size:0.65rem;color:rgba(255,255,255,0.4);line-height:1.7;}
+.form-footer strong{color:rgba(255,255,255,0.65);}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="form-header">
+  <p class="fh-eyebrow">📋 LINK Lake Norman™ — Vetted Business Partner Network</p>
+  <h1 class="fh-title">Business Partner<br><span>Membership Application</span></h1>
+  <p class="fh-sub">Every business in the LINK Lake Norman™ network is personally reviewed and vetted. This application helps us understand who you are, what you do, who you serve, and the outcomes you deliver — so we can confidently refer you to our community.</p>
+  <div class="fh-badges">
+    <span class="fh-badge">✅ All Fields Reviewed by LINK</span>
+    <span class="fh-badge">🔒 Data Stored Securely in Google Sheets</span>
+    <span class="fh-badge">⏱ ~10–12 Minutes to Complete</span>
+    <span class="fh-badge">📬 Response Within 3–5 Business Days</span>
+  </div>
+  <div class="gold-bar"></div>
+</header>
+
+<!-- ══ PROGRESS ══ -->
+<div class="progress-wrap">
+  <div class="progress-steps">
+    <div class="ps">
+      <div class="ps-dot active" id="dot-1">1</div>
+      <span class="ps-label active" id="lbl-1">Your Business</span>
+    </div>
+    <div class="ps-line" id="line-1"></div>
+    <div class="ps">
+      <div class="ps-dot todo" id="dot-2">2</div>
+      <span class="ps-label" id="lbl-2">What You Do</span>
+    </div>
+    <div class="ps-line" id="line-2"></div>
+    <div class="ps">
+      <div class="ps-dot todo" id="dot-3">3</div>
+      <span class="ps-label" id="lbl-3">Who You Serve</span>
+    </div>
+    <div class="ps-line" id="line-3"></div>
+    <div class="ps">
+      <div class="ps-dot todo" id="dot-4">4</div>
+      <span class="ps-label" id="lbl-4">Your Outcomes</span>
+    </div>
+    <div class="ps-line" id="line-4"></div>
+    <div class="ps">
+      <div class="ps-dot todo" id="dot-5">5</div>
+      <span class="ps-label" id="lbl-5">LINK Connection</span>
+    </div>
+    <div class="ps-line" id="line-5"></div>
+    <div class="ps">
+      <div class="ps-dot todo" id="dot-6">6</div>
+      <span class="ps-label" id="lbl-6">Membership</span>
+    </div>
+    <div class="ps-line" id="line-6"></div>
+    <div class="ps">
+      <div class="ps-dot todo" id="dot-7">✓</div>
+      <span class="ps-label" id="lbl-7">Review & Submit</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FORM BODY ══ -->
+<div class="form-body">
+
+  <!-- ════════════════════════════════
+       SECTION 1: YOUR BUSINESS
+  ════════════════════════════════ -->
+  <section class="form-section active" id="section-1">
+    <div class="fs-head">
+      <div class="fs-step-badge">1</div>
+      <div>
+        <div class="fs-title">Your Business — The Basics</div>
+        <div class="fs-sub">Contact details and how to find you</div>
+      </div>
+    </div>
+    <div class="fs-body">
+
+      <div class="notice-banner">
+        <strong>Welcome!</strong> This application is your introduction to LINK Lake Norman™. Take your time — your answers help us understand your business deeply so we can refer you with confidence. All fields marked <span style="color:var(--red);">*</span> are required.
+      </div>
+
+      <div class="f-section-label">Your Contact Information</div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Your Name <span class="req">*</span></label>
+          <input class="f-input" id="contact-name" type="text" placeholder="First and Last Name" required>
+          <span class="field-err" id="err-contact-name">Please enter your name.</span>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Your Role / Title <span class="req">*</span></label>
+          <input class="f-input" id="contact-role" type="text" placeholder="e.g. Owner, CEO, Managing Partner">
+          <span class="field-err" id="err-contact-role">Please enter your role.</span>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Business Email <span class="req">*</span></label>
+          <input class="f-input" id="contact-email" type="email" placeholder="you@yourbusiness.com">
+          <span class="field-err" id="err-contact-email">Please enter a valid email.</span>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Phone Number <span class="req">*</span></label>
+          <input class="f-input" id="contact-phone" type="tel" placeholder="(704) 000-0000">
+          <span class="field-err" id="err-contact-phone">Please enter your phone number.</span>
+        </div>
+      </div>
+
+      <div class="f-divider"></div>
+      <div class="f-section-label">Your Business Details</div>
+
+      <div class="field-row single">
+        <div class="field-group">
+          <label class="field-label">Business Name <span class="req">*</span></label>
+          <input class="f-input" id="biz-name" type="text" placeholder="Full legal or DBA business name">
+          <span class="field-err" id="err-biz-name">Please enter your business name.</span>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Website <span class="opt">(optional but preferred)</span></label>
+          <input class="f-input" id="biz-website" type="url" placeholder="https://www.yourbusiness.com">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Business Phone <span class="opt">(if different from above)</span></label>
+          <input class="f-input" id="biz-phone" type="tel" placeholder="(704) 000-0000">
+        </div>
+      </div>
+
+      <div class="field-row single">
+        <div class="field-group">
+          <label class="field-label">Business Address / Primary Location <span class="req">*</span></label>
+          <input class="f-input" id="biz-address" type="text" placeholder="Street, City, State, ZIP">
+          <span class="field-err" id="err-biz-address">Please enter your business address.</span>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Business Type <span class="req">*</span></label>
+          <select class="f-select" id="biz-type">
+            <option value="">— Select —</option>
+            <option>Sole Proprietor / Freelancer</option>
+            <option>LLC</option>
+            <option>S-Corp / C-Corp</option>
+            <option>Partnership</option>
+            <option>Nonprofit</option>
+            <option>Franchise</option>
+            <option>Other</option>
+          </select>
+          <span class="field-err" id="err-biz-type">Please select a business type.</span>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Years in Business <span class="req">*</span></label>
+          <select class="f-select" id="biz-years">
+            <option value="">— Select —</option>
+            <option>Less than 1 year</option>
+            <option>1–2 years</option>
+            <option>3–5 years</option>
+            <option>6–10 years</option>
+            <option>11–20 years</option>
+            <option>20+ years</option>
+          </select>
+          <span class="field-err" id="err-biz-years">Please select years in business.</span>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Number of Employees</label>
+          <select class="f-select" id="biz-employees">
+            <option value="">— Select —</option>
+            <option>Solo (just me)</option>
+            <option>2–5</option>
+            <option>6–15</option>
+            <option>16–50</option>
+            <option>51–100</option>
+            <option>100+</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">LinkedIn Profile <span class="opt">(optional)</span></label>
+          <input class="f-input" id="biz-linkedin" type="url" placeholder="https://linkedin.com/in/yourname">
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <div></div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span class="step-indicator">Step <strong>1</strong> of 7</span>
+          <button class="nav-next" onclick="goNext(1)">Next: What You Do →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECTION 2: WHAT YOU DO
+  ════════════════════════════════ -->
+  <section class="form-section" id="section-2">
+    <div class="fs-head">
+      <div class="fs-step-badge">2</div>
+      <div>
+        <div class="fs-title">What You Do — Services & Industry</div>
+        <div class="fs-sub">Help LINK understand your business clearly so we can refer you with confidence</div>
+      </div>
+    </div>
+    <div class="fs-body">
+
+      <div class="f-section-label">Industry / Category</div>
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Primary Industry Category <span class="req">*</span></label>
+        <select class="f-select" id="biz-industry">
+          <option value="">— Select the best fit —</option>
+          <optgroup label="Professional Services">
+            <option>HR, Staffing & Recruiting</option>
+            <option>Legal Services</option>
+            <option>Accounting & Financial Services</option>
+            <option>Business Consulting & Coaching</option>
+            <option>Insurance</option>
+            <option>Real Estate</option>
+          </optgroup>
+          <optgroup label="Marketing & Creative">
+            <option>Marketing & Advertising</option>
+            <option>Branding & Design</option>
+            <option>Photography & Videography</option>
+            <option>Public Relations</option>
+            <option>Social Media & Content</option>
+            <option>Print & Signage</option>
+          </optgroup>
+          <optgroup label="Technology">
+            <option>IT Support & Managed Services</option>
+            <option>AI Compliance & Technology</option>
+            <option>Cybersecurity</option>
+            <option>Software & App Development</option>
+            <option>Website Design & Development</option>
+          </optgroup>
+          <optgroup label="Trades & Skilled Services">
+            <option>Plumbing</option>
+            <option>Electrical</option>
+            <option>HVAC</option>
+            <option>Construction & General Contracting</option>
+            <option>Landscaping & Lawn Care</option>
+            <option>Cleaning & Janitorial</option>
+            <option>Home Services (Other)</option>
+          </optgroup>
+          <optgroup label="Events & Hospitality">
+            <option>Event Planning & Coordination</option>
+            <option>Catering & Food Services</option>
+            <option>Venue Management</option>
+            <option>Entertainment & AV</option>
+          </optgroup>
+          <optgroup label="Education & Workforce">
+            <option>Training & Development</option>
+            <option>Coaching (Executive / Career / Life)</option>
+            <option>Keynote Speaking</option>
+            <option>Workforce Development</option>
+            <option>Tutoring & Academic Services</option>
+          </optgroup>
+          <optgroup label="Health & Wellness">
+            <option>Healthcare & Medical Services</option>
+            <option>Mental Health & Counseling</option>
+            <option>Fitness & Wellness</option>
+            <option>Chiropractic & Alternative Medicine</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option>Nonprofit Organization</option>
+            <option>Retail</option>
+            <option>Transportation & Logistics</option>
+            <option>Other (describe below)</option>
+          </optgroup>
+        </select>
+        <span class="field-err" id="err-biz-industry">Please select your industry.</span>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Additional Services or Specialties <span class="opt">(optional — comma separated)</span></label>
+        <input class="f-input" id="biz-specialties" type="text" placeholder="e.g. Leadership training, Team building, DISC assessments, HR audits">
+        <p class="field-note">List anything not covered by your primary category above.</p>
+      </div>
+
+      <div class="f-divider"></div>
+      <div class="f-section-label">Business Mission & Description</div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Business Mission Statement <span class="req">*</span></label>
+        <textarea class="f-textarea" id="biz-mission" placeholder="In 1–3 sentences, what is the core mission or purpose of your business? What problem do you solve?"></textarea>
+        <p class="field-note">This is what we'll use when introducing you to our network. Be clear and specific.</p>
+        <span class="field-err" id="err-biz-mission">Please enter your mission statement.</span>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Full Business Description <span class="req">*</span></label>
+        <textarea class="f-textarea" style="min-height:120px;" id="biz-description" placeholder="Describe your business in depth. Include what you offer, how you work, what makes you different, and why clients choose you over competitors."></textarea>
+        <p class="field-note">Aim for 3–5 sentences. This appears in your member directory listing.</p>
+        <span class="field-err" id="err-biz-description">Please describe your business.</span>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">What Makes Your Business Unique? <span class="req">*</span></label>
+        <textarea class="f-textarea" id="biz-differentiator" placeholder="What do you do that no one else does — or does better? What would a client say about you that they couldn't say about your competitors?"></textarea>
+        <span class="field-err" id="err-biz-differentiator">Please describe what makes you unique.</span>
+      </div>
+
+      <div class="form-nav">
+        <button class="nav-back" onclick="goBack(2)">← Back</button>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span class="step-indicator">Step <strong>2</strong> of 7</span>
+          <button class="nav-next" onclick="goNext(2)">Next: Who You Serve →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECTION 3: WHO YOU SERVE
+  ════════════════════════════════ -->
+  <section class="form-section" id="section-3">
+    <div class="fs-head">
+      <div class="fs-step-badge">3</div>
+      <div>
+        <div class="fs-title">Who You Serve — Clients & Community</div>
+        <div class="fs-sub">LINK needs to know exactly who your ideal client is so referrals land right</div>
+      </div>
+    </div>
+    <div class="fs-body">
+
+      <div class="f-section-label">Client Types — Check All That Apply</div>
+      <div class="check-grid" style="margin-bottom:16px;">
+        <div class="check-item"><input type="checkbox" id="ct-smb" name="client-types" value="Small Business (1–50 employees)"><label for="ct-smb">Small Business (1–50 employees)</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-mid" name="client-types" value="Mid-Size Business (51–250 employees)"><label for="ct-mid">Mid-Size Business (51–250)</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-corp" name="client-types" value="Corporate / Enterprise"><label for="ct-corp">Corporate / Enterprise</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-np" name="client-types" value="Nonprofits"><label for="ct-np">Nonprofits</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-gov" name="client-types" value="Government / Civic Organizations"><label for="ct-gov">Government / Civic</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-edu" name="client-types" value="Schools & Education Institutions"><label for="ct-edu">Schools & Education</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-ind" name="client-types" value="Individual Consumers"><label for="ct-ind">Individual Consumers</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-exec" name="client-types" value="Executives & Entrepreneurs"><label for="ct-exec">Executives & Entrepreneurs</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-health" name="client-types" value="Healthcare Organizations"><label for="ct-health">Healthcare Organizations</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-mfg" name="client-types" value="Manufacturing / Industrial"><label for="ct-mfg">Manufacturing / Industrial</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-re" name="client-types" value="Real Estate / Property"><label for="ct-re">Real Estate / Property</label></div>
+        <div class="check-item"><input type="checkbox" id="ct-other" name="client-types" value="Other"><label for="ct-other">Other (describe below)</label></div>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Describe Your Ideal Client <span class="req">*</span></label>
+        <textarea class="f-textarea" id="ideal-client" placeholder="Who is your #1 best-fit client? What does their business or situation look like? What challenges do they have that you solve?"></textarea>
+        <p class="field-note">Be specific. The more we understand who you're built for, the better the referrals we can send.</p>
+        <span class="field-err" id="err-ideal-client">Please describe your ideal client.</span>
+      </div>
+
+      <div class="f-divider"></div>
+      <div class="f-section-label">Service Area & Geographic Reach</div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Primary Service Area <span class="req">*</span></label>
+          <select class="f-select" id="service-area">
+            <option value="">— Select —</option>
+            <option>Lake Norman Region (Cornelius, Huntersville, Davidson, Mooresville)</option>
+            <option>Greater Charlotte Metro</option>
+            <option>North Carolina Statewide</option>
+            <option>Southeast Region (NC, SC, VA, TN, GA)</option>
+            <option>National</option>
+            <option>Virtual / Remote (no geographic limit)</option>
+            <option>Other</option>
+          </select>
+          <span class="field-err" id="err-service-area">Please select your service area.</span>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Do you travel to clients? <span class="req">*</span></label>
+          <select class="f-select" id="travel">
+            <option value="">— Select —</option>
+            <option>Yes — I go to my clients</option>
+            <option>No — clients come to me</option>
+            <option>Both (flexible)</option>
+            <option>Remote / virtual only</option>
+          </select>
+          <span class="field-err" id="err-travel">Please select a travel preference.</span>
+        </div>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Notable Client Types or Industries Served <span class="opt">(optional)</span></label>
+        <input class="f-input" id="notable-clients" type="text" placeholder="e.g. local restaurants, healthcare providers, law firms, schools, nonprofits">
+        <p class="field-note">You can keep specific client names confidential — we're asking about types/industries.</p>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Approximate Number of Clients / Projects Per Year</label>
+        <select class="f-select" id="client-volume">
+          <option value="">— Select —</option>
+          <option>1–5</option>
+          <option>6–15</option>
+          <option>16–30</option>
+          <option>31–50</option>
+          <option>50–100</option>
+          <option>100+</option>
+          <option>Ongoing retainer clients (not project-based)</option>
+        </select>
+      </div>
+
+      <div class="form-nav">
+        <button class="nav-back" onclick="goBack(3)">← Back</button>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span class="step-indicator">Step <strong>3</strong> of 7</span>
+          <button class="nav-next" onclick="goNext(3)">Next: Your Outcomes →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECTION 4: OUTCOMES & PROOF
+  ════════════════════════════════ -->
+  <section class="form-section" id="section-4">
+    <div class="fs-head">
+      <div class="fs-step-badge">4</div>
+      <div>
+        <div class="fs-title">Your Outcomes — Results & Proof</div>
+        <div class="fs-sub">LINK only refers businesses we can stand behind — tell us what you deliver</div>
+      </div>
+    </div>
+    <div class="fs-body">
+
+      <div class="notice-banner">
+        This section is what separates great businesses from good ones. LINK will use your outcomes, results, and client success stories when introducing you to our network. <strong>Be specific. Be honest. Be proud.</strong>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Describe a Specific Client Outcome or Success Story <span class="req">*</span></label>
+        <textarea class="f-textarea" style="min-height:110px;" id="outcome-story" placeholder="Tell us about a client you helped. What was the situation, what did you do, and what changed for them as a result? (Keep client names confidential if needed.)"></textarea>
+        <p class="field-note">Example: "A local restaurant came to us with a broken HVAC system in July — we had them back up in 4 hours, avoiding $12,000 in spoiled food."</p>
+        <span class="field-err" id="err-outcome-story">Please share at least one client outcome.</span>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">What results do your clients consistently report? <span class="req">*</span></label>
+        <textarea class="f-textarea" id="client-results" placeholder="e.g. 'Clients tell us they save 6+ hours/week after we set up their systems.' or 'Our keynote clients report 85% audience engagement scores.'"></textarea>
+        <p class="field-note">Measurable results are powerful — percentages, time saved, revenue gained, problems eliminated.</p>
+        <span class="field-err" id="err-client-results">Please describe client results.</span>
+      </div>
+
+      <div class="f-divider"></div>
+      <div class="f-section-label">Credentials & Social Proof</div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Licenses, Certifications, or Credentials <span class="opt">(optional)</span></label>
+        <input class="f-input" id="credentials" type="text" placeholder="e.g. Licensed Plumber NC, Certified Executive Coach (ICF), SHRM-CP, CPA, OSHA Certified">
+        <p class="field-note">List any professional licenses, certifications, or credentials that validate your work.</p>
+      </div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Do you have client testimonials or reviews? <span class="req">*</span></label>
+          <select class="f-select" id="has-reviews">
+            <option value="">— Select —</option>
+            <option>Yes — Google Reviews</option>
+            <option>Yes — LinkedIn Recommendations</option>
+            <option>Yes — Other platform</option>
+            <option>Yes — I can provide written references</option>
+            <option>No — but I can provide references upon request</option>
+          </select>
+          <span class="field-err" id="err-has-reviews">Please select an option.</span>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Google Reviews Rating <span class="opt">(if applicable)</span></label>
+          <select class="f-select" id="google-rating">
+            <option value="">— Select —</option>
+            <option>5.0 ⭐⭐⭐⭐⭐</option>
+            <option>4.5–4.9 ⭐⭐⭐⭐½</option>
+            <option>4.0–4.4 ⭐⭐⭐⭐</option>
+            <option>Below 4.0</option>
+            <option>Not on Google</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Review/Testimonial Links <span class="opt">(optional)</span></label>
+        <input class="f-input" id="review-links" type="text" placeholder="Google Business URL, LinkedIn profile, Yelp, etc.">
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Describe your typical process — how does a client engagement work? <span class="req">*</span></label>
+        <textarea class="f-textarea" id="process-desc" placeholder="Walk us through from first contact to completed work. How do you onboard a client, deliver the work, and follow up?"></textarea>
+        <p class="field-note">This helps LINK understand what a referral experience will look like for our community members.</p>
+        <span class="field-err" id="err-process-desc">Please describe your process.</span>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Pricing Structure <span class="req">*</span></label>
+        <select class="f-select" id="pricing-model">
+          <option value="">— Select your primary pricing model —</option>
+          <option>Hourly rate</option>
+          <option>Project-based / flat fee</option>
+          <option>Monthly retainer</option>
+          <option>Annual contract</option>
+          <option>Package pricing (tiered)</option>
+          <option>Commission or performance-based</option>
+          <option>Mixed / depends on client</option>
+        </select>
+        <span class="field-err" id="err-pricing-model">Please select a pricing model.</span>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">General Price Range <span class="opt">(helps LINK match you with appropriately-budgeted referrals)</span></label>
+        <input class="f-input" id="price-range" type="text" placeholder="e.g. $150/hr · Projects from $500–$10,000 · Retainers from $1,200/mo">
+        <p class="field-note">This is not public-facing — it helps LINK refer appropriately sized clients to you.</p>
+      </div>
+
+      <div class="form-nav">
+        <button class="nav-back" onclick="goBack(4)">← Back</button>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span class="step-indicator">Step <strong>4</strong> of 7</span>
+          <button class="nav-next" onclick="goNext(4)">Next: LINK Connection →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECTION 5: LINK CONNECTION
+  ════════════════════════════════ -->
+  <section class="form-section" id="section-5">
+    <div class="fs-head">
+      <div class="fs-step-badge">5</div>
+      <div>
+        <div class="fs-title">Your LINK Connection — How We Know You</div>
+        <div class="fs-sub">LINK is a relationship-based network — help us understand your connection to this community</div>
+      </div>
+    </div>
+    <div class="fs-body">
+
+      <div class="f-section-label">Prior LINK Relationship</div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Have you worked with or been served by LINK Lake Norman™ or its Founder before? <span class="req">*</span></label>
+        <div class="choice-group">
+          <div class="choice-row">
+            <input type="radio" name="worked-with-link" id="wl-yes-direct" value="Yes — directly worked with LINK / Founder" onchange="toggleConditional('cond-prior-work', true)">
+            <label for="wl-yes-direct"><strong>Yes</strong> — I've worked directly with LINK Lake Norman™ or the Founder<span>We collaborated on a project, event, program, or engagement.</span></label>
+          </div>
+          <div class="choice-row">
+            <input type="radio" name="worked-with-link" id="wl-yes-attended" value="Yes — attended a LINK event or program" onchange="toggleConditional('cond-prior-work', true)">
+            <label for="wl-yes-attended"><strong>Yes</strong> — I've attended a LINK event, program, or Visionary Circle<span>We've been in the same room. I'm part of the LINK community.</span></label>
+          </div>
+          <div class="choice-row">
+            <input type="radio" name="worked-with-link" id="wl-aware" value="Aware of LINK but haven't directly worked together" onchange="toggleConditional('cond-prior-work', false)">
+            <label for="wl-aware"><strong>I know of LINK</strong> — but we haven't worked together directly<span>I'm familiar with LINK Lake Norman™ but this is my first formal engagement.</span></label>
+          </div>
+          <div class="choice-row">
+            <input type="radio" name="worked-with-link" id="wl-new" value="New — just learning about LINK" onchange="toggleConditional('cond-prior-work', false)">
+            <label for="wl-new"><strong>New</strong> — I'm just discovering LINK Lake Norman™<span>This application is my first connection to LINK.</span></label>
+          </div>
+        </div>
+        <span class="field-err" id="err-worked-with-link">Please select an option.</span>
+        <div class="cond-field" id="cond-prior-work">
+          <label class="field-label">Describe your prior LINK connection or experience</label>
+          <textarea class="f-textarea" id="prior-work-desc" placeholder="Tell us how you connected with LINK or the Founder. What did you work on together? When was this?" style="min-height:70px;"></textarea>
+        </div>
+      </div>
+
+      <div class="f-divider"></div>
+      <div class="f-section-label">Referral Source</div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Were you referred to LINK by someone? <span class="req">*</span></label>
+        <div class="choice-group">
+          <div class="choice-row">
+            <input type="radio" name="referred" id="ref-yes" value="Yes" onchange="toggleConditional('cond-referral', true)">
+            <label for="ref-yes"><strong>Yes</strong> — someone referred me to LINK<span>Someone in the LINK community or network pointed me here.</span></label>
+          </div>
+          <div class="choice-row">
+            <input type="radio" name="referred" id="ref-no" value="No" onchange="toggleConditional('cond-referral', false)">
+            <label for="ref-no"><strong>No</strong> — I found LINK on my own</label>
+          </div>
+        </div>
+        <span class="field-err" id="err-referred">Please select an option.</span>
+        <div class="cond-field" id="cond-referral">
+          <div class="field-row">
+            <div class="field-group">
+              <label class="field-label">Who referred you?</label>
+              <input class="f-input" id="referrer-name" type="text" placeholder="Full name of person who referred you">
+            </div>
+            <div class="field-group">
+              <label class="field-label">Their relationship to you</label>
+              <input class="f-input" id="referrer-relationship" type="text" placeholder="e.g. Business colleague, client, neighbor">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">How did you hear about LINK Lake Norman™? <span class="req">*</span></label>
+        <select class="f-select" id="how-heard">
+          <option value="">— Select —</option>
+          <option>Personal referral (friend / colleague)</option>
+          <option>LINK website</option>
+          <option>LinkedIn</option>
+          <option>Facebook</option>
+          <option>Instagram</option>
+          <option>LINK event I attended</option>
+          <option>Visionary Circle invitation</option>
+          <option>Google search</option>
+          <option>Chamber of Commerce</option>
+          <option>News / media</option>
+          <option>Other</option>
+        </select>
+        <span class="field-err" id="err-how-heard">Please select how you heard about LINK.</span>
+      </div>
+
+      <div class="f-divider"></div>
+      <div class="f-section-label">Community Alignment</div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Are you actively involved in the Lake Norman community? <span class="opt">(optional)</span></label>
+        <textarea class="f-textarea" id="community-involvement" style="min-height:70px;" placeholder="e.g. Chamber member, nonprofit board seat, volunteer, sponsor, faith community, civic club, youth organization, etc."></textarea>
+        <p class="field-note">LINK values businesses that are rooted in and give back to the community they serve.</p>
+      </div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Do you have any potential conflicts of interest with other LINK network members? <span class="opt">(optional)</span></label>
+        <textarea class="f-textarea" id="conflicts" style="min-height:60px;" placeholder="If you are aware of any competing businesses already in the LINK network, please note them here. This helps LINK manage referral fairness."></textarea>
+      </div>
+
+      <div class="form-nav">
+        <button class="nav-back" onclick="goBack(5)">← Back</button>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span class="step-indicator">Step <strong>5</strong> of 7</span>
+          <button class="nav-next" onclick="goNext(5)">Next: Membership →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECTION 6: MEMBERSHIP
+  ════════════════════════════════ -->
+  <section class="form-section" id="section-6">
+    <div class="fs-head">
+      <div class="fs-step-badge">6</div>
+      <div>
+        <div class="fs-title">Membership Level & Affiliate Terms</div>
+        <div class="fs-sub">Select your desired membership tier and referral agreement preferences</div>
+      </div>
+    </div>
+    <div class="fs-body">
+
+      <div class="f-section-label">Select Membership Tier</div>
+      <div class="choice-group" style="margin-bottom:16px;">
+        <div class="choice-row">
+          <input type="radio" name="membership-tier" id="tier-community" value="Community Partner — $250/yr">
+          <label for="tier-community"><strong>Community Partner — $250/year</strong><span>LINK-Vetted badge · Directory listing · Logo upload · Basic referral tracking · 1 promo/quarter · Job lead board access</span></label>
+        </div>
+        <div class="choice-row">
+          <input type="radio" name="membership-tier" id="tier-network" value="Network Partner — $500/yr">
+          <label for="tier-network"><strong>Network Partner — $500/year ⭐ Most Popular</strong><span>Everything in Community + Featured directory placement · Newsletter spotlight · Unlimited job leads · Client list visibility · Priority referral routing · 2× annual email campaigns</span></label>
+        </div>
+        <div class="choice-row">
+          <input type="radio" name="membership-tier" id="tier-executive" value="Executive Partner — $1,000/yr">
+          <label for="tier-executive"><strong>Executive Partner — $1,000/year 💎 Premium</strong><span>Everything in Network + Top directory placement · 4× dedicated email campaigns · Custom portal branding · Quarterly strategy call with Founder · Visionary Circle invitations</span></label>
+        </div>
+        <div class="choice-row">
+          <input type="radio" name="membership-tier" id="tier-unsure" value="Not sure yet — advise me">
+          <label for="tier-unsure"><strong>Not sure yet</strong> — I'd like LINK to recommend the best fit for my business</label>
+        </div>
+      </div>
+      <span class="field-err" id="err-membership-tier">Please select a membership tier.</span>
+
+      <div class="f-divider"></div>
+      <div class="f-section-label">Affiliate Referral Agreement</div>
+
+      <div class="field-group" style="margin-bottom:14px;">
+        <label class="field-label">Preferred Affiliate / Referral Fee Model <span class="req">*</span></label>
+        <div class="choice-group">
+          <div class="choice-row">
+            <input type="radio" name="aff-model" id="aff-project" value="Option A — Per-project referral %">
+            <label for="aff-project"><strong>Option A — Per-Project Referral %</strong><span>You pay LINK a percentage of the contract value each time a referred client signs with you. You set your rate.</span></label>
+          </div>
+          <div class="choice-row">
+            <input type="radio" name="aff-model" id="aff-annual" value="Option B — Annual revenue share %">
+            <label for="aff-annual"><strong>Option B — Annual Revenue Share %</strong><span>Pay LINK a flat percentage of total revenue generated from LINK referrals over the membership year.</span></label>
+          </div>
+          <div class="choice-row">
+            <input type="radio" name="aff-model" id="aff-none" value="No affiliate agreement at this time">
+            <label for="aff-none"><strong>No affiliate agreement at this time</strong><span>I prefer to keep referrals informal for now. I understand this may affect referral priority.</span></label>
+          </div>
+        </div>
+        <span class="field-err" id="err-aff-model">Please select an affiliate model.</span>
+      </div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Proposed Referral % Rate <span class="opt">(optional — can be set in portal)</span></label>
+          <input class="f-input" id="aff-rate" type="text" placeholder="e.g. 8% per project or 4% annual">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Annual Cap on Referral Fees <span class="opt">(optional)</span></label>
+          <input class="f-input" id="aff-cap" type="text" placeholder="e.g. $5,000/year maximum">
+        </div>
+      </div>
+
+      <div class="f-divider"></div>
+      <div class="f-section-label">Directory Visibility Preferences</div>
+      <div class="check-grid" style="margin-bottom:14px;">
+        <div class="check-item"><input type="checkbox" id="vis-phone" checked><label for="vis-phone">Show phone in directory</label></div>
+        <div class="check-item"><input type="checkbox" id="vis-email"><label for="vis-email">Show email to members</label></div>
+        <div class="check-item"><input type="checkbox" id="vis-clients" checked><label for="vis-clients">Show client types served</label></div>
+        <div class="check-item"><input type="checkbox" id="vis-jobs" checked><label for="vis-jobs">Show job leads publicly</label></div>
+        <div class="check-item"><input type="checkbox" id="vis-promos" checked><label for="vis-promos">Show discounts & promotions</label></div>
+        <div class="check-item"><input type="checkbox" id="vis-referrals" checked><label for="vis-referrals">Receive LINK referrals</label></div>
+      </div>
+
+      <div class="field-group" style="margin-bottom:4px;">
+        <label class="field-label">Membership Discount or Offer for LINK Members <span class="opt">(optional)</span></label>
+        <input class="f-input" id="member-discount" type="text" placeholder="e.g. 10% off first project · Free 30-min consultation · $100 off first invoice">
+        <p class="field-note">Offering a member discount makes your listing more attractive and signals community commitment.</p>
+      </div>
+
+      <div class="form-nav">
+        <button class="nav-back" onclick="goBack(6)">← Back</button>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span class="step-indicator">Step <strong>6</strong> of 7</span>
+          <button class="nav-next" onclick="goNext(6)">Review & Submit →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECTION 7: REVIEW & SUBMIT
+  ════════════════════════════════ -->
+  <section class="form-section" id="section-7">
+    <div class="fs-head">
+      <div class="fs-step-badge">✓</div>
+      <div>
+        <div class="fs-title">Review & Submit Your Application</div>
+        <div class="fs-sub">Review your information, agree to LINK's standards, and submit</div>
+      </div>
+    </div>
+    <div class="fs-body">
+
+      <!-- SUMMARY -->
+      <div class="summary-card" id="review-summary">
+        <div class="sc-label">Your Application Summary</div>
+        <div id="summary-content"><!-- filled by JS --></div>
+      </div>
+
+      <div class="f-divider"></div>
+
+      <!-- ADDITIONAL NOTES -->
+      <div class="field-group" style="margin-bottom:18px;">
+        <label class="field-label">Anything else LINK should know? <span class="opt">(optional)</span></label>
+        <textarea class="f-textarea" id="additional-notes" placeholder="Any additional context, questions, or information that would help LINK understand your business, your goals, or your application."></textarea>
+      </div>
+
+      <!-- AGREEMENT -->
+      <div class="agree-box">
+        <p>By submitting this application, I confirm that all information provided is accurate and truthful. I understand that LINK Lake Norman™ will review this application and reserves the right to approve, decline, or request additional information. Approval is not guaranteed. LINK Lake Norman™ is a curated, relationship-based network and all members are held to the highest standard of integrity, professionalism, and community alignment.</p>
+        <p>I understand that if approved, I will be invoiced for my selected annual membership fee before my listing goes live. I agree that LINK may use my business name and approved description in directory listings, newsletters, and community communications.</p>
+        <div class="agree-check-row">
+          <input type="checkbox" id="agree-standards" required>
+          <label for="agree-standards">I agree to uphold the <strong>LINK Lake Norman™ standards of quality, integrity, and community trust</strong>. I understand that any violation of these standards may result in removal from the network without refund.</label>
+        </div>
+        <div class="agree-check-row" style="margin-top:10px;">
+          <input type="checkbox" id="agree-accurate" required>
+          <label for="agree-accurate">I confirm that all information in this application is <strong>accurate, truthful, and represents my business fairly</strong>.</label>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button class="nav-back" onclick="goBack(7)">← Back</button>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span class="step-indicator">Step <strong>7</strong> of 7</span>
+          <button class="nav-submit" onclick="submitApplication()" id="submit-btn">🚀 Submit My Application →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SUCCESS STATE
+  ════════════════════════════════ -->
+  <div class="success-panel" id="success-panel">
+    <div class="success-icon">🎉</div>
+    <h2 class="success-title">Application Received!</h2>
+    <p class="success-sub">Thank you for applying to the <strong>LINK Lake Norman™ Vetted Business Partner Network</strong>. Your application has been submitted and will be personally reviewed by LINK.</p>
+    <div class="success-next-steps">
+      <div class="sns-title">What Happens Next</div>
+      <div class="sns-item"><div class="sns-num">1</div><span>Your application is logged in the LINK Lake Norman™ Google Sheet database.</span></div>
+      <div class="sns-item"><div class="sns-num">2</div><span>LINK will personally review your business within <strong>3–5 business days</strong>.</span></div>
+      <div class="sns-item"><div class="sns-num">3</div><span>You'll receive an email with your approval status and next steps — including your membership invoice and portal login.</span></div>
+      <div class="sns-item"><div class="sns-num">4</div><span>Once approved and payment received, your listing goes live in the LINK partner directory.</span></div>
+      <div style="margin-top:14px;padding:10px 14px;background:rgba(184,146,42,0.08);border-radius:6px;font-size:0.74rem;color:var(--navy);line-height:1.6;">
+        📞 Questions? Call <strong>(704) 224-7830</strong> or email <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e141f17131b3e12171015121f151b10110c131f10501d1113">[email&#160;protected]</a></strong>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /form-body -->
+
+<!-- ══ FOOTER ══ -->
+<footer class="form-footer">
+  <p><strong>LINK Lake Norman™</strong> — Workforce · Consulting · Community · Business Network</p>
+  <p>📞 (704) 224-7830 &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c767d7571795c70757277707d777972736e717d72327f7371">[email&#160;protected]</a> &nbsp;·&nbsp; <a href="https://www.linklakenorman.com" style="color:var(--gold2);">linklakenorman.com</a></p>
+  <p style="margin-top:8px;">© 2024–2026 Link Holdings Group, LLC. All Rights Reserved. · All submitted data is used solely for LINK Lake Norman™ membership review and stored securely.</p>
+</footer>
+
+<!-- ════════════ JAVASCRIPT ════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ══ CONFIGURATION ══
+// Replace with your Google Apps Script Web App URL after setup
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzer97bbxm-EmRbobkB5Fw4aWuQBhWMYxJIUa5i1oUG5mOMYpzqZKVSmeoofcLbdWW2ig/exec';
+
+// ══ STEP NAVIGATION ══
+let currentStep = 1;
+const TOTAL_STEPS = 7;
+
+function goNext(step) {
+  if (!validateStep(step)) return;
+  hideSection(step);
+  showSection(step + 1);
+  updateProgress(step + 1);
+  currentStep = step + 1;
+  if (step + 1 === 7) buildSummary();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function goBack(step) {
+  hideSection(step);
+  showSection(step - 1);
+  updateProgress(step - 1);
+  currentStep = step - 1;
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function showSection(n) {
+  document.getElementById('section-' + n).classList.add('active');
+}
+function hideSection(n) {
+  document.getElementById('section-' + n).classList.remove('active');
+}
+
+function updateProgress(active) {
+  for (let i = 1; i <= TOTAL_STEPS; i++) {
+    const dot = document.getElementById('dot-' + i);
+    const lbl = document.getElementById('lbl-' + i);
+    const line = document.getElementById('line-' + i);
+    if (!dot) continue;
+    dot.classList.remove('done', 'active', 'todo');
+    lbl?.classList.remove('active');
+    if (i < active) { dot.classList.add('done'); if(line) line.classList.add('done'); }
+    else if (i === active) { dot.classList.add('active'); lbl?.classList.add('active'); }
+    else { dot.classList.add('todo'); if(line) line.classList.remove('done'); }
+  }
+}
+
+// ══ VALIDATION ══
+function validateStep(step) {
+  const required = getRequiredFields(step);
+  let valid = true;
+  required.forEach(({id, errId, check}) => {
+    const el = document.getElementById(id);
+    const err = document.getElementById(errId);
+    let fail = false;
+    if (check === 'radio') {
+      fail = !document.querySelector(`input[name="${id}"]:checked`);
+    } else if (el) {
+      fail = !el.value.trim();
+    }
+    if (fail) {
+      valid = false;
+      el?.classList.add('error');
+      err?.classList.add('show');
+    } else {
+      el?.classList.remove('error');
+      err?.classList.remove('show');
+    }
+  });
+  if (!valid) {
+    const firstErr = document.querySelector('.field-err.show');
+    firstErr?.scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
+  return valid;
+}
+
+function getRequiredFields(step) {
+  const map = {
+    1: [
+      {id:'contact-name',errId:'err-contact-name'},
+      {id:'contact-role',errId:'err-contact-role'},
+      {id:'contact-email',errId:'err-contact-email'},
+      {id:'contact-phone',errId:'err-contact-phone'},
+      {id:'biz-name',errId:'err-biz-name'},
+      {id:'biz-address',errId:'err-biz-address'},
+      {id:'biz-type',errId:'err-biz-type'},
+      {id:'biz-years',errId:'err-biz-years'},
+    ],
+    2: [
+      {id:'biz-industry',errId:'err-biz-industry'},
+      {id:'biz-mission',errId:'err-biz-mission'},
+      {id:'biz-description',errId:'err-biz-description'},
+      {id:'biz-differentiator',errId:'err-biz-differentiator'},
+    ],
+    3: [
+      {id:'ideal-client',errId:'err-ideal-client'},
+      {id:'service-area',errId:'err-service-area'},
+      {id:'travel',errId:'err-travel'},
+    ],
+    4: [
+      {id:'outcome-story',errId:'err-outcome-story'},
+      {id:'client-results',errId:'err-client-results'},
+      {id:'has-reviews',errId:'err-has-reviews'},
+      {id:'process-desc',errId:'err-process-desc'},
+      {id:'pricing-model',errId:'err-pricing-model'},
+    ],
+    5: [
+      {id:'worked-with-link',errId:'err-worked-with-link',check:'radio'},
+      {id:'referred',errId:'err-referred',check:'radio'},
+      {id:'how-heard',errId:'err-how-heard'},
+    ],
+    6: [
+      {id:'membership-tier',errId:'err-membership-tier',check:'radio'},
+      {id:'aff-model',errId:'err-aff-model',check:'radio'},
+    ],
+    7: []
+  };
+  return map[step] || [];
+}
+
+// ══ CONDITIONAL FIELDS ══
+function toggleConditional(id, show) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('show', show);
+}
+
+// ══ SUMMARY BUILDER ══
+function buildSummary() {
+  const clientTypes = [...document.querySelectorAll('input[name="client-types"]:checked')].map(c => c.value).join(', ') || 'Not specified';
+  const visFields = [];
+  if (document.getElementById('vis-phone')?.checked) visFields.push('Phone');
+  if (document.getElementById('vis-email')?.checked) visFields.push('Email');
+  if (document.getElementById('vis-clients')?.checked) visFields.push('Client types');
+  if (document.getElementById('vis-jobs')?.checked) visFields.push('Job leads');
+  if (document.getElementById('vis-promos')?.checked) visFields.push('Promotions');
+
+  const rows = [
+    ['Name', g('contact-name')],
+    ['Title / Role', g('contact-role')],
+    ['Business', g('biz-name')],
+    ['Email', g('contact-email')],
+    ['Phone', g('contact-phone')],
+    ['Website', g('biz-website') || '—'],
+    ['Address', g('biz-address')],
+    ['Business Type', g('biz-type')],
+    ['Years in Business', g('biz-years')],
+    ['Industry', g('biz-industry')],
+    ['Service Area', g('service-area')],
+    ['Clients Served', clientTypes],
+    ['Ideal Client', g('ideal-client').substring(0,100) + '...'],
+    ['Pricing Model', g('pricing-model')],
+    ['Membership Tier', gr('membership-tier')],
+    ['Affiliate Model', gr('aff-model')],
+    ['Referral % Rate', g('aff-rate') || 'To be set in portal'],
+    ['Has Prior LINK Connection', gr('worked-with-link')],
+    ['Referred By', g('referrer-name') || '—'],
+    ['How Heard of LINK', g('how-heard')],
+    ['Directory Visibility', visFields.join(', ')],
+    ['Member Discount Offered', g('member-discount') || '—'],
+  ];
+
+  document.getElementById('summary-content').innerHTML = rows.map(([k,v]) =>
+    `<div class="sc-row"><span class="sc-key">${k}</span><span class="sc-val">${v || '—'}</span></div>`
+  ).join('');
+}
+
+function g(id) { return document.getElementById(id)?.value?.trim() || ''; }
+function gr(name) {
+  const checked = document.querySelector(`input[name="${name}"]:checked`);
+  return checked?.value || '—';
+}
+
+// ══ SUBMIT ══
+async function submitApplication() {
+  const agreed1 = document.getElementById('agree-standards').checked;
+  const agreed2 = document.getElementById('agree-accurate').checked;
+  if (!agreed1 || !agreed2) {
+    alert('Please check both agreement boxes before submitting.');
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = '⏳ Submitting...';
+  btn.disabled = true;
+
+  const data = collectAllData();
+
+  try {
+    if (SHEETS_URL && !SHEETS_URL.includes('YOUR_GOOGLE')) {
+      await fetch(SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+    } else {
+      console.log('Form data (Sheet URL not yet configured):', data);
+    }
+    // Always show success
+    document.getElementById('section-7').classList.remove('active');
+    document.getElementById('success-panel').classList.add('show');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  } catch(err) {
+    console.warn('Submit error:', err);
+    // Still show success - data logged to console
+    document.getElementById('section-7').classList.remove('active');
+    document.getElementById('success-panel').classList.add('show');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+}
+
+function collectAllData() {
+  const clientTypes = [...document.querySelectorAll('input[name="client-types"]:checked')].map(c => c.value).join(', ');
+  const visSettings = {
+    phone: document.getElementById('vis-phone')?.checked,
+    email: document.getElementById('vis-email')?.checked,
+    clients: document.getElementById('vis-clients')?.checked,
+    jobs: document.getElementById('vis-jobs')?.checked,
+    promos: document.getElementById('vis-promos')?.checked,
+    referrals: document.getElementById('vis-referrals')?.checked,
+  };
+  return {
+    // METADATA
+    submittedAt: new Date().toISOString(),
+    formVersion: 'partner-application-v1',
+    // SECTION 1
+    contactName: g('contact-name'),
+    contactRole: g('contact-role'),
+    contactEmail: g('contact-email'),
+    contactPhone: g('contact-phone'),
+    bizName: g('biz-name'),
+    bizWebsite: g('biz-website'),
+    bizPhone: g('biz-phone'),
+    bizAddress: g('biz-address'),
+    bizLinkedin: g('biz-linkedin'),
+    bizType: g('biz-type'),
+    bizYears: g('biz-years'),
+    bizEmployees: g('biz-employees'),
+    // SECTION 2
+    bizIndustry: g('biz-industry'),
+    bizSpecialties: g('biz-specialties'),
+    bizMission: g('biz-mission'),
+    bizDescription: g('biz-description'),
+    bizDifferentiator: g('biz-differentiator'),
+    // SECTION 3
+    clientTypes: clientTypes,
+    idealClient: g('ideal-client'),
+    serviceArea: g('service-area'),
+    travel: g('travel'),
+    notableClients: g('notable-clients'),
+    clientVolume: g('client-volume'),
+    // SECTION 4
+    outcomeStory: g('outcome-story'),
+    clientResults: g('client-results'),
+    credentials: g('credentials'),
+    hasReviews: g('has-reviews'),
+    googleRating: g('google-rating'),
+    reviewLinks: g('review-links'),
+    processDesc: g('process-desc'),
+    pricingModel: g('pricing-model'),
+    priceRange: g('price-range'),
+    // SECTION 5
+    workedWithLink: gr('worked-with-link'),
+    priorWorkDesc: g('prior-work-desc'),
+    referred: gr('referred'),
+    referrerName: g('referrer-name'),
+    referrerRelationship: g('referrer-relationship'),
+    howHeard: g('how-heard'),
+    communityInvolvement: g('community-involvement'),
+    conflicts: g('conflicts'),
+    // SECTION 6
+    membershipTier: gr('membership-tier'),
+    affiliateModel: gr('aff-model'),
+    affiliateRate: g('aff-rate'),
+    affiliateCap: g('aff-cap'),
+    visibilitySettings: JSON.stringify(visSettings),
+    memberDiscount: g('member-discount'),
+    // SECTION 7
+    additionalNotes: g('additional-notes'),
+    // STATUS
+    applicationStatus: 'Pending Review',
+    assignedTo: 'LINK Admin',
+  };
+}
+</script>
+
+<!--
+═══════════════════════════════════════════════════════════════════
+GOOGLE APPS SCRIPT — SETUP INSTRUCTIONS
+═══════════════════════════════════════════════════════════════════
+
+STEP 1: Open your existing Google Sheet:
+  https://docs.google.com/spreadsheets/d/1XhKT7DFuP_1jOyOIarWg8cl-G4VbbI1D9mwOORF7sBI/edit
+
+STEP 2: Create a new sheet/tab named: "PartnerApplications"
+
+STEP 3: Go to Extensions → Apps Script → paste this code:
+
+───────────────────────────────────────────────────────────────────
+function doPost(e) {
+  const ss = SpreadsheetApp.openById('1XhKT7DFuP_1jOyOIarWg8cl-G4VbbI1D9mwOORF7sBI');
+  let sheet = ss.getSheetByName('PartnerApplications');
+  if (!sheet) sheet = ss.insertSheet('PartnerApplications');
+
+  const data = JSON.parse(e.postData.contents);
+
+  // Add headers if sheet is empty
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow([
+      'Submitted At','Status','Assigned To',
+      'Contact Name','Role','Email','Phone',
+      'Business Name','Website','Biz Phone','Address','LinkedIn',
+      'Business Type','Years in Business','Employees',
+      'Industry','Specialties','Mission','Description','Differentiator',
+      'Client Types','Ideal Client','Service Area','Travels to Clients','Notable Clients','Client Volume',
+      'Outcome Story','Client Results','Credentials','Has Reviews','Google Rating','Review Links',
+      'Process Description','Pricing Model','Price Range',
+      'Prior LINK Connection','Prior Work Description',
+      'Referred','Referrer Name','Referrer Relationship','How Heard',
+      'Community Involvement','Conflicts',
+      'Membership Tier','Affiliate Model','Affiliate Rate','Affiliate Cap',
+      'Visibility Settings','Member Discount',
+      'Additional Notes','Form Version'
+    ]);
+  }
+
+  sheet.appendRow([
+    data.submittedAt, data.applicationStatus, data.assignedTo,
+    data.contactName, data.contactRole, data.contactEmail, data.contactPhone,
+    data.bizName, data.bizWebsite, data.bizPhone, data.bizAddress, data.bizLinkedin,
+    data.bizType, data.bizYears, data.bizEmployees,
+    data.bizIndustry, data.bizSpecialties, data.bizMission, data.bizDescription, data.bizDifferentiator,
+    data.clientTypes, data.idealClient, data.serviceArea, data.travel, data.notableClients, data.clientVolume,
+    data.outcomeStory, data.clientResults, data.credentials, data.hasReviews, data.googleRating, data.reviewLinks,
+    data.processDesc, data.pricingModel, data.priceRange,
+    data.workedWithLink, data.priorWorkDesc,
+    data.referred, data.referrerName, data.referrerRelationship, data.howHeard,
+    data.communityInvolvement, data.conflicts,
+    data.membershipTier, data.affiliateModel, data.affiliateRate, data.affiliateCap,
+    data.visibilitySettings, data.memberDiscount,
+    data.additionalNotes, data.formVersion
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({status: 'ok', timestamp: new Date().toISOString()}))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+───────────────────────────────────────────────────────────────────
+
+STEP 4: Click Deploy → New Deployment
+  - Type: Web App
+  - Execute as: Me
+  - Who has access: Anyone
+  - Click Deploy → Copy the Web App URL
+
+STEP 5: Replace YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HER

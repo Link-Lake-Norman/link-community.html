@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LINK Lake Norman™ — Business Partner Membership Portal</title>
+<meta name="description" content="Join the LINK Lake Norman™ Vetted Business Partner Network. Access exclusive referral opportunities, workforce connections, and the Lake Norman region's most trusted business directory."/>
+<meta name="keywords" content="LINK Lake Norman business partner, Lake Norman vetted vendors, Lake Norman business network, workforce consulting Lake Norman, small business Lake Norman NC, business referral network Huntersville, Cornelius Davidson business membership"/>
+<meta name="author" content="LINK Holdings Group, LLC"/>
+<meta name="robots" content="index, follow"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#0D1F3C; --navy2:#1B3F7A; --gold:#B8922A; --gold2:#D4A843;
+  --gold-lt:#F5EDD6; --white:#FFFFFF; --off:#F7F5F0; --gray:#555;
+  --green:#27ae60; --red:#c0392b; --teal:#2ab8a0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;}
+
+/* ── TOP BAR ── */
+.top-bar{background:#060f1e;border-bottom:2px solid rgba(184,146,42,0.35);padding:7px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;position:sticky;top:0;z-index:200;}
+.top-brand{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:#fff;text-decoration:none;}
+.top-brand sup{font-size:0.52em;color:var(--gold);}
+.top-nav-links{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.tnl{font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.6);text-decoration:none;padding:5px 12px;border-radius:20px;border:1px solid transparent;transition:all 0.2s;}
+.tnl:hover{color:var(--gold2);border-color:rgba(184,146,42,0.3);}
+.tnl.active{background:var(--gold);color:var(--navy);font-weight:700;}
+.tnl.cta{background:var(--gold);color:var(--navy);font-weight:700;}
+
+/* ── TABS ── */
+.portal-tabs{background:#0a1628;border-bottom:2px solid rgba(184,146,42,0.25);display:flex;gap:0;overflow-x:auto;}
+.pt{font-size:0.76rem;font-weight:600;color:rgba(255,255,255,0.5);padding:14px 24px;border-bottom:3px solid transparent;cursor:pointer;transition:all 0.2s;white-space:nowrap;border:none;background:none;}
+.pt:hover{color:var(--gold2);}
+.pt.active{color:var(--gold2);border-bottom:3px solid var(--gold);font-weight:700;}
+
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(145deg,#0D1F3C 0%,#1B3F7A 60%,#0D1F3C 100%);padding:52px 60px 44px;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;top:-80px;right:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(184,146,42,0.15) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:12px;}
+.hero-title{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;line-height:1.1;margin-bottom:12px;}
+.hero-title span{color:var(--gold2);}
+.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.72);line-height:1.75;max-width:700px;margin-bottom:24px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn-gold{background:var(--gold);color:var(--navy);font-weight:700;font-size:0.82rem;padding:11px 22px;border-radius:7px;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s;display:inline-block;}
+.btn-gold:hover{opacity:0.88;}
+.btn-outline{background:transparent;color:#fff;font-weight:700;font-size:0.82rem;padding:11px 22px;border-radius:7px;border:2px solid rgba(255,255,255,0.35);text-decoration:none;cursor:pointer;transition:all 0.2s;display:inline-block;}
+.btn-outline:hover{border-color:var(--gold2);color:var(--gold2);}
+.hero-badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;}
+.h-badge{background:rgba(184,146,42,0.12);border:1px solid rgba(184,146,42,0.3);border-radius:20px;padding:5px 14px;font-size:0.68rem;font-weight:600;color:var(--gold2);}
+.gold-bar{height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2),transparent);margin-top:40px;}
+
+/* ── PRICING CARDS ── */
+.pricing-section{padding:52px 52px;background:var(--off);}
+.section-label{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+.s-bar{width:32px;height:3px;background:var(--gold);flex-shrink:0;}
+.s-eyebrow{font-size:0.63rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.s-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--navy);margin-bottom:8px;}
+.s-sub{font-size:0.84rem;color:#555;line-height:1.7;margin-bottom:32px;max-width:680px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;}
+.price-card{background:#fff;border:1px solid #ddd6c0;border-radius:12px;padding:28px 24px;position:relative;transition:box-shadow 0.2s;}
+.price-card:hover{box-shadow:0 6px 28px rgba(13,31,60,0.1);}
+.price-card.featured{border:2px solid var(--gold);box-shadow:0 6px 28px rgba(184,146,42,0.18);}
+.price-card.featured::before{content:"MOST POPULAR";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:0.55rem;font-weight:700;letter-spacing:2px;padding:4px 14px;border-radius:10px;}
+.pc-tier{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.pc-name{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--navy);margin-bottom:10px;}
+.pc-price{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--navy);line-height:1;}
+.pc-price span{font-size:1rem;font-weight:400;color:#888;}
+.pc-price-note{font-size:0.7rem;color:#888;margin-bottom:18px;margin-top:3px;}
+.pc-divider{height:1px;background:#e8e0d0;margin-bottom:16px;}
+.pc-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:22px;}
+.pc-features li{font-size:0.76rem;color:#4a5568;display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.pc-features li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px;}
+.pc-btn{width:100%;text-align:center;display:block;padding:11px;border-radius:7px;font-weight:700;font-size:0.8rem;cursor:pointer;border:none;transition:all 0.2s;text-decoration:none;}
+.pc-btn-gold{background:var(--gold);color:var(--navy);}
+.pc-btn-gold:hover{opacity:0.88;}
+.pc-btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy);}
+.pc-btn-outline:hover{background:var(--navy);color:#fff;}
+
+/* ── AFFILIATE MODEL ── */
+.affiliate-section{background:var(--navy);padding:44px 52px;}
+.aff-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1100px;margin-top:28px;}
+.aff-card{background:rgba(255,255,255,0.05);border:1px solid rgba(184,146,42,0.2);border-radius:10px;padding:24px;}
+.aff-card-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.aff-card-sub{font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:14px;}
+.aff-table{width:100%;border-collapse:collapse;font-size:0.75rem;}
+.aff-table th{text-align:left;padding:7px 10px;font-size:0.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold2);border-bottom:1px solid rgba(184,146,42,0.25);}
+.aff-table td{padding:8px 10px;color:rgba(255,255,255,0.75);border-bottom:1px solid rgba(255,255,255,0.06);}
+.aff-table tr:last-child td{border-bottom:none;}
+.aff-highlight{color:var(--gold2);font-weight:700;}
+
+/* ── MEMBER PORTAL ── */
+.portal-section{background:var(--off);min-height:80vh;}
+.portal-header{background:var(--navy);padding:28px 52px;border-bottom:3px solid var(--gold);}
+.portal-header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.portal-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:#fff;}
+.portal-status{display:flex;align-items:center;gap:8px;font-size:0.72rem;color:rgba(255,255,255,0.55);}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#4caf50;display:inline-block;animation:pulse-dot 2s infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:0.4;}}
+
+/* LOGIN WALL */
+.login-wall{max-width:460px;margin:60px auto;background:#fff;border-radius:14px;padding:36px 32px;box-shadow:0 6px 30px rgba(13,31,60,0.1);border-top:4px solid var(--gold);}
+.lw-icon{font-size:2.2rem;text-align:center;margin-bottom:14px;}
+.lw-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--navy);text-align:center;margin-bottom:6px;}
+.lw-sub{font-size:0.8rem;color:#666;text-align:center;line-height:1.65;margin-bottom:24px;}
+.lw-field{margin-bottom:14px;}
+.lw-label{font-size:0.7rem;font-weight:700;color:var(--navy);display:block;margin-bottom:5px;letter-spacing:0.3px;}
+.lw-input{width:100%;padding:10px 14px;border:1.5px solid #d0c8b8;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.84rem;color:var(--navy);background:#fff;transition:border-color 0.2s;}
+.lw-input:focus{outline:none;border-color:var(--gold);}
+.lw-btn{width:100%;padding:12px;background:var(--gold);color:var(--navy);font-weight:700;font-size:0.85rem;border:none;border-radius:7px;cursor:pointer;margin-top:6px;transition:opacity 0.2s;}
+.lw-btn:hover{opacity:0.88;}
+.lw-divider{display:flex;align-items:center;gap:10px;margin:18px 0;font-size:0.7rem;color:#aaa;}
+.lw-divider::before,.lw-divider::after{content:"";flex:1;height:1px;background:#e8e0d0;}
+.lw-join-link{display:block;text-align:center;font-size:0.78rem;color:var(--gold);font-weight:700;text-decoration:none;}
+.lw-join-link:hover{text-decoration:underline;}
+.lw-err{font-size:0.72rem;color:var(--red);text-align:center;margin-top:8px;display:none;}
+
+/* MEMBER DASHBOARD */
+.member-dash{padding:32px 48px;display:none;}
+.dash-welcome{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:28px;padding:22px 24px;background:#fff;border-radius:10px;border:1px solid #ddd6c0;border-left:4px solid var(--gold);}
+.dw-left{}
+.dw-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--navy);}
+.dw-tier{font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-top:3px;}
+.dw-right{display:flex;gap:10px;align-items:center;}
+.logo-preview{width:80px;height:56px;border-radius:7px;border:2px dashed #d0c8b8;display:flex;align-items:center;justify-content:center;font-size:0.62rem;color:#aaa;overflow:hidden;background:#fafafa;cursor:pointer;position:relative;}
+.logo-preview img{width:100%;height:100%;object-fit:contain;padding:4px;}
+.logo-upload-hint{font-size:0.62rem;color:#888;margin-top:4px;text-align:center;}
+#logo-file-input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px;}
+.dash-full{grid-column:1/-1;}
+.dash-card{background:#fff;border:1px solid #ddd6c0;border-radius:10px;overflow:hidden;}
+.dc-head{background:var(--navy);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.dc-head-title{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#fff;}
+.dc-head-sub{font-size:0.63rem;color:rgba(255,255,255,0.5);}
+.dc-body{padding:18px;}
+
+/* FORM INPUTS IN PORTAL */
+.p-label{font-size:0.7rem;font-weight:700;color:var(--navy);display:block;margin-bottom:4px;margin-top:12px;}
+.p-input{width:100%;padding:9px 12px;border:1.5px solid #d0c8b8;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;color:var(--navy);background:#fff;}
+.p-input:focus{outline:none;border-color:var(--gold);}
+.p-textarea{width:100%;padding:9px 12px;border:1.5px solid #d0c8b8;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;color:var(--navy);resize:vertical;min-height:80px;}
+.p-select{width:100%;padding:9px 12px;border:1.5px solid #d0c8b8;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;color:var(--navy);}
+.p-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.p-save-btn{margin-top:14px;padding:9px 20px;background:var(--gold);color:var(--navy);font-weight:700;font-size:0.78rem;border:none;border-radius:6px;cursor:pointer;transition:opacity 0.2s;}
+.p-save-btn:hover{opacity:0.88;}
+.save-confirm{display:inline-block;font-size:0.7rem;color:var(--green);margin-left:10px;opacity:0;transition:opacity 0.3s;}
+.save-confirm.show{opacity:1;}
+
+/* TOGGLE SECTION */
+.toggle-group{display:flex;flex-direction:column;gap:8px;}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f0ebe0;}
+.toggle-row:last-child{border-bottom:none;}
+.toggle-label{font-size:0.78rem;color:var(--navy);font-weight:500;}
+.toggle-desc{font-size:0.65rem;color:#888;margin-top:2px;}
+.toggle-switch{position:relative;width:44px;height:24px;flex-shrink:0;}
+.toggle-switch input{opacity:0;width:0;height:0;}
+.toggle-slider{position:absolute;inset:0;background:#ccc;border-radius:24px;cursor:pointer;transition:0.3s;}
+.toggle-slider::before{content:"";position:absolute;left:3px;bottom:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:0.3s;}
+.toggle-switch input:checked+.toggle-slider{background:var(--gold);}
+.toggle-switch input:checked+.toggle-slider::before{transform:translateX(20px);}
+
+/* REFERRAL TRACKER */
+.ref-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;}
+.ref-stat{text-align:center;padding:14px;background:var(--off);border-radius:8px;border:1px solid #e0d8c5;}
+.ref-stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy);}
+.ref-stat-lbl{font-size:0.62rem;color:#777;margin-top:2px;}
+.ref-list{font-size:0.75rem;}
+.ref-list-head{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;padding:7px 10px;font-size:0.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);background:var(--navy);border-radius:6px 6px 0 0;}
+.ref-list-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;padding:9px 10px;border-bottom:1px solid #f0ebe0;color:#4a5568;align-items:center;}
+.ref-list-row:last-child{border-bottom:none;}
+.ref-badge{font-size:0.6rem;padding:2px 7px;border-radius:8px;font-weight:700;}
+.ref-badge.active{background:rgba(39,174,96,0.12);color:var(--green);}
+.ref-badge.pending{background:rgba(230,126,34,0.12);color:#e67e22;}
+.ref-badge.won{background:rgba(27,63,122,0.12);color:var(--navy2);}
+
+/* VENDOR DIRECTORY (public) */
+.dir-section{padding:44px 52px;background:var(--off);}
+.dir-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;align-items:center;}
+.dir-search{padding:9px 14px;border:1.5px solid #d0c8b8;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:0.8rem;color:var(--navy);width:260px;}
+.dir-search:focus{outline:none;border-color:var(--gold);}
+.filter-btn{font-size:0.68rem;font-weight:700;padding:6px 14px;border-radius:16px;border:1px solid #ccc;background:transparent;color:#555;cursor:pointer;transition:all 0.15s;}
+.filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.dir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1200px;}
+.vend-card{background:#fff;border:1px solid #ddd6c0;border-radius:12px;overflow:hidden;transition:box-shadow 0.2s,transform 0.15s;display:flex;flex-direction:column;}
+.vend-card:hover{box-shadow:0 5px 24px rgba(13,31,60,0.1);transform:translateY(-2px);}
+.vend-card.featured{border:2px solid var(--gold);}
+.vc-logo-area{height:100px;background:var(--off);display:flex;align-items:center;justify-content:center;border-bottom:1px solid #e8e0d0;overflow:hidden;position:relative;}
+.vc-logo-area img{max-height:80px;max-width:80%;object-fit:contain;}
+.vc-logo-placeholder{font-size:2.2rem;color:#c0b89a;}
+.vc-vetted-badge{position:absolute;top:8px;right:8px;background:var(--gold);color:var(--navy);font-size:0.55rem;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:10px;}
+.vc-body{padding:16px;}
+.vc-cat-pill{font-size:0.6rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:2px 8px;border-radius:8px;background:rgba(13,31,60,0.07);color:var(--navy);display:inline-block;margin-bottom:7px;}
+.vc-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.vc-tagline{font-size:0.74rem;color:#666;line-height:1.55;margin-bottom:10px;}
+.vc-info-row{display:flex;align-items:center;gap:6px;font-size:0.68rem;color:#777;margin-bottom:4px;}
+.vc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.vc-tag{font-size:0.6rem;background:#f0f4f8;border:1px solid #d0dce8;color:#2d4a6d;padding:2px 7px;border-radius:8px;}
+.vc-discount{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.25);border-radius:7px;padding:7px 10px;margin-top:8px;font-size:0.72rem;color:#1a6b3a;}
+.vc-discount strong{font-weight:700;}
+.vc-actions{padding:12px 16px;background:var(--off);border-top:1px solid #e8e0d0;display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;}
+.vc-btn{font-size:0.68rem;font-weight:700;padding:6px 12px;border-radius:5px;text-decoration:none;transition:all 0.15s;display:inline-flex;align-items:center;gap:4px;border:none;cursor:pointer;}
+.vc-btn.navy{background:var(--navy);color:#fff;}
+.vc-btn.gold{background:var(--gold);color:var(--navy);}
+.vc-btn:hover{opacity:0.85;transform:translateY(-1px);}
+
+/* ACCESS GATE */
+.access-gate{background:rgba(13,31,60,0.06);border:1.5px dashed #c0b48a;border-radius:10px;padding:20px;text-align:center;margin-top:10px;}
+.ag-lock{font-size:1.5rem;margin-bottom:8px;}
+.ag-text{font-size:0.78rem;color:#555;margin-bottom:12px;}
+.ag-btn{background:var(--gold);color:var(--navy);font-weight:700;font-size:0.75rem;padding:8px 18px;border-radius:6px;border:none;cursor:pointer;}
+
+/* APPLICATION FORM EMBED */
+.apply-section{padding:44px 52px;}
+.apply-inner{max-width:900px;margin:0 auto;}
+.apply-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:36px;}
+.step{text-align:center;padding:16px 8px;background:rgba(255,255,255,0.06);border:1px solid rgba(184,146,42,0.15);border-radius:8px;}
+.step-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--gold);}
+.step-label{font-size:0.65rem;color:rgba(255,255,255,0.6);margin-top:4px;line-height:1.4;}
+.apply-frame-wrap{border-radius:12px;overflow:hidden;border:2px solid rgba(184,146,42,0.3);}
+.apply-frame-wrap iframe{width:100%;height:900px;border:none;background:#fff;}
+.apply-notice{background:rgba(184,146,42,0.1);border:1px solid rgba(184,146,42,0.3);border-radius:8px;padding:16px 20px;margin-bottom:20px;font-size:0.78rem;color:rgba(255,255,255,0.8);line-height:1.65;}
+.apply-notice strong{color:var(--gold2);}
+
+/* NEWSLETTER / PROMO CARD BUILDER */
+.builder-card{background:var(--off);border-radius:10px;padding:20px;margin-top:12px;}
+.builder-preview{background:#fff;border:1px solid #ddd6c0;border-radius:8px;padding:18px;margin-top:12px;min-height:100px;}
+.preview-brand{font-family:'Playfair Display',serif;font-size:0.9rem;font-weight:900;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:10px;}
+.preview-body{font-size:0.78rem;color:#4a5568;line-height:1.7;}
+.preview-offer{background:rgba(184,146,42,0.08);border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 6px 6px 0;margin-top:10px;font-size:0.76rem;color:var(--navy);}
+
+/* JOB LEADS SECTION */
+.job-card{background:var(--off);border:1px solid #e0d8c5;border-radius:8px;padding:14px;margin-bottom:10px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.job-info{}
+.job-title{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--navy);font-weight:700;}
+.job-meta{font-size:0.68rem;color:#777;margin-top:3px;}
+.job-status-badge{font-size:0.62rem;font-weight:700;padding:3px 9px;border-radius:10px;flex-shrink:0;}
+.job-status-badge.open{background:rgba(39,174,96,0.12);color:var(--green);}
+.job-status-badge.filled{background:rgba(13,31,60,0.08);color:#888;}
+
+/* SHEETS SYNC NOTE */
+.sync-note{background:rgba(76,175,80,0.08);border:1px solid rgba(76,175,80,0.25);border-radius:8px;padding:12px 16px;font-size:0.72rem;color:#1a6b3a;display:flex;align-items:center;gap:8px;margin-top:12px;}
+.sync-dot{width:8px;height:8px;border-radius:50%;background:#4caf50;flex-shrink:0;animation:pulse-dot 2s infinite;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{padding:36px 24px 32px;}
+  .hero-title{font-size:1.9rem;}
+  .pricing-section,.dir-section,.apply-section,.affiliate-section{padding:32px 24px;}
+  .pricing-grid,.aff-grid,.dir-grid{grid-template-columns:1fr;}
+  .dash-grid{grid-template-columns:1fr;}
+  .member-dash{padding:20px 18px;}
+  .apply-steps{grid-template-columns:repeat(2,1fr);}
+}
+
+/* UTILITY */
+.flex-center{display:flex;align-items:center;justify-content:center;}
+.text-gold{color:var(--gold2);}
+.mt-4{margin-top:4px;} .mt-8{margin-top:8px;} .mt-12{margin-top:12px;}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.chip{font-size:0.62rem;font-weight:700;background:rgba(13,31,60,0.06);border:1px solid rgba(13,31,60,0.12);color:var(--navy);padding:3px 9px;border-radius:10px;}
+</style>
+</head>
+<body>
+
+<!-- ══ TOP NAV ══ -->
+<header class="top-bar">
+  <a href="https://www.linklakenorman.com" class="top-brand">LINK Lake Norman<sup>™</sup></a>
+  <nav class="top-nav-links">
+    <a href="https://www.linklakenorman.com" class="tnl">← Main Site</a>
+    <a href="#" class="tnl" onclick="showTab('directory')">Partner Directory</a>
+    <a href="#" class="tnl" onclick="showTab('member-portal')">Member Login</a>
+    <a href="#" class="tnl cta" onclick="showTab('apply')">Apply for Membership</a>
+  </nav>
+</header>
+
+<!-- ══ PORTAL TABS ══ -->
+<nav class="portal-tabs">
+  <button class="pt active" id="tab-home" onclick="showTab('home')">🏠 Overview</button>
+  <button class="pt" id="tab-pricing" onclick="showTab('pricing')">💳 Membership Plans</button>
+  <button class="pt" id="tab-directory" onclick="showTab('directory')">🏢 Partner Directory</button>
+  <button class="pt" id="tab-affiliate" onclick="showTab('affiliate')">🤝 Affiliate Model</button>
+  <button class="pt" id="tab-apply" onclick="showTab('apply')">📋 Apply Now</button>
+  <button class="pt" id="tab-member-portal" onclick="showTab('member-portal')">🔐 Member Portal</button>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     TAB 1: HOME / OVERVIEW
+══════════════════════════════════════════ -->
+<div class="tab-panel active" id="panel-home">
+  <div class="hero">
+    <p class="hero-eyebrow">🏆 LINK Lake Norman™ — Vetted Business Partner Network</p>
+    <h1 class="hero-title">The Most Trusted<br><span>Business Network</span><br>in the Lake Norman Region</h1>
+    <p class="hero-sub">Join a curated network of vetted businesses, vendors, and service providers that power the Lake Norman corridor. Get referrals, build visibility, and grow through the region's most connected community platform.</p>
+    <div class="hero-actions">
+      <button class="btn-gold" onclick="showTab('apply')">📋 Apply for Membership</button>
+      <button class="btn-outline" onclick="showTab('pricing')">View Pricing & Plans →</button>
+    </div>
+    <div class="hero-badge-row">
+      <span class="h-badge">✅ LINK-Vetted Businesses Only</span>
+      <span class="h-badge">📊 Google Sheets Powered</span>
+      <span class="h-badge">🔗 Referral Revenue Sharing</span>
+      <span class="h-badge">🎯 Member-Only Deals & Leads</span>
+      <span class="h-badge">📣 Newsletter & Marketing Reach</span>
+    </div>
+    <div class="gold-bar"></div>
+  </div>
+
+  <!-- WHY JOIN SECTION -->
+  <div style="background:var(--off);padding:44px 52px;">
+    <div class="section-label"><div class="s-bar"></div><span class="s-eyebrow">Why Join</span></div>
+    <h2 class="s-title">Built for Businesses That Want More Than a Listing</h2>
+    <p class="s-sub">The LINK Lake Norman™ Partner Network is not a yellow pages. Every member is personally reviewed, approved, and connected into a live referral ecosystem that drives real business.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;">
+      <div style="background:#fff;border-radius:10px;padding:22px;border:1px solid #ddd6c0;border-top:4px solid var(--gold);">
+        <div style="font-size:1.6rem;margin-bottom:8px;">🔍</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px;">LINK-Vetted Status</div>
+        <div style="font-size:0.78rem;color:#555;line-height:1.7;">Every partner goes through a review and vetting process. Clients know the LINK badge means quality, trust, and accountability.</div>
+      </div>
+      <div style="background:#fff;border-radius:10px;padding:22px;border:1px solid #ddd6c0;border-top:4px solid var(--gold);">
+        <div style="font-size:1.6rem;margin-bottom:8px;">💼</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Referral Revenue Sharing</div>
+        <div style="font-size:0.78rem;color:#555;line-height:1.7;">Set your own affiliate rates. LINK refers business your way and earns a small percentage — you win, LINK wins, clients win.</div>
+      </div>
+      <div style="background:#fff;border-radius:10px;padding:22px;border:1px solid #ddd6c0;border-top:4px solid var(--gold);">
+        <div style="font-size:1.6rem;margin-bottom:8px;">📊</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Your Own Member Portal</div>
+        <div style="font-size:0.78rem;color:#555;line-height:1.7;">Manage your listing, upload your logo, share specials, post job leads, and send newsletters — all from your private dashboard.</div>
+      </div>
+      <div style="background:#fff;border-radius:10px;padding:22px;border:1px solid #ddd6c0;border-top:4px solid var(--navy);">
+        <div style="font-size:1.6rem;margin-bottom:8px;">📣</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Marketing & Visibility</div>
+        <div style="font-size:0.78rem;color:#555;line-height:1.7;">Promotions, newsletters, seasonal campaigns, and event spotlights distributed to LINK's entire Lake Norman community network.</div>
+      </div>
+      <div style="background:#fff;border-radius:10px;padding:22px;border:1px solid #ddd6c0;border-top:4px solid var(--navy);">
+        <div style="font-size:1.6rem;margin-bottom:8px;">🎓</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Workforce Access</div>
+        <div style="font-size:0.78rem;color:#555;line-height:1.7;">Post job leads and internship opportunities directly to LINK's Future Ready™ student pipeline and workforce development network.</div>
+      </div>
+      <div style="background:#fff;border-radius:10px;padding:22px;border:1px solid #ddd6c0;border-top:4px solid var(--navy);">
+        <div style="font-size:1.6rem;margin-bottom:8px;">🤝</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:6px;">Real Relationships</div>
+        <div style="font-size:0.78rem;color:#555;line-height:1.7;">20+ years of authentic relationships across business, government, education, and nonprofit — a network money can't buy.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK CTA -->
+  <div style="background:var(--navy);padding:36px 52px;text-align:center;">
+    <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;margin-bottom:8px;">Ready to Grow Your Business Through LINK?</div>
+    <div style="font-size:0.84rem;color:rgba(255,255,255,0.65);margin-bottom:20px;">Annual memberships start at $250/year. Vetted. Connected. Trusted.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-gold" onclick="showTab('apply')">📋 Apply for Membership</button>
+      <button class="btn-outline" onclick="showTab('pricing')">View All Plans</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 2: PRICING
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="panel-pricing">
+  <div style="background:var(--navy);padding:36px 52px 28px;">
+    <p class="hero-eyebrow">💳 Membership Plans</p>
+    <h1 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:#fff;margin-bottom:8px;">Annual Membership Pricing</h1>
+    <p style="font-size:0.84rem;color:rgba(255,255,255,0.65);max-width:600px;">All memberships are annual, billed once per year. Membership grants access to the LINK Lake Norman™ Vetted Partner Network, referral system, and member portal.</p>
+    <div class="gold-bar" style="margin-top:24px;"></div>
+  </div>
+  <div class="pricing-section">
+    <div class="section-label"><div class="s-bar"></div><span class="s-eyebrow">Choose Your Level</span></div>
+    <h2 class="s-title">Plans Built for Every Business Stage</h2>
+    <p class="s-sub">Every plan includes vetting, directory listing, portal access, and referral tracking. Upgrade to unlock marketing, job leads, and premium placement.</p>
+    <div class="pricing-grid">
+
+      <!-- BASIC -->
+      <div class="price-card">
+        <div class="pc-tier">Starter</div>
+        <div class="pc-name">Community Partner</div>
+        <div class="pc-price">$250<span>/yr</span></div>
+        <div class="pc-price-note">Billed annually · Cancel anytime</div>
+        <div class="pc-divider"></div>
+        <ul class="pc-features">
+          <li>LINK-Vetted badge & directory listing</li>
+          <li>Company profile with logo upload</li>
+          <li>Contact info & service area display</li>
+          <li>Basic referral tracking dashboard</li>
+          <li>Affiliate % on project referrals (you set the rate)</li>
+          <li>Access to LINK community job lead board</li>
+          <li>1 promo/discount per quarter</li>
+        </ul>
+        <button class="pc-btn pc-btn-outline" onclick="showTab('apply')">Apply — Community Partner</button>
+      </div>
+
+      <!-- FEATURED -->
+      <div class="price-card featured">
+        <div class="pc-tier">Most Popular</div>
+        <div class="pc-name">Network Partner</div>
+        <div class="pc-price">$500<span>/yr</span></div>
+        <div class="pc-price-note">Billed annually · Best value</div>
+        <div class="pc-divider"></div>
+        <ul class="pc-features">
+          <li>Everything in Community Partner</li>
+          <li><strong>Featured placement</strong> in directory</li>
+          <li>Monthly newsletter spotlight rotation</li>
+          <li>Post unlimited job leads & internships</li>
+          <li>Share specials, campaigns & promotions</li>
+          <li>Priority referral routing from LINK</li>
+          <li>Client list visibility (you control what's shown)</li>
+          <li>Annual affiliate % option on business wins</li>
+          <li>2× promotional emails per year to LINK list</li>
+        </ul>
+        <button class="pc-btn pc-btn-gold" onclick="showTab('apply')">Apply — Network Partner</button>
+      </div>
+
+      <!-- EXECUTIVE -->
+      <div class="price-card">
+        <div class="pc-tier">Premium</div>
+        <div class="pc-name">Executive Partner</div>
+        <div class="pc-price">$1,000<span>/yr</span></div>
+        <div class="pc-price-note">Billed annually · White-glove</div>
+        <div class="pc-divider"></div>
+        <ul class="pc-features">
+          <li>Everything in Network Partner</li>
+          <li><strong>Top-of-directory</strong> permanent placement</li>
+          <li>Custom partner portal branding</li>
+          <li>4× dedicated email campaigns to LINK list</li>
+          <li>Keynote / event speaking intro opportunities</li>
+          <li>Co-branded LINK marketing materials</li>
+          <li>Quarterly strategy call with LINK founder</li>
+          <li>Workforce pipeline — direct student referrals</li>
+          <li>Annual % affiliate agreement (custom terms)</li>
+          <li>Invite to LINK Visionary Circle events</li>
+        </ul>
+        <button class="pc-btn pc-btn-outline" onclick="showTab('apply')">Apply — Executive Partner</button>
+      </div>
+    </div>
+
+    <!-- DIRECTORY ACCESS NOTE -->
+    <div style="max-width:1100px;margin-top:28px;background:var(--navy);border-radius:10px;padding:22px 28px;display:flex;align-items:flex-start;gap:16px;">
+      <div style="font-size:1.6rem;flex-shrink:0;">🔒</div>
+      <div>
+        <div style="font-family:'Playfair Display',serif;color:#fff;font-size:1rem;margin-bottom:5px;">Public Directory Access</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.65);line-height:1.7;">Anyone can browse the LINK vetted partner directory. However, full contact details, exclusive discounts, client references, and job leads are only visible to active LINK members and approved network viewers. Businesses, nonprofits, and schools can apply for free viewer access at the $0 community tier.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 3: PARTNER DIRECTORY
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="panel-directory">
+  <div style="background:var(--navy);padding:36px 52px 28px;">
+    <p class="hero-eyebrow">🏢 Vetted Partner Directory</p>
+    <h1 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:#fff;margin-bottom:8px;">LINK-Vetted Business Partners</h1>
+    <p style="font-size:0.84rem;color:rgba(255,255,255,0.65);max-width:600px;">Every business below has been personally reviewed and approved by LINK Lake Norman™. These are the region's most trusted service providers.</p>
+    <div class="gold-bar" style="margin-top:24px;"></div>
+  </div>
+
+  <div class="dir-section">
+    <!-- FILTERS -->
+    <div class="dir-filters">
+      <input class="dir-search" type="text" placeholder="🔍 Search partners..." id="dir-search-input" oninput="filterDirectory()">
+      <button class="filter-btn active" onclick="filterCat(this,'all')">All</button>
+      <button class="filter-btn" onclick="filterCat(this,'hr')">HR & Staffing</button>
+      <button class="filter-btn" onclick="filterCat(this,'marketing')">Marketing</button>
+      <button class="filter-btn" onclick="filterCat(this,'financial')">Financial</button>
+      <button class="filter-btn" onclick="filterCat(this,'legal')">Legal</button>
+      <button class="filter-btn" onclick="filterCat(this,'tech')">Technology</button>
+      <button class="filter-btn" onclick="filterCat(this,'coaching')">Coaching</button>
+      <button class="filter-btn" onclick="filterCat(this,'nonprofit')">Nonprofit</button>
+    </div>
+
+    <!-- DIRECTORY GRID — Sample vetted partners (admin can manage via portal) -->
+    <div class="dir-grid" id="dir-grid">
+
+      <!-- SAMPLE FEATURED PARTNER 1 -->
+      <div class="vend-card featured" data-cat="hr">
+        <div class="vc-logo-area">
+          <div class="vc-logo-placeholder">🏢</div>
+          <span class="vc-vetted-badge">✓ LINK Vetted</span>
+        </div>
+        <div class="vc-body">
+          <span class="vc-cat-pill">HR & Staffing</span>
+          <div class="vc-name">Lake Norman HR Solutions</div>
+          <div class="vc-tagline">Full-service HR consulting, recruiting, and compliance for small to mid-size businesses across the LKN corridor.</div>
+          <div class="vc-info-row">📍 Cornelius, NC &nbsp;|&nbsp; 📞 Contact via Portal</div>
+          <div class="vc-info-row">🌐 Member since 2024</div>
+          <div class="vc-tags">
+            <span class="vc-tag">Recruiting</span>
+            <span class="vc-tag">Compliance</span>
+            <span class="vc-tag">Onboarding</span>
+            <span class="vc-tag">Benefits</span>
+          </div>
+          <div class="vc-discount">🎁 <strong>LINK Member Offer:</strong> 10% off first HR audit — <em>Members only</em></div>
+        </div>
+        <div class="vc-actions">
+          <button class="vc-btn navy" onclick="requireLogin()">📩 Contact Partner</button>
+          <button class="vc-btn gold" onclick="requireLogin()">🎁 See Discount</button>
+        </div>
+      </div>
+
+      <!-- SAMPLE PARTNER 2 -->
+      <div class="vend-card" data-cat="marketing">
+        <div class="vc-logo-area">
+          <div class="vc-logo-placeholder">📣</div>
+          <span class="vc-vetted-badge">✓ LINK Vetted</span>
+        </div>
+        <div class="vc-body">
+          <span class="vc-cat-pill">Marketing</span>
+          <div class="vc-name">North Meck Creative Co.</div>
+          <div class="vc-tagline">Branding, digital marketing, social media management, and content strategy for local businesses and nonprofits.</div>
+          <div class="vc-info-row">📍 Huntersville, NC &nbsp;|&nbsp; 🌐 Member since 2025</div>
+          <div class="vc-tags">
+            <span class="vc-tag">Social Media</span>
+            <span class="vc-tag">Branding</span>
+            <span class="vc-tag">Content</span>
+            <span class="vc-tag">SEO</span>
+          </div>
+        </div>
+        <div class="vc-actions">
+          <button class="vc-btn navy" onclick="requireLogin()">📩 Contact Partner</button>
+          <button class="vc-btn gold" onclick="requireLogin()">🎁 See Offer</button>
+        </div>
+      </div>
+
+      <!-- SAMPLE PARTNER 3 -->
+      <div class="vend-card" data-cat="financial">
+        <div class="vc-logo-area">
+          <div class="vc-logo-placeholder">💼</div>
+          <span class="vc-vetted-badge">✓ LINK Vetted</span>
+        </div>
+        <div class="vc-body">
+          <span class="vc-cat-pill">Financial Services</span>
+          <div class="vc-name">LKN Business Financial Group</div>
+          <div class="vc-tagline">Accounting, bookkeeping, tax strategy, and financial planning tailored for Lake Norman entrepreneurs and small businesses.</div>
+          <div class="vc-info-row">📍 Davidson, NC &nbsp;|&nbsp; 🌐 Member since 2024</div>
+          <div class="vc-tags">
+            <span class="vc-tag">Accounting</span>
+            <span class="vc-tag">Tax Planning</span>
+            <span class="vc-tag">Bookkeeping</span>
+          </div>
+          <div class="vc-discount">🎁 <strong>LINK Member Offer:</strong> Free 30-min consultation — <em>Members only</em></div>
+        </div>
+        <div class="vc-actions">
+          <button class="vc-btn navy" onclick="requireLogin()">📩 Contact Partner</button>
+          <button class="vc-btn gold" onclick="requireLogin()">🎁 See Offer</button>
+        </div>
+      </div>
+
+      <!-- YOUR SPOT PLACEHOLDER -->
+      <div class="vend-card" data-cat="all" style="border:2px dashed #c0b48a;background:#fffdf7;">
+        <div class="vc-logo-area" style="background:#faf7f0;">
+          <div style="text-align:center;padding:10px;">
+            <div style="font-size:2rem;">➕</div>
+            <div style="font-size:0.68rem;color:#b0a080;margin-top:4px;font-weight:700;">YOUR BUSINESS HERE</div>
+          </div>
+        </div>
+        <div class="vc-body">
+          <span class="vc-cat-pill" style="background:rgba(184,146,42,0.1);color:var(--gold);">Join the Network</span>
+          <div class="vc-name" style="color:var(--gold);">Become a LINK Partner</div>
+          <div class="vc-tagline">Join the region's most trusted vetted business network and start receiving referrals from LINK Lake Norman's entire community.</div>
+          <div style="margin-top:10px;font-size:0.72rem;color:var(--gold);font-weight:700;">Annual plans from $250/year →</div>
+        </div>
+        <div class="vc-actions">
+          <button class="vc-btn gold" onclick="showTab('apply')" style="flex:1;justify-content:center;">📋 Apply Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGIN PROMPT FOR FULL ACCESS -->
+    <div style="max-width:1200px;margin-top:32px;">
+      <div class="access-gate">
+        <div class="ag-lock">🔐</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin-bottom:6px;">Full Directory Access for Members</div>
+        <div class="ag-text">Full contact info, exclusive member discounts, client references, job leads, and newsletters are visible to active LINK members and approved community viewers only.</div>
+        <button class="ag-btn" onclick="showTab('member-portal')">🔐 Member Login</button>
+        &nbsp;&nbsp;
+        <button class="ag-btn" style="background:var(--navy);color:#fff;" onclick="showTab('apply')">📋 Apply for Membership</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 4: AFFILIATE MODEL
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="panel-affiliate">
+  <div class="affiliate-section">
+    <div class="section-label"><div class="s-bar"></div><span class="s-eyebrow" style="color:var(--gold2);">Affiliate Model</span></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:#fff;margin-bottom:8px;">How the LINK Referral Revenue Model Works</h2>
+    <p style="font-size:0.84rem;color:rgba(255,255,255,0.65);max-width:680px;line-height:1.75;">LINK Lake Norman™ is built on relationships and trust. When we refer business to you, we earn a small referral fee — and you set the terms. Choose a project-based rate or an annual percentage of revenue wins.</p>
+
+    <div class="aff-grid">
+      <!-- OPTION A: PROJECT REFERRAL FEE -->
+      <div class="aff-card">
+        <div class="aff-card-title">📌 Option A — Per-Project Referral Fee</div>
+        <div class="aff-card-sub">You pay LINK a percentage of the contract value each time a referred client signs with you. Set your own rate in your member portal.</div>
+        <table class="aff-table">
+          <tr><th>Referral Amount</th><th>Example Rate</th><th>LINK Earns</th></tr>
+          <tr><td>$500 project</td><td class="aff-highlight">10%</td><td>$50</td></tr>
+          <tr><td>$2,500 project</td><td class="aff-highlight">8%</td><td>$200</td></tr>
+          <tr><td>$10,000 project</td><td class="aff-highlight">5%</td><td>$500</td></tr>
+          <tr><td>$25,000+ project</td><td class="aff-highlight">Custom</td><td>Negotiated</td></tr>
+        </table>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:12px;">You set your own rates. LINK invoices quarterly for referral fees earned.</div>
+      </div>
+
+      <!-- OPTION B: ANNUAL % -->
+      <div class="aff-card">
+        <div class="aff-card-title">📈 Option B — Annual Revenue Share</div>
+        <div class="aff-card-sub">Preferred by long-term partners. Pay LINK a flat annual percentage of total revenue generated through LINK referrals over the membership year.</div>
+        <table class="aff-table">
+          <tr><th>Partner Revenue Tier</th><th>LINK % Rate</th><th>Est. Annual</th></tr>
+          <tr><td>Under $50K in wins</td><td class="aff-highlight">3%</td><td>Up to $1,500</td></tr>
+          <tr><td>$50K–$150K in wins</td><td class="aff-highlight">4%</td><td>$2K–$6K</td></tr>
+          <tr><td>$150K+ in wins</td><td class="aff-highlight">5%</td><td>Custom</td></tr>
+          <tr><td>Executive Partners</td><td class="aff-highlight">Custom</td><td>Negotiated</td></tr>
+        </table>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:12px;">Reported via member portal. Annual reconciliation with LINK before renewal.</div>
+      </div>
+
+      <!-- HOW IT'S TRACKED -->
+      <div class="aff-card">
+        <div class="aff-card-title">📊 How Referrals Are Tracked</div>
+        <div class="aff-card-sub">Everything is transparent, simple, and stored in your Google Sheet dashboard.</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;font-size:0.76rem;color:rgba(255,255,255,0.7);">
+          <li>✅ LINK sends you a referral via email with a unique referral code</li>
+          <li>✅ You log the outcome in your member portal (won / pending / lost)</li>
+          <li>✅ Revenue data auto-syncs to LINK's Google Sheet</li>
+          <li>✅ Quarterly summary emailed to both parties</li>
+          <li>✅ You invoice or we invoice — your choice of structure</li>
+          <li>✅ All history stored in your member dashboard</li>
+        </ul>
+      </div>
+
+      <!-- YOUR PORTAL CONTROLS -->
+      <div class="aff-card">
+        <div class="aff-card-title">⚙️ You Control Your Terms</div>
+        <div class="aff-card-sub">From your member portal, you can set and update your affiliate model at any time.</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;font-size:0.76rem;color:rgba(255,255,255,0.7);">
+          <li>🎯 Choose Option A (per-project) or Option B (annual %)</li>
+          <li>💰 Set your own referral fee percentage</li>
+          <li>📋 Define which services qualify for referral fees</li>
+          <li>🚫 Exclude certain client types if needed</li>
+          <li>📅 Set a cap on annual referral fee obligations</li>
+          <li>✏️ Update terms at any annual renewal</li>
+        </ul>
+        <button class="btn-gold" style="margin-top:16px;" onclick="showTab('member-portal')">Set Up Affiliate Terms →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 5: APPLY
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="panel-apply">
+  <div style="background:var(--navy);padding:36px 52px 28px;">
+    <p class="hero-eyebrow">📋 Apply for Membership</p>
+    <h1 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:#fff;margin-bottom:8px;">Business Partner Application</h1>
+    <p style="font-size:0.84rem;color:rgba(255,255,255,0.65);max-width:640px;">All applications are personally reviewed by LINK Lake Norman™. Approved members receive login credentials and portal access within 3–5 business days.</p>
+    <div class="gold-bar" style="margin-top:24px;"></div>
+  </div>
+
+  <div class="apply-section">
+    <div class="apply-inner">
+
+      <!-- HOW IT WORKS STEPS -->
+      <div class="apply-steps">
+        <div class="step"><div class="step-num">1</div><div class="step-label">Complete the Application Form Below</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-label">LINK Reviews & Vets Your Business</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-label">Receive Approval + Portal Login (3–5 Days)</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-label">Pay Annual Fee & Go Live in Directory</div></div>
+      </div>
+
+      <div class="apply-notice">
+        <strong>📌 What happens after you apply:</strong> LINK will review your application and contact you within 3–5 business days. Upon approval, you'll receive your member login credentials and a payment link for your selected membership tier. All data submitted is stored securely in the LINK Lake Norman™ Google Sheet database.
+      </div>
+
+      <!-- GOOGLE FORM EMBED -->
+      <!-- 
+        ╔══════════════════════════════════════════════════════════╗
+        ║  SETUP INSTRUCTION — GOOGLE FORM                        ║
+        ║  1. Create your Google Form at forms.google.com         ║
+        ║  2. Include fields: Business Name, Contact Name, Email, ║
+        ║     Phone, Business Type, Services, Website, Tier,      ║
+        ║     Affiliate Option, How did you hear about LINK?      ║
+        ║  3. Set responses to go to your Google Sheet            ║
+        ║  4. Click "Send" → Embed → copy the iframe src URL      ║
+        ║  5. Replace GOOGLE_FORM_EMBED_URL_HERE below            ║
+        ╚══════════════════════════════════════════════════════════╝
+      -->
+      <!-- GOOGLE FORM — LINK Lake Norman™ Business Partner Application -->
+      <div class="apply-frame-wrap">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdys5nPj_PvyHUDSyK0b8BHRjjlO7gtvBXC_jHklvuiRsBKrQ/viewform?embedded=true"
+          width="100%"
+          height="900"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="LINK Lake Norman™ Business Partner Application"
+          style="display:block;border:none;background:#fff;">
+          Loading…
+        </iframe>
+      </div>
+      <div style="text-align:center;margin-top:12px;font-size:0.72rem;color:rgba(255,255,255,0.45);">
+        Having trouble with the form? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdys5nPj_PvyHUDSyK0b8BHRjjlO7gtvBXC_jHklvuiRsBKrQ/viewform" target="_blank" style="color:var(--gold2);font-weight:700;">Open in a new tab →</a> &nbsp;|&nbsp; 📞 (704) 224-7830
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 6: MEMBER PORTAL
+══════════════════════════════════════════ -->
+<div class="tab-panel" id="panel-member-portal">
+  <div class="portal-header">
+    <div class="portal-header-inner">
+      <div>
+        <div style="font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:4px;">🔐 Secure Member Area</div>
+        <div class="portal-title">LINK Partner Portal</div>
+      </div>
+      <div class="portal-status"><span class="status-dot"></span>Portal Active</div>
+    </div>
+  </div>
+
+  <!-- LOGIN WALL -->
+  <div style="background:var(--off);padding:32px;" id="portal-login-section">
+    <div class="login-wall">
+      <div class="lw-icon">🔐</div>
+      <div class="lw-title">Member Login</div>
+      <div class="lw-sub">Enter your member credentials to access your partner portal, manage your listing, view referrals, and update your business profile.</div>
+      <div class="lw-field">
+        <label class="lw-label">Email Address</label>
+        <input class="lw-input" type="email" id="portal-email" placeholder="you@yourbusiness.com">
+      </div>
+      <div class="lw-field">
+        <label class="lw-label">Password</label>
+        <input class="lw-input" type="password" id="portal-pw" placeholder="Your member password" onkeydown="if(event.key==='Enter')attemptLogin()">
+      </div>
+      <button class="lw-btn" onclick="attemptLogin()">Access My Portal →</button>
+      <div class="lw-err" id="login-err">Incorrect credentials. Please try again or contact LINK.</div>
+      <div class="lw-divider">or</div>
+      <a class="lw-join-link" href="#" onclick="showTab('apply')">Not a member yet? Apply for membership →</a>
+      <div style="text-align:center;margin-top:10px;font-size:0.7rem;color:#aaa;">
+        Demo: use <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e5a5b53517e525750554e5f4c4a505b4c105d5153">[email&#160;protected]</a></strong> / <strong>LINKpartner2026</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEMBER DASHBOARD (hidden until login) -->
+  <div class="member-dash" id="member-dashboard" style="background:var(--off);">
+
+    <!-- WELCOME ROW -->
+    <div class="dash-welcome">
+      <div class="dw-left">
+        <div class="dw-name" id="member-display-name">Lake Norman HR Solutions</div>
+        <div class="dw-tier" id="member-tier-label">⭐ NETWORK PARTNER · ACTIVE MEMBER</div>
+        <div style="font-size:0.7rem;color:#888;margin-top:4px;">Member since Jan 2024 &nbsp;|&nbsp; Renews Jan 2027</div>
+      </div>
+      <div class="dw-right">
+        <div style="text-align:center;">
+          <div class="logo-preview" id="logo-preview-box" onclick="document.getElementById('logo-file-input').click()">
+            <input type="file" id="logo-file-input" accept="image/*" style="position:absolute;inset:0;opacity:0;cursor:pointer;" onchange="handleLogoUpload(event)">
+            <span id="logo-placeholder-text" style="pointer-events:none;">📤<br>Upload Logo</span>
+          </div>
+          <div class="logo-upload-hint">Click to upload / update logo</div>
+        </div>
+        <button onclick="logoutPortal()" style="background:transparent;border:1px solid #ccc;color:#777;font-size:0.7rem;padding:6px 12px;border-radius:6px;cursor:pointer;margin-left:8px;">Sign Out</button>
+      </div>
+    </div>
+
+    <!-- SYNC NOTE -->
+    <div class="sync-note">
+      <span class="sync-dot"></span>
+      <span>Your portal data syncs to the <strong>LINK Lake Norman™ Google Sheet</strong>. Changes you save here are logged automatically for LINK admin review.</span>
+    </div>
+
+    <!-- DASHBOARD GRID -->
+    <div class="dash-grid" style="margin-top:18px;">
+
+      <!-- BUSINESS PROFILE -->
+      <div class="dash-card">
+        <div class="dc-head">
+          <div class="dc-head-title">🏢 Business Profile</div>
+          <div class="dc-head-sub">Visible in directory</div>
+        </div>
+        <div class="dc-body">
+          <label class="p-label">Business Name</label>
+          <input class="p-input" id="biz-name" value="Lake Norman HR Solutions">
+          <label class="p-label">Tagline (shown in directory)</label>
+          <input class="p-input" id="biz-tagline" value="Full-service HR consulting for LKN businesses">
+          <div class="p-row">
+            <div>
+              <label class="p-label">Phone</label>
+              <input class="p-input" id="biz-phone" value="(704) 555-0100">
+            </div>
+            <div>
+              <label class="p-label">Website</label>
+              <input class="p-input" id="biz-web" value="www.lknhrsolutions.com">
+            </div>
+          </div>
+          <label class="p-label">Email (shown to members)</label>
+          <input class="p-input" id="biz-email" value="contact@lknhrsolutions.com">
+          <label class="p-label">Service Area</label>
+          <input class="p-input" id="biz-area" value="Cornelius, Huntersville, Davidson, Mooresville">
+          <label class="p-label">Business Description</label>
+          <textarea class="p-textarea" id="biz-desc">Full-service HR consulting, recruiting, and compliance for small to mid-size businesses across the Lake Norman corridor. 10+ years serving the region.</textarea>
+          <button class="p-save-btn" onclick="saveProfile()">💾 Save Profile <span class="save-confirm" id="profile-saved">✓ Saved!</span></button>
+        </div>
+      </div>
+
+      <!-- AFFILIATE & FEES SETTINGS -->
+      <div class="dash-card">
+        <div class="dc-head">
+          <div class="dc-head-title">💰 Affiliate & Fee Settings</div>
+          <div class="dc-head-sub">Your referral terms</div>
+        </div>
+        <div class="dc-body">
+          <label class="p-label">Affiliate Model</label>
+          <select class="p-select" id="aff-model">
+            <option value="project">Option A — Per-Project Referral %</option>
+            <option value="annual" selected>Option B — Annual Revenue Share %</option>
+            <option value="none">No Affiliate Agreement</option>
+          </select>
+          <label class="p-label">Your Referral Fee % (for project referrals)</label>
+          <input class="p-input" id="aff-project-pct" type="number" min="1" max="25" value="8" placeholder="e.g. 8">
+          <label class="p-label">Your Annual Revenue Share % </label>
+          <input class="p-input" id="aff-annual-pct" type="number" min="1" max="15" value="4" placeholder="e.g. 4">
+          <label class="p-label">Annual Fee Cap ($) — max you'll pay per year</label>
+          <input class="p-input" id="aff-cap" type="number" value="5000" placeholder="e.g. 5000">
+          <label class="p-label">Services Eligible for Referral Fees</label>
+          <input class="p-input" id="aff-services" value="HR Consulting, Recruiting, Compliance Audits">
+          <button class="p-save-btn" onclick="saveAffiliate()">💾 Save Terms <span class="save-confirm" id="aff-saved">✓ Saved!</span></button>
+        </div>
+      </div>
+
+      <!-- REFERRAL TRACKER -->
+      <div class="dash-card dash-full">
+        <div class="dc-head">
+          <div class="dc-head-title">📊 Referral Tracker</div>
+          <div class="dc-head-sub">All LINK-referred leads and outcomes</div>
+        </div>
+        <div class="dc-body">
+          <div class="ref-stats">
+            <div class="ref-stat"><div class="ref-stat-num">7</div><div class="ref-stat-lbl">Total Referrals Received</div></div>
+            <div class="ref-stat"><div class="ref-stat-num">3</div><div class="ref-stat-lbl">Won / Closed</div></div>
+            <div class="ref-stat"><div class="ref-stat-num">$18,400</div><div class="ref-stat-lbl">Est. Revenue from Referrals</div></div>
+          </div>
+          <div class="ref-list">
+            <div class="ref-list-head">
+              <span>Referred Client</span><span>Date</span><span>Value</span><span>Status</span>
+            </div>
+            <div class="ref-list-row">
+              <span>Precision Auto Group</span><span>Mar 2026</span><span>$4,200</span><span><span class="ref-badge won">Won</span></span>
+            </div>
+            <div class="ref-list-row">
+              <span>Davidson Dental Group</span><span>Feb 2026</span><span>$2,800</span><span><span class="ref-badge won">Won</span></span>
+            </div>
+            <div class="ref-list-row">
+              <span>LKN Childcare Alliance</span><span>Jan 2026</span><span>$11,400</span><span><span class="ref-badge won">Won</span></span>
+            </div>
+            <div class="ref-list-row">
+              <span>Mooresville Tech Startup</span><span>Mar 2026</span><span>TBD</span><span><span class="ref-badge pending">Pending</span></span>
+            </div>
+            <div class="ref-list-row">
+              <span>Huntersville Fitness Studio</span><span>Feb 2026</span><span>TBD</span><span><span class="ref-badge pending">Pending</span></span>
+            </div>
+            <div class="ref-list-row">
+              <span>North Meck Chamber Biz</span><span>Jan 2026</span><span>—</span><span><span class="ref-badge" style="background:#fce4e4;color:#c0392b;">Lost</span></span>
+            </div>
+            <div class="ref-list-row">
+              <span>LKN Realty Group</span><span>Dec 2025</span><span>—</span><span><span class="ref-badge" style="background:#fce4e4;color:#c0392b;">Lost</span></span>
+            </div>
+          </div>
+          <div class="sync-note" style="margin-top:12px;">
+            <span class="sync-dot"></span>
+            <span>Log new referral outcomes below — auto-syncs to Google Sheet</span>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;margin-top:12px;align-items:end;">
+            <div><label class="p-label">Client / Company Name</label><input class="p-input" id="new-ref-client" placeholder="Company name"></div>
+            <div><label class="p-label">Est. Value</label><input class="p-input" id="new-ref-value" placeholder="$0"></div>
+            <div><label class="p-label">Status</label><select class="p-select" id="new-ref-status"><option>Pending</option><option>Won</option><option>Lost</option></select></div>
+            <div><button class="p-save-btn" style="margin-top:0;" onclick="logReferral()">+ Log</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROMOTIONS & DISCOUNTS -->
+      <div class="dash-card">
+        <div class="dc-head">
+          <div class="dc-head-title">🎁 Promotions & Discounts</div>
+          <div class="dc-head-sub">Shown to LINK members</div>
+        </div>
+        <div class="dc-body">
+          <label class="p-label">Current Offer / Discount</label>
+          <input class="p-input" id="promo-offer" value="10% off first HR audit for LINK members">
+          <label class="p-label">Offer Details</label>
+          <textarea class="p-textarea" id="promo-details">Valid through December 2026. Mention LINK Lake Norman™ when booking. New clients only. One-time use.</textarea>
+          <label class="p-label">Expiration Date</label>
+          <input class="p-input" type="date" id="promo-exp" value="2026-12-31">
+          <div class="toggle-group" style="margin-top:10px;">
+            <div class="toggle-row">
+              <div><div class="toggle-label">Show offer in public directory</div><div class="toggle-desc">Members see your discount badge on your card</div></div>
+              <label class="toggle-switch"><input type="checkbox" checked id="tog-show-promo"><span class="toggle-slider"></span></label>
+            </div>
+          </div>
+          <button class="p-save-btn" onclick="savePromo()">💾 Save Promo <span class="save-confirm" id="promo-saved">✓ Saved!</span></button>
+        </div>
+      </div>
+
+      <!-- MARKETING & NEWSLETTER -->
+      <div class="dash-card">
+        <div class="dc-head">
+          <div class="dc-head-title">📣 Newsletter & Marketing</div>
+          <div class="dc-head-sub">Compose your member content</div>
+        </div>
+        <div class="dc-body">
+          <label class="p-label">Newsletter / Update Headline</label>
+          <input class="p-input" id="news-headline" placeholder="e.g. Spring HR Compliance Checklist for LKN Businesses">
+          <label class="p-label">Content / Body</label>
+          <textarea class="p-textarea" id="news-body" style="min-height:100px;" placeholder="Write your update, offer, or announcement here..."></textarea>
+          <label class="p-label">Call to Action Link</label>
+          <input class="p-input" id="news-cta" placeholder="https://www.yourbusiness.com/offer">
+          <div class="builder-preview" id="news-preview">
+            <div class="preview-brand">Lake Norman HR Solutions — LINK Partner Update</div>
+            <div class="preview-body" id="preview-body-text">Your content will preview here...</div>
+          </div>
+          <button class="p-save-btn" onclick="submitNewsletter()">📤 Submit to LINK for Distribution <span class="save-confirm" id="news-saved">✓ Submitted!</span></button>
+          <div style="font-size:0.68rem;color:#888;margin-top:8px;">LINK will review and include in the next community distribution. Network Partners: 2×/yr · Executive: 4×/yr</div>
+        </div>
+      </div>
+
+      <!-- JOB LEADS -->
+      <div class="dash-card dash-full">
+        <div class="dc-head">
+          <div class="dc-head-title">💼 Job Leads & Opportunities</div>
+          <div class="dc-head-sub">Post to LINK's workforce network</div>
+        </div>
+        <div class="dc-body">
+          <div id="job-leads-list">
+            <div class="job-card">
+              <div class="job-info">
+                <div class="job-title">HR Generalist — Part-Time</div>
+                <div class="job-meta">Lake Norman HR Solutions &nbsp;·&nbsp; Cornelius, NC &nbsp;·&nbsp; $22–26/hr &nbsp;·&nbsp; Posted Mar 2026</div>
+              </div>
+              <span class="job-status-badge open">Open</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;margin-top:14px;align-items:end;border-top:1px solid #f0ebe0;padding-top:14px;">
+            <div><label class="p-label">Job Title</label><input class="p-input" id="new-job-title" placeholder="e.g. Marketing Coordinator"></div>
+            <div><label class="p-label">Pay / Type</label><input class="p-input" id="new-job-pay" placeholder="$18/hr, FT, Intern"></div>
+            <div><label class="p-label">Location</label><input class="p-input" id="new-job-loc" placeholder="City, NC"></div>
+            <div><button class="p-save-btn" style="margin-top:0;" onclick="addJobLead()">+ Post</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISIBILITY CONTROLS -->
+      <div class="dash-card">
+        <div class="dc-head">
+          <div class="dc-head-title">👁️ Visibility Settings</div>
+          <div class="dc-head-sub">Control what others see</div>
+        </div>
+        <div class="dc-body">
+          <div class="toggle-group">
+            <div class="toggle-row">
+              <div><div class="toggle-label">Show phone number publicly</div><div class="toggle-desc">Display on directory card</div></div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div><div class="toggle-label">Show email publicly</div><div class="toggle-desc">Members only can see</div></div>
+              <label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div><div class="toggle-label">Show client list</div><div class="toggle-desc">Notable clients visible to members</div></div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div><div class="toggle-label">Show job leads publicly</div><div class="toggle-desc">Visible to all community viewers</div></div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div><div class="toggle-label">Show promotions publicly</div><div class="toggle-desc">Discounts visible in directory</div></div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div><div class="toggle-label">Receive LINK referrals</div><div class="toggle-desc">Get routed leads from LINK</div></div>
+              <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+            </div>
+          </div>
+          <button class="p-save-btn" onclick="saveVisibility()">💾 Save Settings <span class="save-confirm" id="vis-saved">✓ Saved!</span></button>
+        </div>
+      </div>
+
+      <!-- CLIENT LIST -->
+      <div class="dash-card">
+        <div class="dc-head">
+          <div class="dc-head-title">🤝 Client List</div>
+          <div class="dc-head-sub">Notable clients (you control what's shown)</div>
+        </div>
+        <div class="dc-body">
+          <div style="font-size:0.72rem;color:#666;margin-bottom:10px;line-height:1.65;">Add notable clients or industry types you serve. You control whether this is visible to other LINK members. This builds credibility in your directory listing.</div>
+          <textarea class="p-textarea" id="client-list" style="min-height:90px;">Local Healthcare Practices, Charter Schools, LKN Manufacturing Companies, Startups (Fintech), Real Estate Groups, Nonprofit Organizations</textarea>
+          <label class="p-label" style="margin-top:10px;">Confidential Notes (for LINK only — not shown publicly)</label>
+          <textarea class="p-textarea" id="client-notes" style="min-height:60px;" placeholder="Any notes for LINK admin about referral preferences, client fit, capacity, etc."></textarea>
+          <button class="p-save-btn" onclick="saveClientList()">💾 Save Client Info <span class="save-confirm" id="client-saved">✓ Saved!</span></button>
+        </div>
+      </div>
+
+    </div><!-- /dash-grid -->
+
+    <!-- GOOGLE SHEETS SETUP NOTE -->
+    <div style="background:#fff;border:1px solid #ddd6c0;border-radius:10px;padding:20px;margin-top:4px;border-left:4px solid var(--green);">
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:6px;">📊 Google Sheets Integration</div>
+      <div style="font-size:0.76rem;color:#555;line-height:1.7;">
+        All data saved in this portal is logged to the <strong>LINK Lake Norman™ Business Partner Google Sheet</strong>. 
+        To activate the live sync: connect this portal to Google Sheets via the <strong>Google Apps Script</strong> web app URL below (set up once by admin).
+      </div>
+      <div style="background:#f4f0e8;border-radius:6px;padding:10px 14px;margin-top:10px;font-size:0.72rem;font-family:monospace;color:var(--navy);">
+        GOOGLE_SHEETS_WEBAPP_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+      </div>
+      <div style="font-size:0.68rem;color:#888;margin-top:8px;">Replace with your deployed Google Apps Script URL. See setup guide included in admin package.</div>
+    </div>
+
+  </div><!-- /member-dash -->
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer style="background:#060f1e;border-top:2px solid rgba(184,146,42,0.3);padding:28px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+  <div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:#fff;">LINK Lake Norman<sup style="font-size:0.5em;color:var(--gold);">™</sup></div>
+    <div style="font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:4px;">Workforce · Consulting · Community · Business Network</div>
+  </div>
+  <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+    <a href="https://www.linklakenorman.com" style="font-size:0.72rem;color:rgba(255,255,255,0.55);text-decoration:none;">🌐 linklakenorman.com</a>
+    <span style="font-size:0.72rem;color:rgba(255,255,255,0.55);">📞 (704) 224-7830</span>
+  </div>
+  <div style="font-size:0.62rem;color:rgba(255,255,255,0.3);font-style:italic;">© 2024–2026 Link Holdings Group, LLC. All Rights Reserved.</div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── TAB SWITCHER ──
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.pt').forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById('panel-' + id);
+  const btn = document.getElementById('tab-' + id);
+  if (panel) panel.classList.add('active');
+  if (btn) btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── DIRECTORY FILTER ──
+function filterCat(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.vend-card').forEach(card => {
+    const c = card.getAttribute('data-cat');
+    card.style.display = (cat === 'all' || c === cat || c === 'all') ? '' : 'none';
+  });
+}
+function filterDirectory() {
+  const q = document.getElementById('dir-search-input').value.toLowerCase();
+  document.querySelectorAll('.vend-card').forEach(card => {
+    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+
+// ── PORTAL LOGIN ──
+// DEMO credentials — replace with real auth in production
+const DEMO_USERS = {
+  'demo@linkpartner.com': { pw: 'LINKpartner2026', name: 'Lake Norman HR Solutions', tier: 'Network Partner' }
+};
+
+function attemptLogin() {
+  const email = document.getElementById('portal-email').value.trim().toLowerCase();
+  const pw = document.getElementById('portal-pw').value;
+  const errEl = document.getElementById('login-err');
+  const user = DEMO_USERS[email];
+  if (user && user.pw === pw) {
+    errEl.style.display = 'none';
+    document.getElementById('portal-login-section').style.display = 'none';
+    document.getElementById('member-dashboard').style.display = 'block';
+    document.getElementById('member-display-name').textContent = user.name;
+    document.getElementById('member-tier-label').textContent = '⭐ ' + user.tier.toUpperCase() + ' · ACTIVE MEMBER';
+    logToSheet({ event: 'LOGIN', email, timestamp: new Date().toISOString() });
+  } else {
+    errEl.style.display = 'block';
+  }
+}
+
+function logoutPortal() {
+  document.getElementById('portal-login-section').style.display = 'block';
+  document.getElementById('member-dashboard').style.display = 'none';
+  document.getElementById('portal-email').value = '';
+  document.getElementById('portal-pw').value = '';
+}
+
+// ── LOGIN GATE FOR DIRECTORY ──
+function requireLogin() {
+  if (confirm('Full contact details are available to LINK members. Log in or apply for membership?')) {
+    showTab('member-portal');
+  }
+}
+
+// ── LOGO UPLOAD ──
+function handleLogoUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    const box = document.getElementById('logo-preview-box');
+    document.getElementById('logo-placeholder-text').style.display = 'none';
+    let img = box.querySelector('img');
+    if (!img) { img = document.createElement('img'); box.appendChild(img); }
+    img.src = ev.target.result;
+    img.style.cssText = 'width:100%;height:100%;object-fit:contain;padding:4px;';
+    logToSheet({ event: 'LOGO_UPLOAD', filename: file.name, timestamp: new Date().toISOString() });
+  };
+  reader.readAsDataURL(file);
+}
+
+// ── SAVE HANDLERS ──
+function showConfirm(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+function saveProfile() {
+  const data = {
+    event: 'PROFILE_UPDATE',
+    bizName: document.getElementById('biz-name').value,
+    tagline: document.getElementById('biz-tagline').value,
+    phone: document.getElementById('biz-phone').value,
+    website: document.getElementById('biz-web').value,
+    email: document.getElementById('biz-email').value,
+    area: document.getElementById('biz-area').value,
+    desc: document.getElementById('biz-desc').value,
+    timestamp: new Date().toISOString()
+  };
+  logToSheet(data);
+  showConfirm('profile-saved');
+}
+
+function saveAffiliate() {
+  const data = {
+    event: 'AFFILIATE_UPDATE',
+    model: document.getElementById('aff-model').value,
+    projectPct: document.getElementById('aff-project-pct').value,
+    annualPct: document.getElementById('aff-annual-pct').value,
+    cap: document.getElementById('aff-cap').value,
+    services: document.getElementById('aff-services').value,
+    timestamp: new Date().toISOString()
+  };
+  logToSheet(data);
+  showConfirm('aff-saved');
+}
+
+function savePromo() {
+  const data = {
+    event: 'PROMO_UPDATE',
+    offer: document.getElementById('promo-offer').value,
+    details: document.getElementById('promo-details').value,
+    expires: document.getElementById('promo-exp').value,
+    visible: document.getElementById('tog-show-promo').checked,
+    timestamp: new Date().toISOString()
+  };
+  logToSheet(data);
+  showConfirm('promo-saved');
+}
+
+function saveVisibility() {
+  logToSheet({ event: 'VISIBILITY_UPDATE', timestamp: new Date().toISOString() });
+  showConfirm('vis-saved');
+}
+
+function saveClientList() {
+  const data = {
+    event: 'CLIENT_LIST_UPDATE',
+    clients: document.getElementById('client-list').value,
+    notes: document.getElementById('client-notes').value,
+    timestamp: new Date().toISOString()
+  };
+  logToSheet(data);
+  showConfirm('client-saved');
+}
+
+function submitNewsletter() {
+  const data = {
+    event: 'NEWSLETTER_SUBMIT',
+    headline: document.getElementById('news-headline').value,
+    body: document.getElementById('news-body').value,
+    cta: document.getElementById('news-cta').value,
+    timestamp: new Date().toISOString()
+  };
+  logToSheet(data);
+  showConfirm('news-saved');
+}
+
+// Live newsletter preview
+document.addEventListener('DOMContentLoaded', function() {
+  const bodyInput = document.getElementById('news-body');
+  const previewText = document.getElementById('preview-body-text');
+  if (bodyInput && previewText) {
+    bodyInput.addEventListener('input', function() {
+      previewText.textContent = this.value || 'Your content will preview here...';
+    });
+  }
+});
+
+// ── REFERRAL LOGGER ──
+function logReferral() {
+  const client = document.getElementById('new-ref-client').value.trim();
+  const value = document.getElementById('new-ref-value').value.trim();
+  const status = document.getElementById('new-ref-status').value;
+  if (!client) return;
+  const list = document.querySelector('.ref-list');
+  const row = document.createElement('div');
+  row.className = 'ref-list-row';
+  const badgeClass = status === 'Won' ? 'won' : status === 'Pending' ? 'pending' : '';
+  const badgeStyle = status === 'Lost' ? 'background:#fce4e4;color:#c0392b;' : '';
+  row.innerHTML = `<span>${client}</span><span>${new Date().toLocaleDateString('en-US',{month:'short',year:'numeric'})}</span><span>${value||'TBD'}</span><span><span class="ref-badge ${badgeClass}" style="${badgeStyle}">${status}</span></span>`;
+  list.appendChild(row);
+  logToSheet({ event: 'REFERRAL_LOG', client, value, status, timestamp: new Date().toISOString() });
+  document.getElementById('new-ref-client').value = '';
+  document.getElementById('new-ref-value').value = '';
+}
+
+// ── JOB LEAD POSTER ──
+function addJobLead() {
+  const title = document.getElementById('new-job-title').value.trim();
+  const pay = document.getElementById('new-job-pay').value.trim();
+  const loc = document.getElementById('new-job-loc').value.trim();
+  if (!title) return;
+  const list = document.getElementById('job-leads-list');
+  const card = document.createElement('div');
+  card.className = 'job-card';
+  const bizName = document.getElementById('biz-name')?.value || 'Partner Business';
+  card.innerHTML = `<div class="job-info"><div class="job-title">${title}</div><div class="job-meta">${bizName} · ${loc} · ${pay} · Posted ${new Date().toLocaleDateString('en-US',{month:'short',year:'numeric'})}</div></div><span class="job-status-badge open">Open</span>`;
+  list.appendChild(card);
+  logToSheet({ event: 'JOB_POST', title, pay, location: loc, timestamp: new Date().toISOString() });
+  document.getElementById('new-job-title').value = '';
+  document.getElementById('new-job-pay').value = '';
+  document.getElementById('new-job-loc').value = '';
+}
+
+// ══ GOOGLE SHEETS SYNC ══
+// ─────────────────────────────────────────────────────────
+// HOW TO SET UP:
+// 1. Open your Google Sheet for LINK Business Partners
+// 2. Go to Extensions → Apps Script
+// 3. Paste the doPost(e) function below (see comments)
+// 4. Deploy as Web App → "Anyone" access → copy the URL
+// 5. Replace GOOGLE_SHEETS_WEBAPP_URL below with your URL
+// ─────────────────────────────────────────────────────────
+const GOOGLE_SHEETS_WEBAPP_URL = 'GOOGLE_SHEETS_WEBAPP_URL_HERE';
+
+function logToSheet(data) {
+  if (!GOOGLE_SHEETS_WEBAPP_URL || GOOGLE_SHEETS_WEBAPP_URL.includes('HERE')) {
+    console.log('[LINK Portal] Sheet sync (not yet configured):', data);
+    return;
+  }
+  fetch(GOOGLE_SHEETS_WEBAPP_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(err => console.warn('Sheet sync error:', err));
+}
+
+/*
+  ═══════════════════════════════════════════════════════════
+  GOOGLE APPS SCRIPT — Paste into your Sheet's Apps Script
+  ═══════════════════════════════════════════════════════════
+  
+  function doPost(e) {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet()
+      .getSheetByName('PartnerActivity') || 
+      SpreadsheetApp.getActiveSpreadsheet().insertSheet('PartnerActivity');
+    
+    const data = JSON.parse(e.postData.contents);
+    const row = [
+      new Date(),
+      data.event || '',
+      data.email || '',
+      data.bizName || '',
+      data.timestamp || '',
+      JSON.stringify(data)
+    ];
+    sheet.appendRow(row);
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'ok' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  ════════════════
