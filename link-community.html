@@ -530,19 +530,29 @@ footer strong{color:#fff;}
     <tbody id="lb-body"></tbody></table>
   </div>
 <div class="fs">
-      <form id="hours-log-form" name="Hours Log">
+ <form id="hours-log-form" name="Hours Log">
         <h2>Log Service Hours</h2>
         <div class="fgrid">
           <div class="fg">
             <label>Your email</label>
-            <input type="email" id="log-email" placeholder="jane@email.com">
+            <input type="email" name="email" id="log-email" placeholder="jane@email.com" required>
           </div>
           <div class="fg">
             <label>Nonprofit served</label>
-            <select id="log-org">
-              <option value="">Select org...</option>
-            </select>
+            <input type="text" name="organization" id="log-org" placeholder="Organization name" required>
           </div>
+          <div class="fg">
+            <label>Date of service</label>
+            <input type="date" name="date" id="log-date" required>
+          </div>
+          <div class="fg">
+            <label>Hours</label>
+            <input type="number" name="hours" id="log-hrs" min=".5" max="24" step=".5" placeholder="2" required>
+          </div>
+        </div>
+        <button type="submit" class="fsub" style="background:var(--blue);color:#fff;">Log Hours &amp; Earn Points</button>
+        <div id="log-result"></div>
+      </form>
           <div class="fg">
             <label>Date of service</label>
             <input type="date" id="log-date">
