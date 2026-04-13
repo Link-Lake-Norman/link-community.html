@@ -717,27 +717,26 @@ footer strong{color:#fff;}
         <a href="https://www.grants.gov" target="_blank" class="res-link">Grants.gov — Federal Grant Opportunities</a>
         <a href="https://www.cfcharlottes.org" target="_blank" class="res-link">Foundation for the Carolinas — Local Grants</a>
       </div>
-<form id="volunteer-registration" name="Adult_Volunteers">
-  <div class="fgrid">
-    <div class="fg">
-      <label>Full Name</label>
-      <input type="text" name="name" required placeholder="Jane Doe">
-    </div>
-    <div class="fg">
-      <label>Email Address</label>
-      <input type="email" name="email" required placeholder="jane@email.com">
-    </div>
+<div class="panel" id="panel-adults">
+  <div class="fs">
+    <h2>Adult Volunteer Registration</h2>
+    <p class="sub">Join our network of 30+ nonprofits. Tell us your interests and we'll connect you to the right mission.</p>
+    <form id="volunteer-registration" name="Adult_Volunteers">
+      <div class="fgrid">
+        <div class="fg">
+          <label>Full Name</label>
+          <input type="text" name="name" required placeholder="Jane Doe">
+        </div>
+        <div class="fg">
+          <label>Email Address</label>
+          <input type="email" name="email" required placeholder="jane@email.com">
+        </div>
+      </div>
+      <button type="submit" class="fsub" style="background:var(--blue);color:#fff;">Register as Volunteer</button>
+      <div id="volunteer-result"></div>
+    </form>
   </div>
-  <button type="submit" class="fsub" style="background:var(--blue);color:#fff;">Register as Volunteer</button>
-  <div id="volunteer-result"></div>
-</form>
-
-    <div class="res-card gold">
-      <h4>Top Nonprofit Resources</h4>
-      <p>The best free tools for nonprofits: project management, donor CRM, volunteer tracking, website builders, email marketing, and accounting — many free for nonprofits.</p>
-      <div class="res-links">
-        <a href="https://www.techsoupglobal.org" target="_blank" class="res-link">TechSoup — Free software for nonprofits</a>
-        <a href="https://www.canva.com/nonprofits/" target="_blank" class="res-link">Canva for Nonprofits — Free design tools</a>
+</div>
         <a href="https://www.volunteerhub.com" target="_blank" class="res-link">VolunteerHub — Volunteer management</a>
         <a href="https://www.guidestar.org" target="_blank" class="res-link">Candid/GuideStar — Nonprofit profiles &amp; data</a>
       </div>
@@ -2115,3 +2114,4 @@ forms.forEach(formSetup => {
 </script>
 </body>
 </html>
+
