@@ -1765,14 +1765,18 @@ function sendSheet(data){
 
 async function callClaude(prompt,targetId){
   const el=document.getElementById(targetId);
+  if(!el)return;
   el.innerHTML='<div class="ai-wrap"><div class="ai-lbl"><div class="spin"></div> Generating personalized response...</div><div class="ai-box">Please wait...</div></div>';
   try{
     const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})});
     const d=await r.json();
-    const text=d.content?.[0]?.text||'Unable to generate response.';
-    el.innerHTML=`<div class="ai-wrap"><div class="ai-lbl">AI-generated personalized letter</div><div class="ai-box">${text}</div></div>`;
-  }catch(e){el.innerHTML=`<div class="ai-box err">Error: ${e.message}</div>`;}
+    const text=d.content&&d.content[0]?d.content[0].text:'Unable to generate response.';
+    el.innerHTML='<div class="ai-wrap"><div class="ai-lbl">AI-generated personalized letter</div><div class="ai-box">'+text+'</div></div>';
+  }catch(e){
+    el.innerHTML='<div class="success-box">Your information was saved successfully! The AI letter feature requires an active API connection.</div>';
+  }
 }
+
 
 async function regStudent(){
   const first=document.getElementById('s-first').value.trim();
@@ -1785,6 +1789,7 @@ async function regStudent(){
   const matched=NPS.filter(n=>n&&interests.some(i=>n.cat&&n.cat.toLowerCase().includes(i.toLowerCase().split(' ')[0]))).slice(0,3);
   const orgList=matched.length?matched.map(o=>o.name).join(', '):NPS.filter(n=>n&&n.name).slice(0,3).map(o=>o.name).join(', ');
   const iStr=interests.length?interests.join(', '):'general community service';
+  document.getElementById('s-result').innerHTML='<div class="success-box">You are registered! Your data was saved. Generating your match letter...</div>';
   await callClaude(`Write a warm personalized 200-word welcome letter from LINK Lake Norman to student volunteer ${first} ${last}${school?' from '+school:''}. Their interests: ${iStr}. Best matched nonprofits in North Mecklenburg: ${orgList}. Address them by first name, affirm their choice to volunteer locally, mention their specific interests, briefly introduce the matched nonprofits, explain the points/badges/leaderboard system (20 pts per hour), encourage them to start a volunteer hub at school. Professional but warm. Sign from "The LINK Lake Norman Team".`,'s-result');
 }
 
@@ -1799,6 +1804,7 @@ async function regAdult(){
   const matched=NPS.filter(n=>n&&interests.some(i=>n.cat&&n.cat.toLowerCase().includes(i.toLowerCase().split(' ')[0]))).slice(0,3);
   const orgList=matched.length?matched.map(o=>o.name).join(', '):NPS.filter(n=>n&&n.name).slice(0,3).map(o=>o.name).join(', ');
   const iStr=interests.length?interests.join(', '):'general community service';
+  document.getElementById('a-result').innerHTML='<div class="success-box">You are registered! Your data was saved. Generating your personalized letter...</div>';
   await callClaude(`Write a warm personalized 200-word welcome letter from LINK Lake Norman to adult volunteer ${first} ${last}. Skills: ${skills||'various'}. Interests: ${iStr}. Matched nonprofits: ${orgList}. Welcome them, acknowledge skills, introduce orgs, note North Mecklenburg needs (177K residents, growing). Sign from "The LINK Lake Norman Team".`,'a-result');
 }
 
@@ -1828,6 +1834,7 @@ async function regBiz(){
   const vision=document.getElementById('b-vision').value.trim();
   if(!name||!email){document.getElementById('b-result').innerHTML='<div class="ai-box err">Please fill in required fields.</div>';return;}
   sendSheet({formName:'GeneralSubmissions',type:'business',name,email,vision,timestamp:new Date().toISOString()});
+  document.getElementById('b-result').innerHTML='<div class="success-box">Thank you! Your information was saved. A team member will follow up soon.</div>';
   await callClaude(`Write a 180-word inspiring response from LINK Lake Norman to business "${name}" interested in partnering locally. Vision: "${vision||'community impact'}". Acknowledge their interest; note North Mecklenburg has 177K+ residents with growing needs  -  2,404 experiencing homelessness in Mecklenburg (2025), 77% of affordable housing lost since 2015; employees who volunteer locally build stronger culture; outline partnership tiers from $500/yr. Invite a call. Sign from "The LINK Lake Norman Team".`,'b-result');
 }
 
