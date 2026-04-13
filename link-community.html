@@ -529,43 +529,20 @@ footer strong{color:#fff;}
     <table class="lb-table"><thead><tr><th>Rank</th><th>Volunteer</th><th>Hours</th><th>Points</th><th>Badge</th><th>School / Org</th></tr></thead>
     <tbody id="lb-body"></tbody></table>
   </div>
-<div class="fs">
- <form id="hours-log-form" name="Hours Log">
-        <h2>Log Service Hours</h2>
-        <div class="fgrid">
-          <div class="fg">
-            <label>Your email</label>
-            <input type="email" name="email" id="log-email" placeholder="jane@email.com" required>
-          </div>
-          <div class="fg">
-            <label>Nonprofit served</label>
-            <input type="text" name="organization" id="log-org" placeholder="Organization name" required>
-          </div>
-          <div class="fg">
-            <label>Date of service</label>
-            <input type="date" name="date" id="log-date" required>
-          </div>
-          <div class="fg">
-            <label>Hours</label>
-            <input type="number" name="hours" id="log-hrs" min=".5" max="24" step=".5" placeholder="2" required>
-          </div>
-        </div>
-        <button type="submit" class="fsub" style="background:var(--blue);color:#fff;">Log Hours &amp; Earn Points</button>
-        <div id="log-result"></div>
-      </form>
-          <div class="fg">
-            <label>Date of service</label>
-            <input type="date" id="log-date">
-          </div>
-          <div class="fg">
-            <label>Hours</label>
-            <input type="number" id="log-hrs" min=".5" max="24" step=".5" placeholder="2">
-          </div>
-        </div>
-        <button type="submit" class="fsub" style="background:var(--blue);color:#fff;">Log Hours &amp; Earn Points</button>
-        <div id="log-result"></div>
-      </form>
+  <div class="fs">
+    <h2>Log Service Hours</h2>
+    <div class="fgrid">
+      <div class="fg"><label>Your email</label><input type="email" id="log-email" placeholder="jane@email.com"></div>
+      <div class="fg"><label>Nonprofit served</label><select id="log-org"><option value="">Select org...</option></select></div>
+      <div class="fg"><label>Date of service</label><input type="date" id="log-date"></div>
+      <div class="fg"><label>Hours</label><input type="number" id="log-hrs" min=".5" max="24" step=".5" placeholder="2"></div>
+      <div class="fg full"><label>What did you do?</label><textarea id="log-desc" rows="2" placeholder="Brief description of your service..."></textarea></div>
     </div>
+    <button class="fsub" style="background:var(--blue);color:#fff;" onclick="logHrs()">Log Hours &amp; Earn Points</button>
+    <div id="log-result"></div>
+  </div>
+</div>
+
 <!-- EVENTS -->
 <div class="panel" id="panel-events">
 
@@ -635,24 +612,22 @@ footer strong{color:#fff;}
     <div class="fgrid">
       <div class="fg"><label>First name *</label><input type="text" id="rsvp-first" placeholder="Jane"></div>
       <div class="fg"><label>Last name *</label><input type="text" id="rsvp-last" placeholder="Smith"></div>
-  <form id="student-portal" name="Students">
-        <div class="fgrid">
-          <div class="fg">
-            <label>Student Name</label>
-            <input type="text" name="name" required placeholder="Full Name">
-          </div>
-          <div class="fg">
-            <label>School</label>
-            <input type="text" name="school" required placeholder="School Name">
-          </div>
-          <div class="fg">
-            <label>Email Address</label>
-            <input type="email" name="email" required placeholder="student@email.com">
-          </div>
-        </div>
-        <button type="submit" class="fsub" style="background:var(--blue);color:#fff;">Join Student Portal</button>
-        <div id="student-result"></div>
-      </form>
+      <div class="fg"><label>Email *</label><input type="email" id="rsvp-email" placeholder="jane@org.org"></div>
+      <div class="fg"><label>Phone</label><input type="tel" id="rsvp-phone" placeholder="704-555-0000"></div>
+      <div class="fg"><label>Organization / Title</label><input type="text" id="rsvp-org" placeholder="Executive Director, My Nonprofit"></div>
+      <div class="fg"><label>Attendance</label>
+        <select id="rsvp-type">
+          <option value="">Select...</option>
+          <option>LINK LKN Member — attending free</option>
+          <option>Non-member — $25 registration</option>
+          <option>Interested in membership — tell me more</option>
+        </select>
+      </div>
+      <div class="fg full"><label>What do you hope to get from the Quarterly Connection?</label>
+        <textarea id="rsvp-goal" rows="2" placeholder="e.g., Find a partner org for our food program, share volunteer resources..."></textarea>
+      </div>
+    </div>
+    <button class="fsub" style="background:var(--gold);color:#fff;" onclick="submitRSVP()">Submit RSVP →</button>
     <div id="rsvp-result"></div>
   </div>
 
@@ -717,31 +692,39 @@ footer strong{color:#fff;}
         <a href="https://www.grants.gov" target="_blank" class="res-link">Grants.gov — Federal Grant Opportunities</a>
         <a href="https://www.cfcharlottes.org" target="_blank" class="res-link">Foundation for the Carolinas — Local Grants</a>
       </div>
-</div>
+    </div>
+
+    <div class="res-card red">
+      <h4>Event Sponsorships &amp; In-Kind</h4>
+      <p>How to attract event sponsors, create sponsor packages, approach local businesses, manage in-kind donations, and run auctions and raffles legally in NC.</p>
+      <div class="res-links">
+        <a href="https://www.nclottery.com/charities" target="_blank" class="res-link">NC Raffle &amp; Lottery Guidelines for Nonprofits</a>
+        <a href="https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contributions-written-acknowledgments" target="_blank" class="res-link">IRS In-Kind Donation Acknowledgment Rules</a>
+        <a href="https://www.councilofnonprofits.org" target="_blank" class="res-link">NC Council of Nonprofits — Best Practices</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <h4>Board Governance &amp; Templates</h4>
+      <p>Meeting minute templates, board policies, conflict of interest forms, officer role descriptions, term limits, quorum rules, and Robert's Rules basics — all NC-specific.</p>
+      <div class="res-links">
+        <a href="https://www.ncnonprofits.org" target="_blank" class="res-link">NC Center for Nonprofits — Member Resources</a>
+        <a href="https://www.councilofnonprofits.org/tools-resources/board-roles-and-responsibilities" target="_blank" class="res-link">Board Roles &amp; Responsibility Guide</a>
+        <a href="https://www.irs.gov/pub/irs-pdf/p4221pc.pdf" target="_blank" class="res-link">IRS Compliance Guide for 501(c)(3) Public Charities</a>
+      </div>
+    </div>
+
+    <div class="res-card gold">
+      <h4>Top Nonprofit Resources</h4>
+      <p>The best free tools for nonprofits: project management, donor CRM, volunteer tracking, website builders, email marketing, and accounting — many free for nonprofits.</p>
+      <div class="res-links">
+        <a href="https://www.techsoupglobal.org" target="_blank" class="res-link">TechSoup — Free software for nonprofits</a>
+        <a href="https://www.canva.com/nonprofits/" target="_blank" class="res-link">Canva for Nonprofits — Free design tools</a>
         <a href="https://www.volunteerhub.com" target="_blank" class="res-link">VolunteerHub — Volunteer management</a>
         <a href="https://www.guidestar.org" target="_blank" class="res-link">Candid/GuideStar — Nonprofit profiles &amp; data</a>
       </div>
     </div>
-<div class="panel" id="panel-adults">
-  <div class="fs">
-    <h2>Adult Volunteer Registration</h2>
-    <p class="sub">Join our network of 30+ nonprofits. Tell us your interests and we'll connect you to the right mission.</p>
-    <form id="volunteer-registration" name="Adult_Volunteers">
-      <div class="fgrid">
-        <div class="fg">
-          <label>Full Name</label>
-          <input type="text" name="name" required placeholder="Jane Doe">
-        </div>
-        <div class="fg">
-          <label>Email Address</label>
-          <input type="email" name="email" required placeholder="jane@email.com">
-        </div>
-      </div>
-      <button type="submit" class="fsub" style="background:var(--blue);color:#fff;">Register as Volunteer</button>
-      <div id="volunteer-result"></div>
-    </form>
-  </div>
-</div>
+
     <div class="res-card green">
       <h4>How to Dissolve a Nonprofit</h4>
       <p>If it's time to close: NC dissolution process, IRS final return, notifying the Attorney General, distributing assets, and handling outstanding obligations properly.</p>
@@ -830,7 +813,7 @@ footer strong{color:#fff;}
   <div class="fs">
     <h2>Nonprofit Annual Membership Application — $200/Year</h2>
     <p class="sub"><strong style="color:var(--navy);">For nonprofit organizations only.</strong> Students and adult volunteers register free. This $200/year membership gives your nonprofit full access to the LINK Lake Norman concierge platform — volunteer matching, member portal, directory listing, event posting, community board, locked resource library, quarterly roundtables, in-kind coordination, and Google Sheets sync.</p>
-   <form id="nonprofit-application" name="Nonprofit_Apps">
+    <div style="margin-bottom:14px;">
       <label style="font-size:.73rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Upload Your Logo</label>
       <div class="logo-drop" onclick="document.getElementById('n-logo-file').click()">
         <input type="file" accept="image/*" id="n-logo-file" onchange="previewLogo(this)" style="display:none">
@@ -868,20 +851,7 @@ footer strong{color:#fff;}
   <div class="mem-card">
     <div class="mem-top"><div class="mem-title">Annual Membership — Nonprofits Only</div><div class="mem-price">$200<span>/year</span></div></div>
     <p style="font-size:.82rem;color:var(--gray);line-height:1.6;"><strong style="color:var(--navy);">This membership is exclusively for nonprofit organizations.</strong> It grants access to the full LINK Lake Norman concierge platform. Volunteers register free.</p>
-<form id="business-partnership" name="Business Partners">
-        <div class="fgrid">
-          <div class="fg">
-            <label>Business Name</label>
-            <input type="text" name="business" required placeholder="Company Name">
-          </div>
-          <div class="fg">
-            <label>Contact Email</label>
-            <input type="email" name="email" required placeholder="contact@business.com">
-          </div>
-        </div>
-        <button type="submit" class="fsub" style="background:var(--gold);color:#fff;">Submit Partnership Inquiry</button>
-        <div id="business-result"></div>
-      </form>
+    <div class="perks">
       <span class="pk">Auto-built member portal</span><span class="pk">Logo in scrolling banner</span><span class="pk">Directory listing</span>
       <span class="pk">Volunteer matching</span><span class="pk">4× quarterly roundtables</span><span class="pk">Event &amp; opportunity postings</span>
       <span class="pk">🔒 Member resource library</span><span class="pk">In-kind coordination</span><span class="pk">Google Sheets sync</span>
@@ -1366,7 +1336,7 @@ footer strong{color:#fff;}
 <script>
 
 // ── GOOGLE APPS SCRIPT FORM HANDLER ──────────────────────────────────────
-var linkScriptURL = 'https://script.google.com/macros/s/AKfycby4oZUuFMxu-9R8UOEGsaMpkMRCQ8sFxbuv5xcTOSd8xtTm_8LtooMuAZdeKiNIKVXNtw/exec';
+var linkScriptURL = 'https://script.google.com/macros/s/AKfycbwG1py7iuuWUJ_ckOfJsj4w4rm_xnj0Vd7C1HgzoxzMz5VGtfZsZkkxvqccoF_S2WxCiw/exec';
 
 function sendToSheet(formEl, successMsg) {
   var btn = formEl.querySelector('button[type="submit"]') || formEl.querySelector('button');
@@ -1486,7 +1456,7 @@ const LB = [
   {rank:5,name:"Alana W.",hrs:24,pts:480,badge:"Helper",school:"North Iredell"},
 ];
 
-let sheetURL=localStorage.getItem('linkSheetURL')||'https://script.google.com/macros/s/AKfycby4oZUuFMxu-9R8UOEGsaMpkMRCQ8sFxbuv5xcTOSd8xtTm_8LtooMuAZdeKiNIKVXNtw/exec',portalData=null;
+let sheetURL=localStorage.getItem('linkSheetURL')||'https://script.google.com/macros/s/AKfycbwG1py7iuuWUJ_ckOfJsj4w4rm_xnj0Vd7C1HgzoxzMz5VGtfZsZkkxvqccoF_S2WxCiw/exec',portalData=null;
 const logoCache={};
 
 function getInit(n){
@@ -1762,7 +1732,17 @@ function previewLogo(input){
   updatePortalPreview();
 }
 
-function sendSheet(data){if(!sheetURL)return;if(!data.formName&&!data.form_id)data.formName='GeneralSubmissions';var payload=Object.assign({},data,{form_id:data.formName||data.form_id||'GeneralSubmissions'});fetch(sheetURL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});}
+function sendSheet(data){
+  if(!sheetURL)return;
+  if(!data.formName&&!data.form_id)data.formName='GeneralSubmissions';
+  data.form_id=data.form_id||data.formName||'GeneralSubmissions';
+  data.Timestamp=new Date().toISOString();
+  var params=new URLSearchParams();
+  Object.keys(data).forEach(function(k){params.append(k,data[k]||'');});
+  fetch(sheetURL,{method:'POST',mode:'no-cors',body:params})
+    .then(function(){console.log('Sheet updated: '+data.form_id);})
+    .catch(function(e){console.error('sendSheet error:',e);});
+}
 
 async function callClaude(prompt,targetId){
   const el=document.getElementById(targetId);
@@ -1782,7 +1762,7 @@ async function regStudent(){
   const school=document.getElementById('s-school').value.trim();
   const interests=Array.from(document.getElementById('s-interests').selectedOptions).map(o=>o.value);
   if(!first||!last||!email){document.getElementById('s-result').innerHTML='<div class="ai-box err">Please fill in all required fields.</div>';return;}
-  sendSheet({type:'student',first,last,email,school,interests:interests.join(', '),timestamp:new Date().toISOString()});
+  sendSheet({formName:'Volunteers_Students',type:'student',first,last,email,school,interests:interests.join(', '),timestamp:new Date().toISOString()});
   const matched=NPS.filter(n=>n&&interests.some(i=>n.cat&&n.cat.toLowerCase().includes(i.toLowerCase().split(' ')[0]))).slice(0,3);
   const orgList=matched.length?matched.map(o=>o.name).join(', '):NPS.filter(n=>n&&n.name).slice(0,3).map(o=>o.name).join(', ');
   const iStr=interests.length?interests.join(', '):'general community service';
@@ -1796,7 +1776,7 @@ async function regAdult(){
   const skills=document.getElementById('a-skills').value.trim();
   const interests=Array.from(document.getElementById('a-interests').selectedOptions).map(o=>o.value);
   if(!first||!last||!email){document.getElementById('a-result').innerHTML='<div class="ai-box err">Please fill in all required fields.</div>';return;}
-  sendSheet({type:'adult',first,last,email,skills,interests:interests.join(', '),timestamp:new Date().toISOString()});
+  sendSheet({formName:'Volunteers_Adults',type:'adult',first,last,email,skills,interests:interests.join(', '),timestamp:new Date().toISOString()});
   const matched=NPS.filter(n=>n&&interests.some(i=>n.cat&&n.cat.toLowerCase().includes(i.toLowerCase().split(' ')[0]))).slice(0,3);
   const orgList=matched.length?matched.map(o=>o.name).join(', '):NPS.filter(n=>n&&n.name).slice(0,3).map(o=>o.name).join(', ');
   const iStr=interests.length?interests.join(', '):'general community service';
@@ -1828,7 +1808,7 @@ async function regBiz(){
   const email=document.getElementById('b-email').value.trim();
   const vision=document.getElementById('b-vision').value.trim();
   if(!name||!email){document.getElementById('b-result').innerHTML='<div class="ai-box err">Please fill in required fields.</div>';return;}
-  sendSheet({type:'business',name,email,vision,timestamp:new Date().toISOString()});
+  sendSheet({formName:'GeneralSubmissions',type:'business',name,email,vision,timestamp:new Date().toISOString()});
   await callClaude(`Write a 180-word inspiring response from LINK Lake Norman to business "${name}" interested in partnering locally. Vision: "${vision||'community impact'}". Acknowledge their interest; note North Mecklenburg has 177K+ residents with growing needs  -  2,404 experiencing homelessness in Mecklenburg (2025), 77% of affordable housing lost since 2015; employees who volunteer locally build stronger culture; outline partnership tiers from $500/yr. Invite a call. Sign from "The LINK Lake Norman Team".`,'b-result');
 }
 
@@ -1877,7 +1857,7 @@ function regGroup(){
   const goal=document.getElementById('grp-goal').value;
   const mission=document.getElementById('grp-mission').value.trim();
   if(!name||!email||!leader||!pwd){document.getElementById('grp-result').innerHTML='<div class="ai-box err">Please fill in all required fields.</div>';return;}
-  sendSheet({type:'group',name,leader,email,phone:document.getElementById('grp-phone').value.trim(),groupType:type,size,goal,mission,timestamp:new Date().toISOString()});
+  sendSheet({formName:'Volunteers_Students',type:'group',name,leader,email,phone:document.getElementById('grp-phone').value.trim(),groupType:type,size,goal,mission,timestamp:new Date().toISOString()});
   document.getElementById('grp-result').innerHTML=`<div class="success-box">
     <strong>Group portal created for ${name}!</strong><br><br>
     ✅ Your group password: <strong>${pwd}</strong>  -  share this with members so they can join your group when registering<br>
@@ -2013,7 +1993,7 @@ function submitRSVP(){
   const type=document.getElementById('rsvp-type').value;
   const goal=document.getElementById('rsvp-goal').value.trim();
   if(!first||!last||!email){document.getElementById('rsvp-result').innerHTML='<div class="ai-box err">Please fill in your name and email.</div>';return;}
-  sendSheet({type:'rsvp',first,last,email,phone:document.getElementById('rsvp-phone').value.trim(),org,attendanceType:type,goal,timestamp:new Date().toISOString()});
+  sendSheet({formName:'Events',type:'rsvp',first,last,email,phone:document.getElementById('rsvp-phone').value.trim(),org,attendanceType:type,goal,timestamp:new Date().toISOString()});
   document.getElementById('rsvp-result').innerHTML=`<div class="success-box">RSVP received! You're on the list for the next Nonprofit &amp; Community Quarterly Connection. Watch for a confirmation at ${email}. Questions? <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@linklakenorman.com" target="_blank" style="color:var(--green);font-weight:600;">info@linklakenorman.com</a></div>`;
 }
 
@@ -2072,39 +2052,9 @@ function openDonateItem(){
   setTimeout(()=>{const el=document.getElementById('di-title');if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.focus();}},400);
 }
 
-buildMQ(); renderNPs(); renderLB(); renderEvents(); renderBoard(); renderAdmin();
+buildMQ();renderNPs();renderLB();renderEvents();renderBoard();renderAdmin();
+;renderAdmin();
 
-const scriptURL = https://script.google.com/macros/s/AKfycbyklhTDKAmkQ2sugX9dY69Tg8_YhJdaqPizwx3K-V_3y8A-LY7t5bR5ew6WboFX-CZKHg/exec
-const forms = [
-  { id: 'hours-log-form', result: 'log-result' },
-  { id: 'student-portal', result: 'student-result' },
-  { id: 'volunteer-registration', result: 'volunteer-result' },
-  { id: 'business-partnership', result: 'business-result' }
-];
-
-forms.forEach(formSetup => {
-  const form = document.getElementById(formSetup.id);
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const resultDiv = document.getElementById(formSetup.result);
-      resultDiv.innerHTML = '<div class="note-box">Processing... please wait.</div>';
-      
-      const formData = new FormData(form);
-      formData.append('sheetName', form.getAttribute('name'));
-
-      fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => {
-          resultDiv.innerHTML = '<div class="success-box">✅ Success! Your data has been sent to the LINK database.</div>';
-          form.reset();
-        })
-        .catch(error => {
-          console.error('Error!', error.message);
-          resultDiv.innerHTML = '<div class="warn-box">❌ Error: Connection failed. Please try again.</div>';
-        });
-    });
-  }
-});
 </script>
 </body>
 </html>
