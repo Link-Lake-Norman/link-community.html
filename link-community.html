@@ -717,11 +717,16 @@ footer strong{color:#fff;}
         <a href="https://www.grants.gov" target="_blank" class="res-link">Grants.gov — Federal Grant Opportunities</a>
         <a href="https://www.cfcharlottes.org" target="_blank" class="res-link">Foundation for the Carolinas — Local Grants</a>
       </div>
+</div>
+        <a href="https://www.volunteerhub.com" target="_blank" class="res-link">VolunteerHub — Volunteer management</a>
+        <a href="https://www.guidestar.org" target="_blank" class="res-link">Candid/GuideStar — Nonprofit profiles &amp; data</a>
+      </div>
+    </div>
 <div class="panel" id="panel-adults">
   <div class="fs">
     <h2>Adult Volunteer Registration</h2>
     <p class="sub">Join our network of 30+ nonprofits. Tell us your interests and we'll connect you to the right mission.</p>
- <form id="volunteer-registration" name="Adult_Volunteers">
+    <form id="volunteer-registration" name="Adult_Volunteers">
       <div class="fgrid">
         <div class="fg">
           <label>Full Name</label>
@@ -737,11 +742,6 @@ footer strong{color:#fff;}
     </form>
   </div>
 </div>
-        <a href="https://www.volunteerhub.com" target="_blank" class="res-link">VolunteerHub — Volunteer management</a>
-        <a href="https://www.guidestar.org" target="_blank" class="res-link">Candid/GuideStar — Nonprofit profiles &amp; data</a>
-      </div>
-    </div>
-
     <div class="res-card green">
       <h4>How to Dissolve a Nonprofit</h4>
       <p>If it's time to close: NC dissolution process, IRS final return, notifying the Attorney General, distributing assets, and handling outstanding obligations properly.</p>
@@ -830,7 +830,7 @@ footer strong{color:#fff;}
   <div class="fs">
     <h2>Nonprofit Annual Membership Application — $200/Year</h2>
     <p class="sub"><strong style="color:var(--navy);">For nonprofit organizations only.</strong> Students and adult volunteers register free. This $200/year membership gives your nonprofit full access to the LINK Lake Norman concierge platform — volunteer matching, member portal, directory listing, event posting, community board, locked resource library, quarterly roundtables, in-kind coordination, and Google Sheets sync.</p>
-    <div style="margin-bottom:14px;">
+   <form id="nonprofit-application" name="Nonprofit_Apps">
       <label style="font-size:.73rem;font-weight:600;color:var(--navy);display:block;margin-bottom:6px;">Upload Your Logo</label>
       <div class="logo-drop" onclick="document.getElementById('n-logo-file').click()">
         <input type="file" accept="image/*" id="n-logo-file" onchange="previewLogo(this)" style="display:none">
@@ -2075,7 +2075,6 @@ function openDonateItem(){
 buildMQ(); renderNPs(); renderLB(); renderEvents(); renderBoard(); renderAdmin();
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzhYTUat8qse4pxmoUN8dZiAz1GrK2wyum60MafUHijSpFZUcbmrWg-AtZGT6FKrpnBfw/exec';
-
 const forms = [
   { id: 'hours-log-form', result: 'log-result' },
   { id: 'student-portal', result: 'student-result' },
